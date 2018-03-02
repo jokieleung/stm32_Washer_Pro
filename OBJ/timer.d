@@ -37,3 +37,5 @@
 ..\obj\timer.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\timer.o: ..\HARDWARE\ADC\adc.h
 ..\obj\timer.o: ..\HARDWARE\SHT2X\SHT2x.h
+..\obj\timer.o: ..\WORK_MODE\WASHER\washer.h
+..\obj\timer.o: ..\HARDWARE\USART_TO_LCD\USART_TO_LCD.H

@@ -1,5 +1,5 @@
 Dependencies for Project 'WASHER', Target 'TIMER': (DO NOT MODIFY !)
-F (.\main.c)(0x5A97CE1C)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\TIMER -I ..\HARDWARE\RELAY -I ..\HARDWARE\USART_TO_LCD -I ..\WORK_MODE\DRY -I ..\WORK_MODE\WASHER -I ..\HARDWARE\ADC -I ..\HARDWARE\IIC -I ..\HARDWARE\SHT2X-I"D:\ProjectPlus\Keil 32Program\烘洗机相关工程\stm32_Washer_Pro\USER\RTE"-ID:\Keil_v5\ARM\CMSIS\Include-IDevice\Include-D__UVISION_VERSION="521" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x5A98F8AE)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\TIMER -I ..\HARDWARE\RELAY -I ..\HARDWARE\USART_TO_LCD -I ..\WORK_MODE\DRY -I ..\WORK_MODE\WASHER -I ..\HARDWARE\ADC -I ..\HARDWARE\IIC -I ..\HARDWARE\SHT2X-I"D:\ProjectPlus\Keil 32Program\烘洗机相关工程\stm32_Washer_Pro\USER\RTE"-ID:\Keil_v5\ARM\CMSIS\Include-IDevice\Include-D__UVISION_VERSION="521" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (..\HARDWARE\LED\led.h)(0x50513ABC)
 I (..\SYSTEM\sys\sys.h)(0x550F951B)
 I (..\USER\stm32f10x.h)(0x5A73D8B7)
@@ -36,9 +36,9 @@ I (..\SYSTEM\usart\usart.h)(0x50517A82)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x574E3E26)
 I (..\HARDWARE\TIMER\timer.h)(0x5053001A)
 I (..\HARDWARE\ADC\adc.h)(0x5A969B63)
-I (..\HARDWARE\USART_TO_LCD\USART_TO_LCD.H)(0x5A97C8B1)
+I (..\HARDWARE\USART_TO_LCD\USART_TO_LCD.H)(0x5A98FDC4)
 I (..\HARDWARE\SHT2X\SHT2x.h)(0x57C3E9F0)
-I (..\WORK_MODE\WASHER\washer.h)(0x5A97CCAF)
+I (..\WORK_MODE\WASHER\washer.h)(0x5A97FD18)
 I (..\HARDWARE\RELAY\RELAY.H)(0x5A7973B7)
 F (.\stm32f10x_it.c)(0x4EBEACB0)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\TIMER -I ..\HARDWARE\RELAY -I ..\HARDWARE\USART_TO_LCD -I ..\WORK_MODE\DRY -I ..\WORK_MODE\WASHER -I ..\HARDWARE\ADC -I ..\HARDWARE\IIC -I ..\HARDWARE\SHT2X-I"D:\ProjectPlus\Keil 32Program\烘洗机相关工程\stm32_Washer_Pro\USER\RTE"-ID:\Keil_v5\ARM\CMSIS\Include-IDevice\Include-D__UVISION_VERSION="521" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f10x_it.o --omf_browse ..\obj\stm32f10x_it.crf --depend ..\obj\stm32f10x_it.d)
 I (stm32f10x_it.h)(0x4D99A426)
@@ -164,7 +164,7 @@ I (..\STM32F10x_FWLib\inc\misc.h)(0x504ED09C)
 I (..\HARDWARE\KEY\key.h)(0x550A8567)
 I (..\SYSTEM\sys\sys.h)(0x550F951B)
 I (..\SYSTEM\delay\delay.h)(0x555AC82B)
-F (..\HARDWARE\TIMER\timer.c)(0x5A97CE13)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\TIMER -I ..\HARDWARE\RELAY -I ..\HARDWARE\USART_TO_LCD -I ..\WORK_MODE\DRY -I ..\WORK_MODE\WASHER -I ..\HARDWARE\ADC -I ..\HARDWARE\IIC -I ..\HARDWARE\SHT2X-I"D:\ProjectPlus\Keil 32Program\烘洗机相关工程\stm32_Washer_Pro\USER\RTE"-ID:\Keil_v5\ARM\CMSIS\Include-IDevice\Include-D__UVISION_VERSION="521" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\timer.o --omf_browse ..\obj\timer.crf --depend ..\obj\timer.d)
+F (..\HARDWARE\TIMER\timer.c)(0x5A996CF6)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\TIMER -I ..\HARDWARE\RELAY -I ..\HARDWARE\USART_TO_LCD -I ..\WORK_MODE\DRY -I ..\WORK_MODE\WASHER -I ..\HARDWARE\ADC -I ..\HARDWARE\IIC -I ..\HARDWARE\SHT2X-I"D:\ProjectPlus\Keil 32Program\烘洗机相关工程\stm32_Washer_Pro\USER\RTE"-ID:\Keil_v5\ARM\CMSIS\Include-IDevice\Include-D__UVISION_VERSION="521" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\timer.o --omf_browse ..\obj\timer.crf --depend ..\obj\timer.d)
 I (..\HARDWARE\TIMER\timer.h)(0x5053001A)
 I (..\SYSTEM\sys\sys.h)(0x550F951B)
 I (..\USER\stm32f10x.h)(0x5A73D8B7)
@@ -196,9 +196,9 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x504ED09C)
 I (..\HARDWARE\LED\led.h)(0x50513ABC)
-I (..\WORK_MODE\WASHER\washer.h)(0x5A97CCAF)
+I (..\WORK_MODE\WASHER\washer.h)(0x5A97FD18)
 I (..\HARDWARE\RELAY\RELAY.H)(0x5A7973B7)
-I (..\HARDWARE\USART_TO_LCD\USART_TO_LCD.H)(0x5A97C8B1)
+I (..\HARDWARE\USART_TO_LCD\USART_TO_LCD.H)(0x5A98FDC4)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x574E3E26)
 I (..\HARDWARE\ADC\adc.h)(0x5A969B63)
 I (..\HARDWARE\SHT2X\SHT2x.h)(0x57C3E9F0)
@@ -233,8 +233,8 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x504ED09C)
-F (..\HARDWARE\USART_TO_LCD\USART_TO_LCD.c)(0x5A97BB81)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\TIMER -I ..\HARDWARE\RELAY -I ..\HARDWARE\USART_TO_LCD -I ..\WORK_MODE\DRY -I ..\WORK_MODE\WASHER -I ..\HARDWARE\ADC -I ..\HARDWARE\IIC -I ..\HARDWARE\SHT2X-I"D:\ProjectPlus\Keil 32Program\烘洗机相关工程\stm32_Washer_Pro\USER\RTE"-ID:\Keil_v5\ARM\CMSIS\Include-IDevice\Include-D__UVISION_VERSION="521" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\usart_to_lcd.o --omf_browse ..\obj\usart_to_lcd.crf --depend ..\obj\usart_to_lcd.d)
-I (..\HARDWARE\USART_TO_LCD\USART_TO_LCD.H)(0x5A97C8B1)
+F (..\HARDWARE\USART_TO_LCD\USART_TO_LCD.c)(0x5A993C06)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\TIMER -I ..\HARDWARE\RELAY -I ..\HARDWARE\USART_TO_LCD -I ..\WORK_MODE\DRY -I ..\WORK_MODE\WASHER -I ..\HARDWARE\ADC -I ..\HARDWARE\IIC -I ..\HARDWARE\SHT2X-I"D:\ProjectPlus\Keil 32Program\烘洗机相关工程\stm32_Washer_Pro\USER\RTE"-ID:\Keil_v5\ARM\CMSIS\Include-IDevice\Include-D__UVISION_VERSION="521" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\usart_to_lcd.o --omf_browse ..\obj\usart_to_lcd.crf --depend ..\obj\usart_to_lcd.d)
+I (..\HARDWARE\USART_TO_LCD\USART_TO_LCD.H)(0x5A98FDC4)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x574E3E26)
 I (..\SYSTEM\sys\sys.h)(0x550F951B)
 I (..\USER\stm32f10x.h)(0x5A73D8B7)
@@ -267,6 +267,8 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x504ED09C)
 I (..\HARDWARE\ADC\adc.h)(0x5A969B63)
 I (..\HARDWARE\SHT2X\SHT2x.h)(0x57C3E9F0)
+I (..\WORK_MODE\WASHER\washer.h)(0x5A97FD18)
+I (..\HARDWARE\RELAY\RELAY.H)(0x5A7973B7)
 F (..\HARDWARE\ADC\adc.c)(0x5A969B63)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\TIMER -I ..\HARDWARE\RELAY -I ..\HARDWARE\USART_TO_LCD -I ..\WORK_MODE\DRY -I ..\WORK_MODE\WASHER -I ..\HARDWARE\ADC -I ..\HARDWARE\IIC -I ..\HARDWARE\SHT2X-I"D:\ProjectPlus\Keil 32Program\烘洗机相关工程\stm32_Washer_Pro\USER\RTE"-ID:\Keil_v5\ARM\CMSIS\Include-IDevice\Include-D__UVISION_VERSION="521" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\adc.o --omf_browse ..\obj\adc.crf --depend ..\obj\adc.d)
 I (..\HARDWARE\ADC\adc.h)(0x5A969B63)
 I (..\SYSTEM\sys\sys.h)(0x550F951B)
@@ -1128,10 +1130,10 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_spi.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x504ED09C)
-F (..\README.TXT)(0x5A97CB1C)()
+F (..\README.TXT)(0x5A98FA0E)()
 F (..\WORK_MODE\DRY\DRY.C)(0x5A66EE91)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\TIMER -I ..\HARDWARE\RELAY -I ..\HARDWARE\USART_TO_LCD -I ..\WORK_MODE\DRY -I ..\WORK_MODE\WASHER -I ..\HARDWARE\ADC -I ..\HARDWARE\IIC -I ..\HARDWARE\SHT2X-I"D:\ProjectPlus\Keil 32Program\烘洗机相关工程\stm32_Washer_Pro\USER\RTE"-ID:\Keil_v5\ARM\CMSIS\Include-IDevice\Include-D__UVISION_VERSION="521" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\dry.o --omf_browse ..\obj\dry.crf --depend ..\obj\dry.d)
-F (..\WORK_MODE\WASHER\WASHER.C)(0x5A97CCD6)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\TIMER -I ..\HARDWARE\RELAY -I ..\HARDWARE\USART_TO_LCD -I ..\WORK_MODE\DRY -I ..\WORK_MODE\WASHER -I ..\HARDWARE\ADC -I ..\HARDWARE\IIC -I ..\HARDWARE\SHT2X-I"D:\ProjectPlus\Keil 32Program\烘洗机相关工程\stm32_Washer_Pro\USER\RTE"-ID:\Keil_v5\ARM\CMSIS\Include-IDevice\Include-D__UVISION_VERSION="521" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\washer.o --omf_browse ..\obj\washer.crf --depend ..\obj\washer.d)
-I (..\WORK_MODE\WASHER\washer.h)(0x5A97CCAF)
+F (..\WORK_MODE\WASHER\WASHER.C)(0x5A993C06)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I ..\HARDWARE\LED -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\STM32F10x_FWLib\inc -I ..\CORE -I ..\HARDWARE\KEY -I ..\HARDWARE\TIMER -I ..\HARDWARE\RELAY -I ..\HARDWARE\USART_TO_LCD -I ..\WORK_MODE\DRY -I ..\WORK_MODE\WASHER -I ..\HARDWARE\ADC -I ..\HARDWARE\IIC -I ..\HARDWARE\SHT2X-I"D:\ProjectPlus\Keil 32Program\烘洗机相关工程\stm32_Washer_Pro\USER\RTE"-ID:\Keil_v5\ARM\CMSIS\Include-IDevice\Include-D__UVISION_VERSION="521" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\washer.o --omf_browse ..\obj\washer.crf --depend ..\obj\washer.d)
+I (..\WORK_MODE\WASHER\washer.h)(0x5A97FD18)
 I (..\SYSTEM\sys\sys.h)(0x550F951B)
 I (..\USER\stm32f10x.h)(0x5A73D8B7)
 I (..\CORE\core_cm3.h)(0x4D523B58)
@@ -1162,7 +1164,7 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x504ED09C)
 I (..\HARDWARE\RELAY\RELAY.H)(0x5A7973B7)
-I (..\HARDWARE\USART_TO_LCD\USART_TO_LCD.H)(0x5A97C8B1)
+I (..\HARDWARE\USART_TO_LCD\USART_TO_LCD.H)(0x5A98FDC4)
 I (D:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x574E3E26)
 I (..\HARDWARE\ADC\adc.h)(0x5A969B63)
 I (..\HARDWARE\SHT2X\SHT2x.h)(0x57C3E9F0)

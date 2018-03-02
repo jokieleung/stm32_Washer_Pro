@@ -26,7 +26,13 @@ u8 BUTTON3[] = {0XA5,0X5A,0X06,0X83,0X00,0X00,0X01,0X03,0X33};
 u8 PRE_ARY[] = {0XA5,0X5A,0X05,0X82,0X00,0X20,0X00,0X00};//压力值显示数组 
 u8 TMP_ARY[] = {0XA5,0X5A,0X05,0X82,0X00,0X30,0X00,0X00};//温度值显示数组 
 u8 HUM_ARY[] = {0XA5,0X5A,0X05,0X82,0X00,0X40,0X00,0X00};//湿度值显示数组 
-
+//剩余时间显示数组
+u8 WSH_ARY_M[] = {0XA5,0X5A,0X05,0X82,0X00,0X50,0X00,0X00};//洗衣剩余时间显示数组 
+u8 WSH_ARY_S[] = {0XA5,0X5A,0X05,0X82,0X00,0X51,0X00,0X00};//洗衣剩余时间显示数组 
+u8 DRY_ARY_M[] = {0XA5,0X5A,0X05,0X82,0X00,0X60,0X00,0X00};//干衣剩余时间显示数组 
+u8 DRY_ARY_S[] = {0XA5,0X5A,0X05,0X82,0X00,0X61,0X00,0X00};//干衣剩余时间显示数组 
+u8 WLE_ARY_M[] = {0XA5,0X5A,0X05,0X82,0X00,0X70,0X00,0X00};//洗干衣剩余时间显示数组 
+u8 WLE_ARY_S[] = {0XA5,0X5A,0X05,0X82,0X00,0X71,0X00,0X00};//洗干衣剩余时间显示数组 
 //***********************卖家例程*******************************
 //*************************************************************
 u16 StartNum=0,TalNum=0;
@@ -135,7 +141,7 @@ void USART2_Init(u32 bound)
 	//Usart2 NVIC 配置		此时暂时设置其优先级为最高
   	NVIC_InitStructure.NVIC_IRQChannel = USART2_IRQn;
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=0 ;//抢占优先级0
-	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;		//子优先级0
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;		//子优先级0
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;			//IRQ通道使能
 	NVIC_Init(&NVIC_InitStructure);	//根据指定的参数初始化VIC寄存器
 
@@ -224,6 +230,39 @@ void UpdateDisPres(){
 				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//等待发送结束
 	}
 }
+//更新剩余洗衣时间   需转换成hh:mm格式
+extern u16 waterin_count;//进水计数值
+extern u16 wash_count;//洗衣计数值
+extern u16 waterout_count;//排水计数值
+void UpdateRemainingWashTim(){
+	int remainSec,Minu,Sec;
+	u8 low,high,i;
+	u8 ARYlength;
+	//总的剩余时间，单位s
+	remainSec = (WATERIN_TIME+WASH_TIME+WATEROUT_TIME)-waterin_count-wash_count-waterout_count;
+	Minu = (remainSec)/60; //（整除）
+	Sec = (remainSec)% 60; //秒：（取余）
+	low = Minu & 0xff;
+	high = (Minu>>8) & 0xff;
+	WSH_ARY_M[7] = low;
+	WSH_ARY_M[6] = high;
+	low = Sec & 0xff;
+	high = (Sec>>8) & 0xff;
+	WSH_ARY_S[7] = low;
+	WSH_ARY_S[6] = high;
+//		把变量数组里的数据循环发送给串口，每次发送一个字节  Jokie
+	ARYlength = sizeof(WSH_ARY_M)/sizeof(WSH_ARY_M[0]); //计算数组长度
+	for(i=0;i<ARYlength;i++)
+	{
+				USART_SendData(USART2, WSH_ARY_M[i]);//向串口2把接收的数据重新通过串口2发送
+				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//等待发送结束
+	}
+	for(i=0;i<ARYlength;i++)
+	{
+				USART_SendData(USART2, WSH_ARY_S[i]);//向串口2把接收的数据重新通过串口2发送
+				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//等待发送结束
+	}
+}
 
 
 //功能 ：检测串口屏是否有按键按下
@@ -235,11 +274,8 @@ u8 ifButtonDown(){
 	u16 rx_len;
 	u8 button1_cnt=0,button2_cnt=0,button3_cnt=0;//用来判定BUTTON BUF与哪个BUTTON的键值是一致的变量			
 			//串口2测试  成功  2018-1-22
-		if(USART2_RX_STA&0x8000)
-		{
-			
+
 			rx_len=USART2_RX_STA&0x3fff;//得到此次接收到的数据长度
-//			printf("\r\n您发送的消息为:\r\n\r\n");
 			USART2_RX_STA=0;		//归零该STA寄存器要在for循环前面（未知为什么）
 			
 			//用串口调试助手调试时用
@@ -253,38 +289,38 @@ u8 ifButtonDown(){
 //			思路：循环获取接收到的BUF内的数据，完成for循环（即获取完成后），将该数据验证是否为对应button键值
 			
 			//STEP1 把串口2接收BUF与各BUTTON键值比较
-			button1_cnt=0,button2_cnt=0,button3_cnt=0;//归零Cnt
+			button1_cnt=0;button2_cnt=0;button3_cnt=0;//归零Cnt
+			
 			for(t=0;t<rx_len;t++)
 			{
+				
 				if(BUTTON1[t]==USART2_RX_BUF[t])	button1_cnt++;
 				if(BUTTON2[t]==USART2_RX_BUF[t])	button2_cnt++;
 				if(BUTTON3[t]==USART2_RX_BUF[t])	button3_cnt++;
+				//通过串口1观察 debug用  测试成功 2018.03.02 13：44
+//				USART_SendData(USART1, USART2_RX_BUF[t]);//把接收的串口2数据重新通过串口1发送
+//				while(USART_GetFlagStatus(USART1,USART_FLAG_TC)!=SET);//等待发送结束
 			}
+			//通过串口1观察 debug用
+//			printf("rx_len :%d	",rx_len);
+//			printf("button1_cnt :%d	",button1_cnt);
+//			printf("button2_cnt :%d	",button2_cnt);
+//			printf("button3_cnt :%d \r\n\r\n",button3_cnt);
+//			
 			//STEP2 判定相应按钮是否按下以做出对应的响应
-			if(button1_cnt==rx_len){											//按键1
-				if(GPIO_ReadOutputDataBit(GPIOB,GPIO_Pin_5))//如果原来为高电平，则设为低电平
-					GPIO_ResetBits(GPIOB,GPIO_Pin_5);
-				else																				//如果原来为低电平，则设为高电平	
-					GPIO_SetBits(GPIOB,GPIO_Pin_5);
-				return BUTTON1_NUM;
-			} 
-			else if(button2_cnt==rx_len){											//按键2
-				if(GPIO_ReadOutputDataBit(GPIOB,GPIO_Pin_5))//如果原来为高电平，则设为低电平
-					GPIO_ResetBits(GPIOB,GPIO_Pin_5);
-				else																				//如果原来为低电平，则设为高电平	
-					GPIO_SetBits(GPIOB,GPIO_Pin_5);
-				return BUTTON2_NUM;
-			}
-			else if(button3_cnt==rx_len){											//按键3
-				if(GPIO_ReadOutputDataBit(GPIOB,GPIO_Pin_5))//如果原来为高电平，则设为低电平
-					GPIO_ResetBits(GPIOB,GPIO_Pin_5);
-				else																				//如果原来为低电平，则设为高电平	
-					GPIO_SetBits(GPIOB,GPIO_Pin_5);
-				return BUTTON3_NUM;
+			if(rx_len!=0)
+			{
+				if(button1_cnt==rx_len){											//按键1
+					return BUTTON1_NUM;
+				} 
+				else if(button2_cnt==rx_len){											//按键2
+					return BUTTON2_NUM;
+				}
+				else if(button3_cnt==rx_len){											//按键3
+					return BUTTON3_NUM;
+				}
 			}
 			else return 0;
-		}
-		else return 0;
 }
 
 
@@ -308,13 +344,14 @@ void USART2_IRQHandler( void )
 		if(USART_GetITStatus(USART2, USART_IT_RXNE) != RESET)  //接收中断(接收数据不管什么结尾)
 	{
 		Res =USART_ReceiveData(USART2);	//读取接收到的数据
-		if((USART2_RX_STA&0x8000)==0)//接收未完成
-		{
+//		if((USART2_RX_STA&0x8000)==0)//接收未完成
+//		{
 			USART2_RX_BUF[USART2_RX_STA&0X3FFF]=Res ;
 			USART2_RX_STA++;
 			if(USART2_RX_STA>(USART2_REC_LEN-1))USART2_RX_STA=0;
-			USART2_RX_STA|=0x8000;		
-		}			
+			//这里有问题
+//			USART2_RX_STA|=0x8000;		
+//		}			
    }
 //----------------------------------------------------------------------------------------
 //-----------------------------在串口中断中接收数据   BY Jokie(end)---------------------

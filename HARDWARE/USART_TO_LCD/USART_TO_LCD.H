@@ -4,6 +4,7 @@
 #include "sys.h" 
 #include "adc.h"
 #include "SHT2x.h"
+#include "washer.h"
 //////////////////////////////////////////////////////////////////////////////////	 
 //本程序只供学习使用，未经作者许可，不得用于其它任何用途
 //ALIENTEK STM32开发板
@@ -29,7 +30,7 @@
 //V1.5修改说明
 //1,增加了对UCOSII的支持
 #define USART2_REC_LEN  			200  	//定义最大接收字节数 200
-#define EN_USART2_RX 			1		//使能（1）/禁止（0）串口1接收
+#define EN_USART2_RX 			1		//使能（1）/禁止（0）串口2接收
 //按钮键值	  	
 #define BUTTON1_NUM 0x01
 #define BUTTON2_NUM 0x02
@@ -55,7 +56,9 @@ u8 ifButtonDown(void);
 void UpdateDisTemp(void);
 void UpdateDisHumi(void);
 void UpdateDisPres(void);
-
+void UpdateRemainingWashTim(void);
+void UpdateRemainingDryTim(void);
+void UpdateRemainingWholeTim(void);
 #endif
 
 

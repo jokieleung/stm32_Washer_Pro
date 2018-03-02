@@ -38,16 +38,12 @@ extern u16 USART2_RX_STA;
 				wash_func();	
 				break;
 			case BUTTON2_NUM:	//烘衣按键
-//				wash_func();	
 				break;
 			case BUTTON3_NUM:	//洗烘按键
-//				wash_func();	
 				break;
 			case BUTTON4_NUM:	//开始按键
-//				wash_func();	
 				break;
 			case BUTTON5_NUM:	//暂停按键
-//				wash_func();	
 				break;
 			
 		}		

@@ -33,3 +33,6 @@
 ..\obj\usart_to_lcd.o: ..\STM32F10x_FWLib\inc\misc.h
 ..\obj\usart_to_lcd.o: ..\HARDWARE\ADC\adc.h
 ..\obj\usart_to_lcd.o: ..\HARDWARE\SHT2X\SHT2x.h
+..\obj\usart_to_lcd.o: ..\WORK_MODE\WASHER\washer.h
+..\obj\usart_to_lcd.o: ..\HARDWARE\RELAY\RELAY.H
+..\obj\usart_to_lcd.o: ..\HARDWARE\USART_TO_LCD\USART_TO_LCD.H

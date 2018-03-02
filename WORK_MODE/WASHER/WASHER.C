@@ -2,7 +2,16 @@
 
 u8 Washer_Mode;//洗衣模式标志位
 
-
+//定义全局变量
+//u8 process;				    //当前洗衣机运行状态全局变量
+//u8 method;				    //当前洗衣机运行方式全局变量
+//u8 speed;				    //当前电动机速度全局变量
+//u8 flag;						//洗衣完成标志位
+//u8 state;					//洗衣机运行状态选择
+//u16 ad_level;				    //水位采样全局变量
+//u16 ad_voltage;			    //电压采样全局变量
+//u8 st_pau;				    //当前洗衣机运行全局变量
+//u8 step;					    //当前洗衣机运行步骤全局变量
 
 extern u16 waterin_count;//进水计数值
 extern u16 wash_count;//洗衣计数值
@@ -23,6 +32,7 @@ void wash_func(){
 		UpdateDisPres();
 		UpdateDisTemp();
 		UpdateDisHumi();
+		UpdateRemainingWashTim();
 	}
 	WATER_IN = 1;//关闭进水阀
 	
@@ -34,6 +44,7 @@ void wash_func(){
 		UpdateDisPres();
 		UpdateDisTemp();
 		UpdateDisHumi();
+		UpdateRemainingWashTim();
 	}
 	UNTRALSONIC = 1;//关闭振子
 	
@@ -45,6 +56,7 @@ void wash_func(){
 		UpdateDisPres();
 		UpdateDisTemp();
 		UpdateDisHumi();
+		UpdateRemainingWashTim();
 	}
 	WATER_OUT = 1;//关闭排水阀
 	

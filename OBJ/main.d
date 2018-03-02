@@ -40,3 +40,5 @@
 ..\obj\main.o: ..\HARDWARE\SHT2X\SHT2x.h
 ..\obj\main.o: ..\WORK_MODE\WASHER\washer.h
 ..\obj\main.o: ..\HARDWARE\RELAY\RELAY.H
+..\obj\main.o: ..\HARDWARE\USART_TO_LCD\USART_TO_LCD.H
+..\obj\main.o: ..\WORK_MODE\WASHER\washer.h

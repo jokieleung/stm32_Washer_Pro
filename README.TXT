@@ -16,11 +16,11 @@
 
 	5.I2C（温湿度传感器）暂定PB.10(SCLK) PB.11（SDA）
 
-	6.
+	6.AI音响控制端PE0-PE7
 
 外设中断优先级(NVIC_PriorityGroup_2)：
 
-	1.TIM3 (0-3)
+	1.TIM3 (1-3)
 
 	2.UART1接收(3-3)
 

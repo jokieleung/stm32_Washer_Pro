@@ -31,7 +31,7 @@ void TIM3_Int_Init(u16 arr,u16 psc)
 
 	//中断优先级NVIC设置
 	NVIC_InitStructure.NVIC_IRQChannel = TIM3_IRQn;  //TIM3中断
-	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 0;  //先占优先级0级
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;  //先占优先级0级
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;  //从优先级3级
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE; //IRQ通道被使能
 	NVIC_Init(&NVIC_InitStructure);  //初始化NVIC寄存器
@@ -43,9 +43,9 @@ void TIM3_Int_Init(u16 arr,u16 psc)
 //一些需要计时用的全局变量
 //洗衣用的count变量
 extern u8 Washer_Mode;//洗衣模式标志位
-u16 waterin_count;//进水计数值
-u16 wash_count;//洗衣计数值
-u16 waterout_count;//排水计数值
+u16 waterin_count=0;//进水计数值
+u16 wash_count=0;//洗衣计数值
+u16 waterout_count=0;//排水计数值
 
 void TIM3_IRQHandler(void)   //TIM3中断
 {
@@ -53,11 +53,7 @@ void TIM3_IRQHandler(void)   //TIM3中断
 		{
 		TIM_ClearITPendingBit(TIM3, TIM_IT_Update  );  //清除TIMx更新中断标志 
 			
-			//更新对应变量值
-//		UpdateDisPres();
-//		UpdateDisTemp();
-//		UpdateDisHumi();
-			
+
 			//****************如果洗衣模式打开*************************
 			if(Washer_Mode)
 			{

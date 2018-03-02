@@ -35,3 +35,5 @@
 ..\obj\washer.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\washer.o: ..\HARDWARE\ADC\adc.h
 ..\obj\washer.o: ..\HARDWARE\SHT2X\SHT2x.h
+..\obj\washer.o: ..\WORK_MODE\WASHER\washer.h
+..\obj\washer.o: ..\HARDWARE\USART_TO_LCD\USART_TO_LCD.H
