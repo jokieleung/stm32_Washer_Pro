@@ -5,6 +5,7 @@
 #include "adc.h"
 #include "SHT2x.h"
 #include "washer.h"
+#include "delay.h"
 //////////////////////////////////////////////////////////////////////////////////	 
 //本程序只供学习使用，未经作者许可，不得用于其它任何用途
 //ALIENTEK STM32开发板
@@ -57,8 +58,9 @@ void UpdateDisTemp(void);
 void UpdateDisHumi(void);
 void UpdateDisPres(void);
 void UpdateRemainingWashTim(void);
-void UpdateRemainingDryTim(void);
-void UpdateRemainingWholeTim(void);
+void UpdateUsedDryTim(void);
+void UpdateUsedWholeTim(void);
+void JumpToFinishedUI(void);
 #endif
 
 

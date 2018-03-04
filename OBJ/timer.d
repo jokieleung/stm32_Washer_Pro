@@ -38,4 +38,5 @@
 ..\obj\timer.o: ..\HARDWARE\ADC\adc.h
 ..\obj\timer.o: ..\HARDWARE\SHT2X\SHT2x.h
 ..\obj\timer.o: ..\WORK_MODE\WASHER\washer.h
-..\obj\timer.o: ..\HARDWARE\USART_TO_LCD\USART_TO_LCD.H
+..\obj\timer.o: ..\SYSTEM\delay\delay.h
+..\obj\timer.o: ..\WORK_MODE\DRY\dry.h

@@ -36,3 +36,5 @@
 ..\obj\usart_to_lcd.o: ..\WORK_MODE\WASHER\washer.h
 ..\obj\usart_to_lcd.o: ..\HARDWARE\RELAY\RELAY.H
 ..\obj\usart_to_lcd.o: ..\HARDWARE\USART_TO_LCD\USART_TO_LCD.H
+..\obj\usart_to_lcd.o: ..\WORK_MODE\DRY\dry.h
+..\obj\usart_to_lcd.o: ..\SYSTEM\delay\delay.h

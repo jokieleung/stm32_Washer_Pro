@@ -335,7 +335,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\HARDWARE\LED;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\KEY;..\HARDWARE\TIMER;..\HARDWARE\RELAY;..\HARDWARE\USART_TO_LCD;..\WORK_MODE\DRY;..\WORK_MODE\WASHER;..\HARDWARE\ADC;..\HARDWARE\IIC;..\HARDWARE\SHT2X</IncludePath>
+              <IncludePath>..\HARDWARE\LED;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\KEY;..\HARDWARE\TIMER;..\HARDWARE\RELAY;..\HARDWARE\USART_TO_LCD;..\WORK_MODE\DRY;..\WORK_MODE\WASHER;..\HARDWARE\ADC;..\HARDWARE\IIC;..\HARDWARE\SHT2X;..\HARDWARE\TIM4</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -405,11 +405,6 @@
               <FilePath>..\HARDWARE\LED\led.c</FilePath>
             </File>
             <File>
-              <FileName>key.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\HARDWARE\KEY\key.c</FilePath>
-            </File>
-            <File>
               <FileName>timer.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\TIMER\timer.c</FilePath>
@@ -438,6 +433,11 @@
               <FileName>SHT2x.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\SHT2X\SHT2x.c</FilePath>
+            </File>
+            <File>
+              <FileName>TIM4.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\TIM4\TIM4.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -36,4 +36,5 @@
 ..\obj\washer.o: ..\HARDWARE\ADC\adc.h
 ..\obj\washer.o: ..\HARDWARE\SHT2X\SHT2x.h
 ..\obj\washer.o: ..\WORK_MODE\WASHER\washer.h
-..\obj\washer.o: ..\HARDWARE\USART_TO_LCD\USART_TO_LCD.H
+..\obj\washer.o: ..\SYSTEM\delay\delay.h
+..\obj\washer.o: ..\WORK_MODE\DRY\dry.h

@@ -43,9 +43,15 @@ void TIM3_Int_Init(u16 arr,u16 psc)
 //一些需要计时用的全局变量
 //洗衣用的count变量
 extern u8 Washer_Mode;//洗衣模式标志位
+extern u8 Dry_Mode;//干衣模式标志位
 u16 waterin_count=0;//进水计数值
 u16 wash_count=0;//洗衣计数值
 u16 waterout_count=0;//排水计数值
+u16 dry_count = 0;//已干燥时间计数值
+u16 work_count = 0;//已工作的总时间计数值
+extern u16 WATERIN_TIME; //进水时间变量
+extern u16 WASH_TIME; //洗衣时间变量
+extern u16 WATEROUT_TIME; //排水时间变量
 
 void TIM3_IRQHandler(void)   //TIM3中断
 {
@@ -57,6 +63,7 @@ void TIM3_IRQHandler(void)   //TIM3中断
 			//****************如果洗衣模式打开*************************
 			if(Washer_Mode)
 			{
+				work_count++;
 				if(waterin_count < WATERIN_TIME )
 					waterin_count++;
 				
@@ -65,6 +72,14 @@ void TIM3_IRQHandler(void)   //TIM3中断
 				
 				else if((waterout_count < WATEROUT_TIME)/*&&(wash_count >= WASH_TIME )&&(waterin_count >= WATERIN_TIME)*/)
 					waterout_count++;
+			}
+			//*********************************************************
+			
+			//****************如果干衣模式打开*************************
+			if(Dry_Mode)
+			{
+				work_count++;
+				dry_count++;
 			}
 			
 			//*********************************************************
