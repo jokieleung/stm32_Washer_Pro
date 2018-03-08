@@ -45,7 +45,7 @@ struct __FILE
 
 FILE __stdout;       
 //定义_sys_exit()以避免使用半主机模式    
-_sys_exit(int x) 
+void _sys_exit(int x) 
 { 
 	x = x; 
 } 
@@ -106,7 +106,7 @@ void uart_init(u32 bound){
   GPIO_Init(GPIOA, &GPIO_InitStructure);//初始化GPIOA.10  
 
   //Usart1 NVIC 配置
-  NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;
+    NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=3 ;//抢占优先级3
 	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 3;		//子优先级3
 	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;			//IRQ通道使能

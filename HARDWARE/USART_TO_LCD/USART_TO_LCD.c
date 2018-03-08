@@ -44,6 +44,428 @@ u8 DRY_ARY_M[] = {0XA5,0X5A,0X05,0X82,0X00,0X60,0X00,0X00};//¸ÉÒÂÒÑÓÃÊ±¼äÏÔÊ¾Êý×
 u8 DRY_ARY_S[] = {0XA5,0X5A,0X05,0X82,0X00,0X61,0X00,0X00};//¸ÉÒÂÒÑÓÃÊ±¼äÏÔÊ¾Êý×é 
 u8 WLE_ARY_M[] = {0XA5,0X5A,0X05,0X82,0X00,0X70,0X00,0X00};//Ï´¸ÉÒÂÒÑÓÃÊ±¼äÏÔÊ¾Êý×é 
 u8 WLE_ARY_S[] = {0XA5,0X5A,0X05,0X82,0X00,0X71,0X00,0X00};//Ï´¸ÉÒÂÒÑÓÃÊ±¼äÏÔÊ¾Êý×é 
+
+//±äÁ¿Öµ£¬´«¸ÐÖµµÄÈ«¾Ö±äÁ¿ 
+float Temp,Humi,Pres;
+int RemainWashTime,DryTime,WashDryTime;
+
+void USART2_Init(u32 bound)
+{
+   //GPIO¶Ë¿ÚÉèÖÃ
+  GPIO_InitTypeDef GPIO_InitStructure;
+	USART_InitTypeDef USART_InitStructure;
+	NVIC_InitTypeDef NVIC_InitStructure;
+	 //Ê¹ÄÜUSART2£¬GPIOAÊ±ÖÓ
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2, ENABLE);
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);	
+	//USART2_TX   GPIOA.2
+  	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2; //PA2  TXD
+  	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+  	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;	//¸´ÓÃÍÆÍìÊä³ö
+  	GPIO_Init(GPIOA, &GPIO_InitStructure);
+   
+	//USART2_RX	  GPIOA.3³õÊ¼»¯
+  	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3;//PA3  RXD
+  	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;//¸¡¿ÕÊäÈë
+  	GPIO_Init(GPIOA, &GPIO_InitStructure);//³õÊ¼»¯GPIOA3  
+  
+	//Usart2 NVIC ÅäÖÃ		´ËÊ±ÔÝÊ±ÉèÖÃÆäÓÅÏÈ¼¶Îª×î¸ß
+  	NVIC_InitStructure.NVIC_IRQChannel = USART2_IRQn;
+	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=0 ;//ÇÀÕ¼ÓÅÏÈ¼¶0
+	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;		//×ÓÓÅÏÈ¼¶0
+	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;			//IRQÍ¨µÀÊ¹ÄÜ
+	NVIC_Init(&NVIC_InitStructure);	//¸ù¾ÝÖ¸¶¨µÄ²ÎÊý³õÊ¼»¯VIC¼Ä´æÆ÷
+
+   	//USART2 ³õÊ¼»¯ÉèÖÃ
+	USART_InitStructure.USART_BaudRate = bound;//´®¿Ú²¨ÌØÂÊ
+	USART_InitStructure.USART_WordLength = USART_WordLength_8b;//×Ö³¤Îª8Î»Êý¾Ý¸ñÊ½
+	USART_InitStructure.USART_StopBits = USART_StopBits_1;//Ò»¸öÍ£Ö¹Î»
+	USART_InitStructure.USART_Parity = USART_Parity_No;//ÎÞÆæÅ¼Ð£ÑéÎ»
+	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;//ÎÞÓ²¼þÊý¾ÝÁ÷¿ØÖÆ
+	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;	//ÊÕ·¢Ä£Ê½
+	
+  	USART_Init(USART2, &USART_InitStructure); //³õÊ¼»¯´®¿Ú2
+
+  	USART_ITConfig(USART2, USART_IT_RXNE|USART_IT_IDLE, ENABLE);//¿ªÆô´®¿Ú½ÓÊÜºÍ×ÜÏß¿ÕÏÐÖÐ¶Ï
+  	
+	USART_Cmd(USART2, ENABLE);                    //Ê¹ÄÜ´®¿Ú2 	
+}
+
+//¹¦ÄÜ £º¸üÐÂÏÔÊ¾ÆÁÎÂ¶ÈÖµ
+void UpdateDisTemp(float *temp){
+	//ÉùÃ÷ÒªÓÃµÄ±äÁ¿
+	u16 dis;
+	u8 low,high,i;
+	u8 ARYlength;
+	//»ñÈ¡ÎÂ¶ÈÖµ
+	//*******************
+//	printf("ÎÂ¶ÈÊÇ£º%.2f\n",Temp);	
+	dis = (int)((*temp) * 10);
+	low = dis & 0xff;
+	high = (dis>>8) & 0xff;
+	TMP_ARY[7] = low;
+	TMP_ARY[6] = high;
+//		°Ñ±äÁ¿Êý×éÀïµÄÊý¾ÝÑ­»··¢ËÍ¸ø´®¿Ú£¬Ã¿´Î·¢ËÍÒ»¸ö×Ö½Ú  Jokie
+	ARYlength = sizeof(TMP_ARY)/sizeof(TMP_ARY[0]); //¼ÆËãÊý×é³¤¶È
+	for(i=0;i<ARYlength;i++)
+	{
+				USART_SendData(USART2, TMP_ARY[i]);//ÏòÏò´®¿Ú2°Ñ½ÓÊÕµÄÊý¾ÝÖØÐÂÍ¨¹ý´®¿Ú2·¢ËÍ
+				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//µÈ´ý·¢ËÍ½áÊø
+	}
+}
+//¹¦ÄÜ £º¸üÐÂÏÔÊ¾ÆÁÊª¶ÈÖµ
+void UpdateDisHumi(float *Humi){
+	//ÉùÃ÷ÒªÓÃµÄ±äÁ¿
+	u16 dis;
+	u8 low,high,i;
+	u8 ARYlength;
+//	printf("Êª¶ÈÊÇ£º%.2f\n\n",Humi);	
+	dis = (int)((*Humi) * 10);
+	low = dis & 0xff;
+	high = (dis>>8) & 0xff;
+	HUM_ARY[7] = low;
+	HUM_ARY[6] = high;
+//		°Ñ±äÁ¿Êý×éÀïµÄÊý¾ÝÑ­»··¢ËÍ¸ø´®¿Ú£¬Ã¿´Î·¢ËÍÒ»¸ö×Ö½Ú  Jokie
+	ARYlength = sizeof(HUM_ARY)/sizeof(HUM_ARY[0]); //¼ÆËãÊý×é³¤¶È
+	for(i=0;i<ARYlength;i++)
+	{
+				USART_SendData(USART2, HUM_ARY[i]);//ÏòÏò´®¿Ú2°Ñ½ÓÊÕµÄÊý¾ÝÖØÐÂÍ¨¹ý´®¿Ú2·¢ËÍ
+				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//µÈ´ý·¢ËÍ½áÊø
+	}
+}
+
+//¹¦ÄÜ £º¸üÐÂÏÔÊ¾ÆÁÑ¹Á¦Öµ
+void UpdateDisPres(float *Pres){
+	//ÉùÃ÷ÒªÓÃµÄ±äÁ¿
+	int dis;
+	u8 low,high,i;
+	u8 ARYlength;
+	
+	//¸ü»»³É»ñÈ¡ADµÄÑ¹Á¦Öµ
+	
+	dis = (int)(*Pres);//Ñ¹Á¦×ª»»ÎªÕûÊý,µ¥Î»Kpa
+	low = dis & 0xff;
+	high = (dis>>8) & 0xff;
+	PRE_ARY[7] = low;
+	PRE_ARY[6] = high;
+//		°Ñ±äÁ¿Êý×éÀïµÄÊý¾ÝÑ­»··¢ËÍ¸ø´®¿Ú£¬Ã¿´Î·¢ËÍÒ»¸ö×Ö½Ú  Jokie
+	ARYlength = sizeof(PRE_ARY)/sizeof(PRE_ARY[0]); //¼ÆËãÊý×é³¤¶È
+	for(i=0;i<ARYlength;i++)
+	{
+				USART_SendData(USART2, PRE_ARY[i]);//Ïò´®¿Ú2°Ñ½ÓÊÕµÄÊý¾ÝÖØÐÂÍ¨¹ý´®¿Ú2·¢ËÍ
+				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//µÈ´ý·¢ËÍ½áÊø
+	}
+}
+//¸üÐÂÊ£ÓàÏ´ÒÂÊ±¼ä   ×ª»»³Éhh:mm¸ñÊ½
+extern u16 waterin_count;//½øË®¼ÆÊýÖµ
+extern u16 wash_count;//Ï´ÒÂ¼ÆÊýÖµ
+extern u16 waterout_count;//ÅÅË®¼ÆÊýÖµ
+extern u16 WATERIN_TIME; //½øË®Ê±¼ä±äÁ¿
+extern u16 WASH_TIME; //Ï´ÒÂÊ±¼ä±äÁ¿
+extern u16 WATEROUT_TIME; //ÅÅË®Ê±¼ä±äÁ¿
+
+void UpdateRemainingWashTim(int *remainSec){
+	int Minu,Sec;
+	u8 low,high,i;
+	u8 ARYlength;
+	//×ÜµÄÊ£ÓàÊ±¼ä£¬µ¥Î»s
+	
+//	printf("remainSec : %d \r\n" ,remainSec);
+	Minu = ((*remainSec)/60); //£¨Õû³ý£©
+	Sec = ((*remainSec)% 60); //Ãë£º£¨È¡Óà£©
+	low = Minu & 0xff;
+	high = (Minu>>8) & 0xff;
+	WSH_ARY_M[7] = low;
+	WSH_ARY_M[6] = high;
+	low = Sec & 0xff;
+	high = (Sec>>8) & 0xff;
+	WSH_ARY_S[7] = low;
+	WSH_ARY_S[6] = high;
+//		°Ñ±äÁ¿Êý×éÀïµÄÊý¾ÝÑ­»··¢ËÍ¸ø´®¿Ú£¬Ã¿´Î·¢ËÍÒ»¸ö×Ö½Ú  Jokie
+	ARYlength = sizeof(WSH_ARY_M)/sizeof(WSH_ARY_M[0]); //¼ÆËãÊý×é³¤¶È
+	for(i=0;i<ARYlength;i++)
+	{
+				USART_SendData(USART2, WSH_ARY_M[i]);//Ïò´®¿Ú2°Ñ½ÓÊÕµÄÊý¾ÝÖØÐÂÍ¨¹ý´®¿Ú2·¢ËÍ
+				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//µÈ´ý·¢ËÍ½áÊø
+	}
+	delay_ms(1);
+	for(i=0;i<ARYlength;i++)
+	{
+				USART_SendData(USART2, WSH_ARY_S[i]);//Ïò´®¿Ú2°Ñ½ÓÊÕµÄÊý¾ÝÖØÐÂÍ¨¹ý´®¿Ú2·¢ËÍ
+				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//µÈ´ý·¢ËÍ½áÊø
+	}
+}
+
+
+extern u16 dry_count;
+//¸üÐÂÒÑ¾­¸ÉÒÂÊ±¼ä
+void UpdateUsedDryTim(int *UsedSec){
+	int Minu,Sec;
+	u8 low,high,i;
+	u8 ARYlength;
+	//×ÜµÄÊ£ÓàÊ±¼ä£¬µ¥Î»s
+	
+//	printf("remainSec : %d \r\n" ,remainSec);
+	Minu = ((*UsedSec)/60); //£¨Õû³ý£©
+	Sec = ((*UsedSec)% 60); //Ãë£º£¨È¡Óà£©
+	low = Minu & 0xff;
+	high = (Minu>>8) & 0xff;
+	DRY_ARY_M[7] = low;
+	DRY_ARY_M[6] = high;
+	low = Sec & 0xff;
+	high = (Sec>>8) & 0xff;
+	DRY_ARY_S[7] = low;
+	DRY_ARY_S[6] = high;
+//		°Ñ±äÁ¿Êý×éÀïµÄÊý¾ÝÑ­»··¢ËÍ¸ø´®¿Ú£¬Ã¿´Î·¢ËÍÒ»¸ö×Ö½Ú  Jokie
+	ARYlength = sizeof(DRY_ARY_M)/sizeof(DRY_ARY_M[0]); //¼ÆËãÊý×é³¤¶È
+	for(i=0;i<ARYlength;i++)
+	{
+				USART_SendData(USART2, DRY_ARY_M[i]);//Ïò´®¿Ú2°Ñ½ÓÊÕµÄÊý¾ÝÖØÐÂÍ¨¹ý´®¿Ú2·¢ËÍ
+				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//µÈ´ý·¢ËÍ½áÊø
+	}
+	delay_ms(1);
+	for(i=0;i<ARYlength;i++)
+	{
+				USART_SendData(USART2, DRY_ARY_S[i]);//Ïò´®¿Ú2°Ñ½ÓÊÕµÄÊý¾ÝÖØÐÂÍ¨¹ý´®¿Ú2·¢ËÍ
+				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//µÈ´ý·¢ËÍ½áÊø
+	}
+}
+
+extern u16 work_count;
+void UpdateUsedWholeTim(int *UsedSec){
+	int Minu,Sec;
+	u8 low,high,i;
+	u8 ARYlength;
+	//×ÜµÄÊ£ÓàÊ±¼ä£¬µ¥Î»s
+	
+//	printf("remainSec : %d \r\n" ,remainSec);
+	Minu = ((*UsedSec)/60); //£¨Õû³ý£©
+	Sec = ((*UsedSec)% 60); //Ãë£º£¨È¡Óà£©
+	low = Minu & 0xff;
+	high = (Minu>>8) & 0xff;
+	WLE_ARY_M[7] = low;
+	WLE_ARY_M[6] = high;
+	low = Sec & 0xff;
+	high = (Sec>>8) & 0xff;
+	WLE_ARY_S[7] = low;
+	WLE_ARY_S[6] = high;
+//		°Ñ±äÁ¿Êý×éÀïµÄÊý¾ÝÑ­»··¢ËÍ¸ø´®¿Ú£¬Ã¿´Î·¢ËÍÒ»¸ö×Ö½Ú  Jokie
+	ARYlength = sizeof(WLE_ARY_M)/sizeof(WLE_ARY_M[0]); //¼ÆËãÊý×é³¤¶È
+	for(i=0;i<ARYlength;i++)
+	{
+				USART_SendData(USART2, WLE_ARY_M[i]);//Ïò´®¿Ú2°Ñ½ÓÊÕµÄÊý¾ÝÖØÐÂÍ¨¹ý´®¿Ú2·¢ËÍ
+				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//µÈ´ý·¢ËÍ½áÊø
+	}
+	delay_ms(1);
+	for(i=0;i<ARYlength;i++)
+	{
+				USART_SendData(USART2, WLE_ARY_S[i]);//Ïò´®¿Ú2°Ñ½ÓÊÕµÄÊý¾ÝÖØÐÂÍ¨¹ý´®¿Ú2·¢ËÍ
+				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//µÈ´ý·¢ËÍ½áÊø
+	}
+}
+
+//Ìø×ªµ½Ï´ÒÂÍê³ÉµÄ½çÃæ
+void JumpToFinishedUI(){
+	u8 ARYlength,i;
+	u8 FNSH_PAGE[] = {0XA5,0X5A,0X04,0X80,0X03,0X00,0X07};//Ìø×ªÏ´ÒÂÍê³ÉÒ³ÃæÖ¸Áî A5 5A 04 80 03 00 07 
+	
+	ARYlength = sizeof(FNSH_PAGE)/sizeof(FNSH_PAGE[0]); //¼ÆËãÊý×é³¤¶È
+	for(i=0;i<ARYlength;i++)
+	{
+				USART_SendData(USART2, FNSH_PAGE[i]);//Ïò´®¿Ú2°Ñ½ÓÊÕµÄÊý¾ÝÖØÐÂÍ¨¹ý´®¿Ú2·¢ËÍ
+				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//µÈ´ý·¢ËÍ½áÊø
+	}
+}
+//Ìø×ªµ½ÌØ¶¨µÄ½çÃæ
+//ÊäÈë£º7Î»Ìø×ªÖ¸ÁîÊý×é  eg. FNSH_PAGE[] = {0XA5,0X5A,0X04,0X80,0X03,0X00,0X07};//Ìø×ªÏ´ÒÂÍê³ÉÒ³ÃæÖ¸Áî A5 5A 04 80 03 00 07 
+void JumpToUI(u8 PAGE_ARY[]){
+	u8 ARYlength,i;
+	
+	ARYlength = 7;//sizeof(PAGE_ARY)/sizeof(PAGE_ARY[0]); //¼ÆËãÊý×é³¤¶È
+	
+	for(i=0;i<ARYlength;i++)
+	{
+				USART_SendData(USART2, PAGE_ARY[i]);//Ïò´®¿Ú2°Ñ½ÓÊÕµÄÊý¾ÝÖØÐÂÍ¨¹ý´®¿Ú2·¢ËÍ
+				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//µÈ´ý·¢ËÍ½áÊø
+	}
+}
+
+//¹¦ÄÜ£º»ñÈ¡ËùÓÐÐèÒªÏÔÊ¾µÄ±äÁ¿Öµ£¬²¢¸³Öµµ½ÏàÓ¦µÄ¹Ì¶¨Ö¸Õë£¨µØÖ·£©ÄÚ
+void GetEveryDisPara(){
+	//»ñÈ¡ÎÂ¶ÈÖµ
+	Temp = SHT2x_GetTempPoll();
+//	printf("Temp:%f\n",Temp);
+	//»ñÈ¡Êª¶ÈÖµ
+	Humi = SHT2x_GetHumiPoll();
+//	printf("Humi %f\n",Humi);
+	//»ñÈ¡Ñ¹Á¦Öµ
+	Pres = GetPresAverage(ADC_Channel_1,10);
+//	printf("Pres %f \n",Pres);
+	//»ñÈ¡Ê£ÓàÏ´ÒÂÊ±¼ä
+	RemainWashTime = (WATERIN_TIME+WASH_TIME+WATEROUT_TIME)-waterin_count-wash_count-waterout_count;
+//	printf("RemainWashTime %d \n",RemainWashTime);
+	//»ñÈ¡¸ÉÔïÊ±¼ä
+	DryTime = dry_count;
+//	printf("DryTime %d \n",DryTime);
+	//»ñÈ¡Ï´ºæÊ±¼ä
+	WashDryTime = work_count;
+//	printf("WashDryTime %d \n",WashDryTime);
+}
+//@¹¦ÄÜ£º»ñÈ¡ËùÓÐÐèÒªÏÔÊ¾µÄ±äÁ¿Öµ£¬²¢¸³Öµµ½ÏàÓ¦µÄ¹Ì¶¨Ö¸Õë£¨µØÖ·£©ÄÚ
+//@para: float *Temp,float *Humi,float *Pres,int *RemainWashTime,int *DryTime,int *WashDryTime
+extern u8 washing_flag;
+void UpdateEveryDisPara(float *Temp,float *Humi,float *Pres,int *RemainWashTime,int *DryTime,int *WashDryTime){
+	//¸üÐÂÎÂ¶ÈÖµ
+	UpdateDisTemp(Temp);
+	//¸üÐÂÊª¶ÈÖµ
+	UpdateDisHumi(Humi);
+	//¸üÐÂÑ¹Á¦Öµ
+	UpdateDisPres(Pres);
+	//¸üÐÂÊ£ÓàÏ´ÒÂÊ±¼ä
+		UpdateRemainingWashTim(RemainWashTime);
+	//¸üÐÂ¸ÉÔïÊ±¼ä
+	UpdateUsedDryTim(DryTime);
+	//¸üÐÂÏ´ºæÊ±¼ä
+	UpdateUsedWholeTim(WashDryTime);
+}
+
+
+
+
+
+
+//¹¦ÄÜ £º¼ì²â´®¿ÚÆÁÊÇ·ñÓÐ°´¼ü°´ÏÂ
+//·µ»ØÖµ£º
+//0£ºÎÞ°´¼ü°´ÏÂ
+//ÆäËû£ºÏàÓ¦°´¼üµÄ¼üÖµ
+u8 ifButtonDown(){
+	u16 t;
+	u16 rx_len;
+	u8 button1_cnt=0,button2_cnt=0,button3_cnt=0,button4_cnt=0,button5_cnt=0,button6_cnt=0,button7_cnt=0,button8_cnt=0,button9_cnt=0;//ÓÃÀ´ÅÐ¶¨BUTTON BUFÓëÄÄ¸öBUTTONµÄ¼üÖµÊÇÒ»ÖÂµÄ±äÁ¿			
+			//´®¿Ú2²âÊÔ  ³É¹¦  2018-1-22
+
+			rx_len=USART2_RX_STA&0x3fff;//µÃµ½´Ë´Î½ÓÊÕµ½µÄÊý¾Ý³¤¶È
+			if(rx_len!=0)
+			{
+				USART2_RX_STA=0;		//¹éÁã¸ÃSTA¼Ä´æÆ÷ÒªÔÚforÑ­»·Ç°Ãæ£¨Î´ÖªÎªÊ²Ã´£©
+				
+	//			Ë¼Â·£ºÑ­»·»ñÈ¡½ÓÊÕµ½µÄBUFÄÚµÄÊý¾Ý£¬Íê³ÉforÑ­»·£¨¼´»ñÈ¡Íê³Éºó£©£¬½«¸ÃÊý¾ÝÑéÖ¤ÊÇ·ñÎª¶ÔÓ¦button¼üÖµ
+				
+				//STEP1 °Ñ´®¿Ú2½ÓÊÕBUFÓë¸÷BUTTON¼üÖµ±È½Ï
+				//¹éÁãCnt
+				button1_cnt=0;button2_cnt=0;button3_cnt=0;button4_cnt=0;button5_cnt=0;button6_cnt=0;button7_cnt=0;
+				button8_cnt=0;button9_cnt=0;
+				for(t=0;t<rx_len;t++)
+				{
+					
+					if(WASH_BT[t]==USART2_RX_BUF[t])	button1_cnt++;
+					if(DRY_BT[t]==USART2_RX_BUF[t])		button2_cnt++;
+					if(WSH_D_B[t]==USART2_RX_BUF[t])	button3_cnt++;
+					if(START_W[t]==USART2_RX_BUF[t])	button4_cnt++;
+					if(START_D[t]==USART2_RX_BUF[t])	button5_cnt++;
+					if(START_WD[t]==USART2_RX_BUF[t])	button6_cnt++;
+					if(END[t]==USART2_RX_BUF[t])			button7_cnt++;
+					if(WSH_TIM[t]==USART2_RX_BUF[t])	button8_cnt++;  //¼Ó¼õÏ´ÒÂÊ±¼ä ÉèÖÃ
+					if(BRK_DRY[t]==USART2_RX_BUF[t])	button9_cnt++;
+					//Í¨¹ý´®¿Ú1¹Û²ì debugÓÃ  ²âÊÔ³É¹¦ 2018.03.02 13£º44
+	//				USART_SendData(USART1, USART2_RX_BUF[t]);//°Ñ½ÓÊÕµÄ´®¿Ú2Êý¾ÝÖØÐÂÍ¨¹ý´®¿Ú1·¢ËÍ
+	//				while(USART_GetFlagStatus(USART1,USART_FLAG_TC)!=SET);//µÈ´ý·¢ËÍ½áÊø
+				}
+				
+				//STEP2 ÅÐ¶¨ÏàÓ¦°´Å¥ÊÇ·ñ°´ÏÂÒÔ×ö³ö¶ÔÓ¦µÄÏìÓ¦
+					if(button1_cnt==rx_len){											//°´¼ü1
+						return BUTTON1_NUM;
+					} 
+					else if(button2_cnt==rx_len){											//°´¼ü2
+						return BUTTON2_NUM;
+					}
+					else if(button3_cnt==rx_len){											//°´¼ü3
+						return BUTTON3_NUM;
+					}
+					else if(button4_cnt==rx_len){											//°´¼ü4
+						return BUTTON4_NUM;
+					}
+					else if(button5_cnt==rx_len){											//°´¼ü5
+						return BUTTON5_NUM;
+					}
+					else if(button6_cnt==rx_len){											//°´¼ü6
+						return BUTTON6_NUM;
+					}
+					else if(button7_cnt==rx_len){											//°´¼ü7
+						return BUTTON7_NUM;
+					}
+					else if((button8_cnt+2)==rx_len){											//°´¼ü8
+//						printf("button8_cnt: %d\r\n",button8_cnt);
+						WASH_TIME=((USART2_RX_BUF[7]<<2)+USART2_RX_BUF[8])*60;//°Ñ¸³Öµ·ÅÔÚÕâÀï£¬±£Ö¤ÊµÊ±ÐÔ
+						return BUTTON8_NUM;
+					}
+					else if(button9_cnt==rx_len){											//°´¼ü9
+						return BUTTON9_NUM;
+					}
+					rx_len=0;
+			}
+			else return 0;
+}
+
+
+
+
+
+
+
+
+
+void USART2_IRQHandler( void )
+{	
+//----------------------------------------------------------------------------------------
+//-----------------------------ÔÚ´®¿ÚÖÐ¶ÏÖÐ½ÓÊÕÊý¾Ý   BY Jokie---------------------------
+//----------------------------------------------------------------------------------------
+		u8 Res;
+#if SYSTEM_SUPPORT_OS 		//Èç¹ûSYSTEM_SUPPORT_OSÎªÕæ£¬ÔòÐèÒªÖ§³ÖOS.
+	OSIntEnter();    
+#endif
+		//changed by jokie :½ÓÊÕÊý¾Ý²»¹ÜÊ²Ã´½áÎ²
+		if(USART_GetITStatus(USART2, USART_IT_RXNE) != RESET)  //½ÓÊÕÖÐ¶Ï(½ÓÊÕÊý¾Ý²»¹ÜÊ²Ã´½áÎ²)
+	{
+		Res =USART_ReceiveData(USART2);	//¶ÁÈ¡½ÓÊÕµ½µÄÊý¾Ý
+			USART2_RX_BUF[USART2_RX_STA&0X3FFF]=Res ;
+			USART2_RX_STA++;
+			if(USART2_RX_STA>(USART2_REC_LEN-1))USART2_RX_STA=0;
+  }
+//----------------------------------------------------------------------------------------
+//-----------------------------ÔÚ´®¿ÚÖÐ¶ÏÖÐ½ÓÊÕÊý¾Ý   BY Jokie(end)---------------------
+//----------------------------------------------------------------------------------------
+	 
+	 
+	 
+	 
+	 
+	 
+
+	 
+//----------------------------------------------------------------------------------------
+//-----------------------------Âô¼Ò¸øµÄÀý³ÌÖÐ¶Ïº¯Êý²¿·Ö---------------------------
+//******************************************************************************************
+	 
+	 
+//	 		if(USART_GetITStatus(USART2, USART_IT_RXNE) != RESET)  //½ÓÊÕÖÐ¶Ï(½ÓÊÕÊý¾Ý²»¹ÜÊ²Ã´½áÎ²)
+//	{
+//		 CommBuff[TalNum++]=USART_ReceiveData(USART2);//±£´æ´®¿ÚÊý¾Ý
+//    if(TalNum==BUFFER_SIZE)
+//      TalNum=0;   			
+//   }
+	
+	 
+	 
+//******************************************************************************************
+//-----------------------------Âô¼Ò¸øµÄÀý³ÌÖÐ¶Ïº¯Êý²¿·Ö(end)---------------------
+//----------------------------------------------------------------------------------------	 
+
+}
+
+
+
+
 //***********************Âô¼ÒÀý³Ì*******************************
 //*************************************************************
 //u16 StartNum=0,TalNum=0;
@@ -128,367 +550,3 @@ u8 WLE_ARY_S[] = {0XA5,0X5A,0X05,0X82,0X00,0X71,0X00,0X00};//Ï´¸ÉÒÂÒÑÓÃÊ±¼äÏÔÊ¾Ê
 //}
 //***********************Âô¼ÒÀý³Ì£¨end£©***********************************
 //*************************************************************
-
-void USART2_Init(u32 bound)
-{
-   //GPIO¶Ë¿ÚÉèÖÃ
-  GPIO_InitTypeDef GPIO_InitStructure;
-	USART_InitTypeDef USART_InitStructure;
-	NVIC_InitTypeDef NVIC_InitStructure;
-	 //Ê¹ÄÜUSART2£¬GPIOAÊ±ÖÓ
-	RCC_APB1PeriphClockCmd(RCC_APB1Periph_USART2, ENABLE);
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA, ENABLE);	
-	//USART2_TX   GPIOA.2
-  	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_2; //PA2  TXD
-  	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
-  	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;	//¸´ÓÃÍÆÍìÊä³ö
-  	GPIO_Init(GPIOA, &GPIO_InitStructure);
-   
-	//USART2_RX	  GPIOA.3³õÊ¼»¯
-  	GPIO_InitStructure.GPIO_Pin = GPIO_Pin_3;//PA3  RXD
-  	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;//¸¡¿ÕÊäÈë
-  	GPIO_Init(GPIOA, &GPIO_InitStructure);//³õÊ¼»¯GPIOA3  
-  
-	//Usart2 NVIC ÅäÖÃ		´ËÊ±ÔÝÊ±ÉèÖÃÆäÓÅÏÈ¼¶Îª×î¸ß
-  	NVIC_InitStructure.NVIC_IRQChannel = USART2_IRQn;
-	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=0 ;//ÇÀÕ¼ÓÅÏÈ¼¶0
-	NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;		//×ÓÓÅÏÈ¼¶0
-	NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;			//IRQÍ¨µÀÊ¹ÄÜ
-	NVIC_Init(&NVIC_InitStructure);	//¸ù¾ÝÖ¸¶¨µÄ²ÎÊý³õÊ¼»¯VIC¼Ä´æÆ÷
-
-   	//USART2 ³õÊ¼»¯ÉèÖÃ
-	USART_InitStructure.USART_BaudRate = bound;//´®¿Ú²¨ÌØÂÊ
-	USART_InitStructure.USART_WordLength = USART_WordLength_8b;//×Ö³¤Îª8Î»Êý¾Ý¸ñÊ½
-	USART_InitStructure.USART_StopBits = USART_StopBits_1;//Ò»¸öÍ£Ö¹Î»
-	USART_InitStructure.USART_Parity = USART_Parity_No;//ÎÞÆæÅ¼Ð£ÑéÎ»
-	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;//ÎÞÓ²¼þÊý¾ÝÁ÷¿ØÖÆ
-	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;	//ÊÕ·¢Ä£Ê½
-	
-  	USART_Init(USART2, &USART_InitStructure); //³õÊ¼»¯´®¿Ú2
-
-  	USART_ITConfig(USART2, USART_IT_RXNE|USART_IT_IDLE, ENABLE);//¿ªÆô´®¿Ú½ÓÊÜºÍ×ÜÏß¿ÕÏÐÖÐ¶Ï
-  	
-	USART_Cmd(USART2, ENABLE);                    //Ê¹ÄÜ´®¿Ú2 	
-}
-
-//¹¦ÄÜ £º¸üÐÂÏÔÊ¾ÆÁÎÂ¶ÈÖµ
-void UpdateDisTemp(){
-	//ÉùÃ÷ÒªÓÃµÄ±äÁ¿
-	float Temp;
-	u16 dis;
-	u8 low,high,i;
-	u8 ARYlength;
-	//»ñÈ¡ÎÂ¶ÈÖµ
-	Temp = SHT2x_GetTempPoll();
-//	printf("ÎÂ¶ÈÊÇ£º%.2f\n",Temp);	
-	dis = (int)(Temp * 10);
-	low = dis & 0xff;
-	high = (dis>>8) & 0xff;
-	TMP_ARY[7] = low;
-	TMP_ARY[6] = high;
-//		°Ñ±äÁ¿Êý×éÀïµÄÊý¾ÝÑ­»··¢ËÍ¸ø´®¿Ú£¬Ã¿´Î·¢ËÍÒ»¸ö×Ö½Ú  Jokie
-	ARYlength = sizeof(TMP_ARY)/sizeof(TMP_ARY[0]); //¼ÆËãÊý×é³¤¶È
-	for(i=0;i<ARYlength;i++)
-	{
-				USART_SendData(USART2, TMP_ARY[i]);//ÏòÏò´®¿Ú2°Ñ½ÓÊÕµÄÊý¾ÝÖØÐÂÍ¨¹ý´®¿Ú2·¢ËÍ
-				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//µÈ´ý·¢ËÍ½áÊø
-	}
-}
-//¹¦ÄÜ £º¸üÐÂÏÔÊ¾ÆÁÊª¶ÈÖµ
-void UpdateDisHumi(){
-	//ÉùÃ÷ÒªÓÃµÄ±äÁ¿
-	float Humi;
-	u16 dis;
-	u8 low,high,i;
-	u8 ARYlength;
-	
-	Humi = SHT2x_GetHumiPoll();
-//	printf("Êª¶ÈÊÇ£º%.2f\n\n",Humi);	
-	dis = (int)(Humi * 10);
-	low = dis & 0xff;
-	high = (dis>>8) & 0xff;
-	HUM_ARY[7] = low;
-	HUM_ARY[6] = high;
-//		°Ñ±äÁ¿Êý×éÀïµÄÊý¾ÝÑ­»··¢ËÍ¸ø´®¿Ú£¬Ã¿´Î·¢ËÍÒ»¸ö×Ö½Ú  Jokie
-	ARYlength = sizeof(HUM_ARY)/sizeof(HUM_ARY[0]); //¼ÆËãÊý×é³¤¶È
-	for(i=0;i<ARYlength;i++)
-	{
-				USART_SendData(USART2, HUM_ARY[i]);//ÏòÏò´®¿Ú2°Ñ½ÓÊÕµÄÊý¾ÝÖØÐÂÍ¨¹ý´®¿Ú2·¢ËÍ
-				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//µÈ´ý·¢ËÍ½áÊø
-	}
-}
-
-//¹¦ÄÜ £º¸üÐÂÏÔÊ¾ÆÁÑ¹Á¦Öµ
-void UpdateDisPres(){
-	//ÉùÃ÷ÒªÓÃµÄ±äÁ¿
-	float Pres;
-	int dis;
-	u8 low,high,i;
-	u8 ARYlength;
-	
-	//¸ü»»³É»ñÈ¡ADµÄÑ¹Á¦Öµ
-	Pres = GetPresAverage(ADC_Channel_1,10);
-	dis = (int)Pres;//Ñ¹Á¦×ª»»ÎªÕûÊý,µ¥Î»Kpa
-	low = dis & 0xff;
-	high = (dis>>8) & 0xff;
-	PRE_ARY[7] = low;
-	PRE_ARY[6] = high;
-//		°Ñ±äÁ¿Êý×éÀïµÄÊý¾ÝÑ­»··¢ËÍ¸ø´®¿Ú£¬Ã¿´Î·¢ËÍÒ»¸ö×Ö½Ú  Jokie
-	ARYlength = sizeof(PRE_ARY)/sizeof(PRE_ARY[0]); //¼ÆËãÊý×é³¤¶È
-	for(i=0;i<ARYlength;i++)
-	{
-				USART_SendData(USART2, PRE_ARY[i]);//Ïò´®¿Ú2°Ñ½ÓÊÕµÄÊý¾ÝÖØÐÂÍ¨¹ý´®¿Ú2·¢ËÍ
-				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//µÈ´ý·¢ËÍ½áÊø
-	}
-}
-//¸üÐÂÊ£ÓàÏ´ÒÂÊ±¼ä   ×ª»»³Éhh:mm¸ñÊ½
-extern u16 waterin_count;//½øË®¼ÆÊýÖµ
-extern u16 wash_count;//Ï´ÒÂ¼ÆÊýÖµ
-extern u16 waterout_count;//ÅÅË®¼ÆÊýÖµ
-extern u16 WATERIN_TIME; //½øË®Ê±¼ä±äÁ¿
-extern u16 WASH_TIME; //Ï´ÒÂÊ±¼ä±äÁ¿
-extern u16 WATEROUT_TIME; //ÅÅË®Ê±¼ä±äÁ¿
-
-void UpdateRemainingWashTim(){
-	int remainSec,Minu,Sec;
-	u8 low,high,i;
-	u8 ARYlength;
-	//×ÜµÄÊ£ÓàÊ±¼ä£¬µ¥Î»s
-	remainSec = (WATERIN_TIME+WASH_TIME+WATEROUT_TIME)-waterin_count-wash_count-waterout_count;
-//	printf("remainSec : %d \r\n" ,remainSec);
-	Minu = (remainSec)/60; //£¨Õû³ý£©
-	Sec = (remainSec)% 60; //Ãë£º£¨È¡Óà£©
-	low = Minu & 0xff;
-	high = (Minu>>8) & 0xff;
-	WSH_ARY_M[7] = low;
-	WSH_ARY_M[6] = high;
-	low = Sec & 0xff;
-	high = (Sec>>8) & 0xff;
-	WSH_ARY_S[7] = low;
-	WSH_ARY_S[6] = high;
-//		°Ñ±äÁ¿Êý×éÀïµÄÊý¾ÝÑ­»··¢ËÍ¸ø´®¿Ú£¬Ã¿´Î·¢ËÍÒ»¸ö×Ö½Ú  Jokie
-	ARYlength = sizeof(WSH_ARY_M)/sizeof(WSH_ARY_M[0]); //¼ÆËãÊý×é³¤¶È
-	for(i=0;i<ARYlength;i++)
-	{
-				USART_SendData(USART2, WSH_ARY_M[i]);//Ïò´®¿Ú2°Ñ½ÓÊÕµÄÊý¾ÝÖØÐÂÍ¨¹ý´®¿Ú2·¢ËÍ
-				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//µÈ´ý·¢ËÍ½áÊø
-	}
-	delay_ms(1);
-	for(i=0;i<ARYlength;i++)
-	{
-				USART_SendData(USART2, WSH_ARY_S[i]);//Ïò´®¿Ú2°Ñ½ÓÊÕµÄÊý¾ÝÖØÐÂÍ¨¹ý´®¿Ú2·¢ËÍ
-				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//µÈ´ý·¢ËÍ½áÊø
-	}
-}
-
-
-extern u16 dry_count;
-//¸üÐÂÒÑ¾­¸ÉÒÂÊ±¼ä
-void UpdateUsedDryTim(void){
-	int UsedSec,Minu,Sec;
-	u8 low,high,i;
-	u8 ARYlength;
-	//×ÜµÄÊ£ÓàÊ±¼ä£¬µ¥Î»s
-	UsedSec = dry_count;
-//	printf("remainSec : %d \r\n" ,remainSec);
-	Minu = (UsedSec)/60; //£¨Õû³ý£©
-	Sec = (UsedSec)% 60; //Ãë£º£¨È¡Óà£©
-	low = Minu & 0xff;
-	high = (Minu>>8) & 0xff;
-	DRY_ARY_M[7] = low;
-	DRY_ARY_M[6] = high;
-	low = Sec & 0xff;
-	high = (Sec>>8) & 0xff;
-	DRY_ARY_S[7] = low;
-	DRY_ARY_S[6] = high;
-//		°Ñ±äÁ¿Êý×éÀïµÄÊý¾ÝÑ­»··¢ËÍ¸ø´®¿Ú£¬Ã¿´Î·¢ËÍÒ»¸ö×Ö½Ú  Jokie
-	ARYlength = sizeof(DRY_ARY_M)/sizeof(DRY_ARY_M[0]); //¼ÆËãÊý×é³¤¶È
-	for(i=0;i<ARYlength;i++)
-	{
-				USART_SendData(USART2, DRY_ARY_M[i]);//Ïò´®¿Ú2°Ñ½ÓÊÕµÄÊý¾ÝÖØÐÂÍ¨¹ý´®¿Ú2·¢ËÍ
-				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//µÈ´ý·¢ËÍ½áÊø
-	}
-	delay_ms(1);
-	for(i=0;i<ARYlength;i++)
-	{
-				USART_SendData(USART2, DRY_ARY_S[i]);//Ïò´®¿Ú2°Ñ½ÓÊÕµÄÊý¾ÝÖØÐÂÍ¨¹ý´®¿Ú2·¢ËÍ
-				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//µÈ´ý·¢ËÍ½áÊø
-	}
-}
-
-extern u16 work_count;
-void UpdateUsedWholeTim(void){
-	int UsedSec,Minu,Sec;
-	u8 low,high,i;
-	u8 ARYlength;
-	//×ÜµÄÊ£ÓàÊ±¼ä£¬µ¥Î»s
-	UsedSec = work_count;
-//	printf("remainSec : %d \r\n" ,remainSec);
-	Minu = (UsedSec)/60; //£¨Õû³ý£©
-	Sec = (UsedSec)% 60; //Ãë£º£¨È¡Óà£©
-	low = Minu & 0xff;
-	high = (Minu>>8) & 0xff;
-	WLE_ARY_M[7] = low;
-	WLE_ARY_M[6] = high;
-	low = Sec & 0xff;
-	high = (Sec>>8) & 0xff;
-	WLE_ARY_S[7] = low;
-	WLE_ARY_S[6] = high;
-//		°Ñ±äÁ¿Êý×éÀïµÄÊý¾ÝÑ­»··¢ËÍ¸ø´®¿Ú£¬Ã¿´Î·¢ËÍÒ»¸ö×Ö½Ú  Jokie
-	ARYlength = sizeof(WLE_ARY_M)/sizeof(WLE_ARY_M[0]); //¼ÆËãÊý×é³¤¶È
-	for(i=0;i<ARYlength;i++)
-	{
-				USART_SendData(USART2, WLE_ARY_M[i]);//Ïò´®¿Ú2°Ñ½ÓÊÕµÄÊý¾ÝÖØÐÂÍ¨¹ý´®¿Ú2·¢ËÍ
-				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//µÈ´ý·¢ËÍ½áÊø
-	}
-	delay_ms(1);
-	for(i=0;i<ARYlength;i++)
-	{
-				USART_SendData(USART2, WLE_ARY_S[i]);//Ïò´®¿Ú2°Ñ½ÓÊÕµÄÊý¾ÝÖØÐÂÍ¨¹ý´®¿Ú2·¢ËÍ
-				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//µÈ´ý·¢ËÍ½áÊø
-	}
-}
-
-//Ìø×ªµ½Ï´ÒÂÍê³ÉµÄ½çÃæ
-void JumpToFinishedUI(){
-	u8 ARYlength,i;
-	u8 FNSH_PAGE[] = {0XA5,0X5A,0X04,0X80,0X03,0X00,0X07};//Ìø×ªÏ´ÒÂÍê³ÉÒ³ÃæÖ¸Áî A5 5A 04 80 03 00 07 
-	
-	ARYlength = sizeof(FNSH_PAGE)/sizeof(FNSH_PAGE[0]); //¼ÆËãÊý×é³¤¶È
-	for(i=0;i<ARYlength;i++)
-	{
-				USART_SendData(USART2, FNSH_PAGE[i]);//Ïò´®¿Ú2°Ñ½ÓÊÕµÄÊý¾ÝÖØÐÂÍ¨¹ý´®¿Ú2·¢ËÍ
-				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//µÈ´ý·¢ËÍ½áÊø
-	}
-}
-
-
-
-//¹¦ÄÜ £º¼ì²â´®¿ÚÆÁÊÇ·ñÓÐ°´¼ü°´ÏÂ
-//·µ»ØÖµ£º
-//0£ºÎÞ°´¼ü°´ÏÂ
-//ÆäËû£ºÏàÓ¦°´¼üµÄ¼üÖµ
-u8 ifButtonDown(){
-	u16 t;
-	u16 rx_len;
-	u8 button1_cnt=0,button2_cnt=0,button3_cnt=0,button4_cnt=0,button5_cnt=0,button6_cnt=0,button7_cnt=0,button8_cnt=0,button9_cnt=0;//ÓÃÀ´ÅÐ¶¨BUTTON BUFÓëÄÄ¸öBUTTONµÄ¼üÖµÊÇÒ»ÖÂµÄ±äÁ¿			
-			//´®¿Ú2²âÊÔ  ³É¹¦  2018-1-22
-
-			rx_len=USART2_RX_STA&0x3fff;//µÃµ½´Ë´Î½ÓÊÕµ½µÄÊý¾Ý³¤¶È
-			if(rx_len!=0)
-			{
-				USART2_RX_STA=0;		//¹éÁã¸ÃSTA¼Ä´æÆ÷ÒªÔÚforÑ­»·Ç°Ãæ£¨Î´ÖªÎªÊ²Ã´£©
-				
-	//			Ë¼Â·£ºÑ­»·»ñÈ¡½ÓÊÕµ½µÄBUFÄÚµÄÊý¾Ý£¬Íê³ÉforÑ­»·£¨¼´»ñÈ¡Íê³Éºó£©£¬½«¸ÃÊý¾ÝÑéÖ¤ÊÇ·ñÎª¶ÔÓ¦button¼üÖµ
-				
-				//STEP1 °Ñ´®¿Ú2½ÓÊÕBUFÓë¸÷BUTTON¼üÖµ±È½Ï
-				//¹éÁãCnt
-				button1_cnt=0;button2_cnt=0;button3_cnt=0;button4_cnt=0;button5_cnt=0;button6_cnt=0;button7_cnt=0;
-				button8_cnt=0;button9_cnt=0;
-				for(t=0;t<rx_len;t++)
-				{
-					
-					if(WASH_BT[t]==USART2_RX_BUF[t])	button1_cnt++;
-					if(DRY_BT[t]==USART2_RX_BUF[t])		button2_cnt++;
-					if(WSH_D_B[t]==USART2_RX_BUF[t])	button3_cnt++;
-					if(START_W[t]==USART2_RX_BUF[t])	button4_cnt++;
-					if(START_D[t]==USART2_RX_BUF[t])	button5_cnt++;
-					if(START_WD[t]==USART2_RX_BUF[t])	button6_cnt++;
-					if(END[t]==USART2_RX_BUF[t])			button7_cnt++;
-					if(WSH_TIM[t]==USART2_RX_BUF[t])	button8_cnt++;  //¼Ó¼õÏ´ÒÂÊ±¼ä ÉèÖÃ
-					if(BRK_DRY[t]==USART2_RX_BUF[t])	button9_cnt++;
-					//Í¨¹ý´®¿Ú1¹Û²ì debugÓÃ  ²âÊÔ³É¹¦ 2018.03.02 13£º44
-	//				USART_SendData(USART1, USART2_RX_BUF[t]);//°Ñ½ÓÊÕµÄ´®¿Ú2Êý¾ÝÖØÐÂÍ¨¹ý´®¿Ú1·¢ËÍ
-	//				while(USART_GetFlagStatus(USART1,USART_FLAG_TC)!=SET);//µÈ´ý·¢ËÍ½áÊø
-				}
-				
-				//STEP2 ÅÐ¶¨ÏàÓ¦°´Å¥ÊÇ·ñ°´ÏÂÒÔ×ö³ö¶ÔÓ¦µÄÏìÓ¦
-					if(button1_cnt==rx_len){											//°´¼ü1
-						return BUTTON1_NUM;
-					} 
-					else if(button2_cnt==rx_len){											//°´¼ü2
-						return BUTTON2_NUM;
-					}
-					else if(button3_cnt==rx_len){											//°´¼ü3
-						return BUTTON3_NUM;
-					}
-					else if(button4_cnt==rx_len){											//°´¼ü4
-						return BUTTON4_NUM;
-					}
-					else if(button5_cnt==rx_len){											//°´¼ü5
-						return BUTTON5_NUM;
-					}
-					else if(button6_cnt==rx_len){											//°´¼ü6
-						return BUTTON6_NUM;
-					}
-					else if(button7_cnt==rx_len){											//°´¼ü7
-						return BUTTON7_NUM;
-					}
-					else if((button8_cnt+2)==rx_len){											//°´¼ü8
-//						printf("button8_cnt: %d\r\n",button8_cnt);
-//						WASH_TIME=((USART2_RX_BUF[7]<<2)+USART2_RX_BUF[8])*60;
-						return BUTTON8_NUM;
-					}
-					else if(button9_cnt==rx_len){											//°´¼ü9
-						return BUTTON9_NUM;
-					}
-					rx_len=0;
-			}
-			else return 0;
-}
-
-
-
-
-
-
-
-
-
-void USART2_IRQHandler( void )
-{	
-//----------------------------------------------------------------------------------------
-//-----------------------------ÔÚ´®¿ÚÖÐ¶ÏÖÐ½ÓÊÕÊý¾Ý   BY Jokie---------------------------
-//----------------------------------------------------------------------------------------
-		u8 Res;
-#if SYSTEM_SUPPORT_OS 		//Èç¹ûSYSTEM_SUPPORT_OSÎªÕæ£¬ÔòÐèÒªÖ§³ÖOS.
-	OSIntEnter();    
-#endif
-		//changed by jokie :½ÓÊÕÊý¾Ý²»¹ÜÊ²Ã´½áÎ²
-		if(USART_GetITStatus(USART2, USART_IT_RXNE) != RESET)  //½ÓÊÕÖÐ¶Ï(½ÓÊÕÊý¾Ý²»¹ÜÊ²Ã´½áÎ²)
-	{
-		Res =USART_ReceiveData(USART2);	//¶ÁÈ¡½ÓÊÕµ½µÄÊý¾Ý
-			USART2_RX_BUF[USART2_RX_STA&0X3FFF]=Res ;
-			USART2_RX_STA++;
-			if(USART2_RX_STA>(USART2_REC_LEN-1))USART2_RX_STA=0;
-  }
-//----------------------------------------------------------------------------------------
-//-----------------------------ÔÚ´®¿ÚÖÐ¶ÏÖÐ½ÓÊÕÊý¾Ý   BY Jokie(end)---------------------
-//----------------------------------------------------------------------------------------
-	 
-	 
-	 
-	 
-	 
-	 
-
-	 
-//----------------------------------------------------------------------------------------
-//-----------------------------Âô¼Ò¸øµÄÀý³ÌÖÐ¶Ïº¯Êý²¿·Ö---------------------------
-//******************************************************************************************
-	 
-	 
-//	 		if(USART_GetITStatus(USART2, USART_IT_RXNE) != RESET)  //½ÓÊÕÖÐ¶Ï(½ÓÊÕÊý¾Ý²»¹ÜÊ²Ã´½áÎ²)
-//	{
-//		 CommBuff[TalNum++]=USART_ReceiveData(USART2);//±£´æ´®¿ÚÊý¾Ý
-//    if(TalNum==BUFFER_SIZE)
-//      TalNum=0;   			
-//   }
-	
-	 
-	 
-//******************************************************************************************
-//-----------------------------Âô¼Ò¸øµÄÀý³ÌÖÐ¶Ïº¯Êý²¿·Ö(end)---------------------
-//----------------------------------------------------------------------------------------	 
-
-}

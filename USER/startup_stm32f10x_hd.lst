@@ -56,9 +56,9 @@ ARM Macro Assembler    Page 1
    32 00000000         ;   <o> Stack Size (in Bytes) <0x0-0xFFFFFFFF:8>
    33 00000000         ; </h>
    34 00000000         
-   35 00000000 00000400 
+   35 00000000 00001000 
                        Stack_Size
-                               EQU              0x00000400
+                               EQU              0x00001000
    36 00000000         
    37 00000000                 AREA             STACK, NOINIT, READWRITE, ALIGN
 =3
@@ -70,17 +70,17 @@ ARM Macro Assembler    Page 2
 
 
                                SPACE            Stack_Size
-   39 00000400         __initial_sp
-   40 00000400         
-   41 00000400         ; <h> Heap Configuration
-   42 00000400         ;   <o>  Heap Size (in Bytes) <0x0-0xFFFFFFFF:8>
-   43 00000400         ; </h>
-   44 00000400         
-   45 00000400 00000200 
+   39 00001000         __initial_sp
+   40 00001000         
+   41 00001000         ; <h> Heap Configuration
+   42 00001000         ;   <o>  Heap Size (in Bytes) <0x0-0xFFFFFFFF:8>
+   43 00001000         ; </h>
+   44 00001000         
+   45 00001000 00000200 
                        Heap_Size
                                EQU              0x00000200
-   46 00000400         
-   47 00000400                 AREA             HEAP, NOINIT, READWRITE, ALIGN=
+   46 00001000         
+   47 00001000                 AREA             HEAP, NOINIT, READWRITE, ALIGN=
 3
    48 00000000         __heap_base
    49 00000000         Heap_Mem
@@ -560,12 +560,12 @@ ARM Macro Assembler    Page 9
               00000000 
               00000000 
               00000000 
-              00000400 
+              00001000 
               00000200 
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
 ork --depend=..\obj\startup_stm32f10x_hd.d -o..\obj\startup_stm32f10x_hd.o -I"D
-:\ProjectPlus\Keil 32Program\烘洗机相关工程\stm32_Washer_Pro\USER\RTE" -ID:\Kei
+:\ProjectPlus\Keil 32Program\烘洗机相关工程\机智云IOT-Washer\USER\RTE" -ID:\Kei
 l_v5\ARM\CMSIS\Include -IDevice\Include --predefine="__UVISION_VERSION SETA 521
 " --list=.\startup_stm32f10x_hd.lst ..\CORE\startup_stm32f10x_hd.s
 
@@ -591,7 +591,7 @@ Symbol: Stack_Mem
       At line 347 in file ..\CORE\startup_stm32f10x_hd.s
       At line 349 in file ..\CORE\startup_stm32f10x_hd.s
 
-__initial_sp 00000400
+__initial_sp 00001000
 
 Symbol: __initial_sp
    Definitions
@@ -1415,7 +1415,7 @@ Symbol: Heap_Size
       At line 49 in file ..\CORE\startup_stm32f10x_hd.s
       At line 348 in file ..\CORE\startup_stm32f10x_hd.s
 
-Stack_Size 00000400
+Stack_Size 00001000
 
 Symbol: Stack_Size
    Definitions

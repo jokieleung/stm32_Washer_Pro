@@ -2,13 +2,22 @@
 
 u8 Washer_Mode;//洗衣模式标志位
 
-u16 WATERIN_TIME=1; //进水时间变量  30s
-u16 WASH_TIME=30; //洗衣时间变量  300s
-u16 WATEROUT_TIME=1; //排水时间变量  30s
+//默认洗衣时间
+#define WaterInTimeDefault 3 	//进水时间变量  30s
+#define WashTimeDefault 300		//洗衣时间变量  300s
+#define WaterOutTimeDefault 3	//排水时间变量  30s
+
+u16 WATERIN_TIME=WaterInTimeDefault;
+u16 WASH_TIME=WashTimeDefault; 
+u16 WATEROUT_TIME=WaterOutTimeDefault; 
 
 extern u16 waterin_count;//进水计数值
 extern u16 wash_count;//洗衣计数值
 extern u16 waterout_count;//排水计数值
+
+
+//全局洗衣机工作状态位
+extern u8 washing_flag,drying_flag,washDrying_flag;
 
 //功能：单洗衣模式
 void wash_func(){
@@ -17,17 +26,13 @@ void wash_func(){
 	waterout_count = 0;//归零排水时间计数值
 	Washer_Mode = 1;	//开启洗衣模式标志位
 	//检测是否按下结束按钮
-	if(ifButtonDown()==BUTTON7_NUM) {stop_wash();return;}
+	if(!washing_flag) {stop_wash();return;}
 	//****************S1:进水*************************
 	
 	WATER_IN = 0;//打开进水阀
 	while(waterin_count < WATERIN_TIME)//等待进水完毕
 	{
-		UpdateDisPres();
-		UpdateDisTemp();
-		UpdateDisHumi();
-		UpdateRemainingWashTim();
-		if(ifButtonDown()==BUTTON7_NUM) {stop_wash();return;}//检测是否按下结束按钮
+		if(!washing_flag) {stop_wash();return;}
 	}
 	WATER_IN = 1;//关闭进水阀
 	
@@ -36,11 +41,7 @@ void wash_func(){
 	UNTRALSONIC = 0;//打开振子
 	while(wash_count < WASH_TIME)//等待洗衣完毕
 	{
-		UpdateDisPres();
-		UpdateDisTemp();
-		UpdateDisHumi();
-		UpdateRemainingWashTim();
-		if(ifButtonDown()==BUTTON7_NUM) {stop_wash();return;}//检测是否按下结束按钮
+		if(!washing_flag) {stop_wash();return;}
 	}
 	UNTRALSONIC = 1;//关闭振子
 	
@@ -49,11 +50,7 @@ void wash_func(){
 	WATER_OUT = 0;//打开排水阀
 	while(waterout_count < WATEROUT_TIME)//等待排水完毕
 	{
-		UpdateDisPres();
-		UpdateDisTemp();
-		UpdateDisHumi();
-		UpdateRemainingWashTim();
-		if(ifButtonDown()==BUTTON7_NUM) {stop_wash();return;}//检测是否按下结束按钮
+		if(!washing_flag) {stop_wash();return;}
 	}
 	WATER_OUT = 1;//关闭排水阀
 	
@@ -70,6 +67,11 @@ void stop_wash(){
 	waterout_count = 0;//归零排水时间计数值
 	Washer_Mode = 0;	//关闭洗衣模式标志位
 	
+
+//	WATERIN_TIME=WaterInTimeDefault; //进水时间变量复位
+//	WASH_TIME=WashTimeDefault;  //洗衣时间变量复位
+//	WATEROUT_TIME=WaterOutTimeDefault;  //排水时间变量复位
+
 	WATER_IN = 1;//关闭进水阀
 	UNTRALSONIC = 1;//关闭振子
 	
@@ -84,9 +86,9 @@ void Rst_Wash(){
 	waterout_count = 0;//归零排水时间计数值
 	Washer_Mode = 0;	//关闭洗衣模式标志位
 	
-//	WATERIN_TIME=15; //进水时间变量复位
-//	WASH_TIME=30; //洗衣时间变量复位
-//	WATEROUT_TIME=15; //排水时间变量复位
+//	WATERIN_TIME=WaterInTimeDefault; //进水时间变量复位
+//	WASH_TIME=WashTimeDefault;  //洗衣时间变量复位
+//	WATEROUT_TIME=WaterOutTimeDefault;  //排水时间变量复位
 	
 	WATER_IN = 1;//关闭进水阀
 	UNTRALSONIC = 1;//关闭振子
@@ -108,18 +110,13 @@ void WashDryfunc(){
 	waterout_count = 0;//归零排水时间计数值
 	Washer_Mode = 1;	//开启洗衣模式标志位
 	//检测是否按下结束按钮
-	if(ifButtonDown()==BUTTON7_NUM) {goto StopWashDry;}//检测是否按下结束按钮
+	if(!washDrying_flag) {goto StopWashDry;}//检测是否按下结束按钮
 	//****************S1:进水*************************
 	
 	WATER_IN = 0;//打开进水阀
 	while(waterin_count < WATERIN_TIME)//等待进水完毕
 	{
-		UpdateDisPres();
-		UpdateDisTemp();
-		UpdateDisHumi();
-		UpdateRemainingWashTim();
-		UpdateUsedWholeTim();
-		if(ifButtonDown()==BUTTON7_NUM) {goto StopWashDry;}//检测是否按下结束按钮
+		if(!washDrying_flag) {goto StopWashDry;}//检测是否按下结束按钮
 	}
 	WATER_IN = 1;//关闭进水阀
 	
@@ -128,12 +125,7 @@ void WashDryfunc(){
 	UNTRALSONIC = 0;//打开振子
 	while(wash_count < WASH_TIME)//等待洗衣完毕
 	{
-		UpdateDisPres();
-		UpdateDisTemp();
-		UpdateDisHumi();
-		UpdateRemainingWashTim();
-		UpdateUsedWholeTim();
-		if(ifButtonDown()==BUTTON7_NUM) {goto StopWashDry;}//检测是否按下结束按钮
+		if(!washDrying_flag) {goto StopWashDry;}//检测是否按下结束按钮
 	}
 	UNTRALSONIC = 1;//关闭振子
 	
@@ -142,12 +134,7 @@ void WashDryfunc(){
 	WATER_OUT = 0;//打开排水阀
 	while(waterout_count < WATEROUT_TIME)//等待排水完毕
 	{
-		UpdateDisPres();
-		UpdateDisTemp();
-		UpdateDisHumi();
-		UpdateRemainingWashTim();
-		UpdateUsedWholeTim();
-		if(ifButtonDown()==BUTTON7_NUM) {goto StopWashDry;}//检测是否按下结束按钮
+		if(!washDrying_flag) {goto StopWashDry;}//检测是否按下结束按钮
 	}
 	WATER_OUT = 1;//关闭排水阀
 	
@@ -166,12 +153,7 @@ void WashDryfunc(){
 	VACUUM_PUMP = 0;//打开真空泵
 	while(GetPresAverage(ADC_Channel_1,10)>=-88)//等待气压达到 -0.088Mpa（约为-0.09Mpa）
 	{
-		UpdateDisPres();
-		UpdateDisTemp();
-		UpdateDisHumi();
-		UpdateUsedWholeTim();
-		
-		if(ifButtonDown()==BUTTON7_NUM) {goto StopWashDry;}//检测是否按下结束按钮
+		if(!washDrying_flag) {goto StopWashDry;}//检测是否按下结束按钮
 	}
 	//******************此时暂时不关闭真空泵，采用连续抽真空模式**************************
 //	VACUUM_PUMP = 1;//关闭真空泵
@@ -182,10 +164,6 @@ void WashDryfunc(){
 	MICROWAVE	= 0;//开启磁控管
 	while(SHT2x_GetHumiPoll()>=10)//等待湿度降到10%  循环调用这个有返回值的函数可能会导致性能问题，先放  Jokie on 2018.3.3
 	{
-		UpdateDisPres();
-		UpdateDisTemp();
-		UpdateDisHumi();
-		UpdateUsedWholeTim();
 		//***************************************************
 		//这块温控后期可做成PID来自控 Jokie 2018.3.3
 		//PID输入：实时温度
@@ -196,9 +174,10 @@ void WashDryfunc(){
 		}
 		else MICROWAVE	= 0;//否则开启磁控管
 		
+		if(!washDrying_flag) {goto StopWashDry;}//检测是否按下结束按钮
+		
 		temp = ifButtonDown();
-		if(temp == BUTTON7_NUM) {stop_dry();return;}//检测是否按下结束按钮
-		else if(temp == BUTTON9_NUM) break;//暂时作为仿真达到干燥条件跳出循环用的按键
+		if(temp == BUTTON9_NUM) break;//暂时作为仿真达到干燥条件跳出循环用的按键
 	}
 	
 	//****************S3:开启进气阀恢复常压，准备提示取衣******************************************
@@ -208,11 +187,7 @@ void WashDryfunc(){
 	while(GetPresAverage(ADC_Channel_1,10)<=-5)//等待气压达到接近常压（约为-0.005Mpa）
 	{
 		GAS_IN = 0;//开启进气（电磁阀）
-		UpdateDisPres();
-		UpdateDisTemp();
-		UpdateDisHumi();
-		UpdateUsedWholeTim();
-		if(ifButtonDown()==BUTTON7_NUM) {goto StopWashDry;}//检测是否按下结束按钮
+		if(!washDrying_flag) {goto StopWashDry;}//检测是否按下结束按钮
 	}
 	GAS_IN = 1;//已恢复常压，关闭进气（电磁阀）
 	Dry_Mode = 0;	//关闭干衣模式标志位

@@ -54,13 +54,17 @@ void USART2_Init(u32 bound);
 //其他：相应按键的键值
 u8 ifButtonDown(void);
 //更新变量值
-void UpdateDisTemp(void);
-void UpdateDisHumi(void);
-void UpdateDisPres(void);
-void UpdateRemainingWashTim(void);
-void UpdateUsedDryTim(void);
-void UpdateUsedWholeTim(void);
+void UpdateDisTemp(float *temp);
+void UpdateDisHumi(float *humi);
+void UpdateDisPres(float *pres);
+
+void UpdateRemainingWashTim(int *remainSec);
+void UpdateUsedDryTim(int *UsedSec);
+void UpdateUsedWholeTim(int *UsedSec);
+void GetEveryDisPara(void);
+void UpdateEveryDisPara(float *Temp,float *Humi,float *Pres,int *RemainWashTime,int *DryTime,int *WashDryTime);
 void JumpToFinishedUI(void);
+void JumpToUI(u8 PAGE_ARY[]);
 #endif
 
 

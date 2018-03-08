@@ -3,9 +3,9 @@
 #include "stm32f10x.h"
 #include "delay.h"
 //如果移植程序时只要改一下三个地方就行了
-#define I2C_SCL GPIO_Pin_10	  //PB10
-#define I2C_SDA GPIO_Pin_11	  //PB11
-#define GPIO_I2C GPIOB
+#define I2C_SCL GPIO_Pin_14	  //PD14
+#define I2C_SDA GPIO_Pin_15	  //PD15
+#define GPIO_I2C GPIOD
 
 #define I2C_SCL_H GPIO_SetBits(GPIO_I2C,I2C_SCL)
 #define I2C_SCL_L GPIO_ResetBits(GPIO_I2C,I2C_SCL)

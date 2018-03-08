@@ -1,14 +1,16 @@
 #include "myiic.h"
+
+
 void I2C_INIT()
 {
 	GPIO_InitTypeDef GPIO_InitStructure;	
-	
-	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB,ENABLE);
+	//如果移植程序时需改
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOD,ENABLE);
 
 	GPIO_InitStructure.GPIO_Pin=I2C_SCL|I2C_SDA;
 	GPIO_InitStructure.GPIO_Speed=GPIO_Speed_50MHz;
 	GPIO_InitStructure.GPIO_Mode=GPIO_Mode_Out_PP;
-	GPIO_Init(GPIOB,&GPIO_InitStructure);
+	GPIO_Init(GPIOD,&GPIO_InitStructure);
 
 	I2C_SCL_H;
 	I2C_SDA_H;
@@ -20,7 +22,7 @@ void I2C_SDA_OUT()
 	GPIO_InitStructure.GPIO_Pin=I2C_SDA;
 	GPIO_InitStructure.GPIO_Speed=GPIO_Speed_50MHz;
 	GPIO_InitStructure.GPIO_Mode=GPIO_Mode_Out_PP;
-	GPIO_Init(GPIOB,&GPIO_InitStructure);
+	GPIO_Init(GPIOD,&GPIO_InitStructure);
 }
 
 void I2C_SDA_IN(void)
@@ -29,7 +31,7 @@ void I2C_SDA_IN(void)
 	
 	GPIO_InitStructure.GPIO_Pin=I2C_SDA;
 	GPIO_InitStructure.GPIO_Mode=GPIO_Mode_IPU;
-	GPIO_Init(GPIOB,&GPIO_InitStructure);
+	GPIO_Init(GPIOD,&GPIO_InitStructure);
 }
 
 //产生起始信号

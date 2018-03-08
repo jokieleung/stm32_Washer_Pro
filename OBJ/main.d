@@ -31,10 +31,19 @@
 ..\obj\main.o: ..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h
 ..\obj\main.o: ..\STM32F10x_FWLib\inc\misc.h
 ..\obj\main.o: ..\SYSTEM\delay\delay.h
+..\obj\main.o: ..\HARDWARE\KEY\key.h
 ..\obj\main.o: ..\SYSTEM\usart\usart.h
 ..\obj\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 ..\obj\main.o: ..\HARDWARE\TIMER\timer.h
-..\obj\main.o: ..\HARDWARE\TIM4\tim4.h
+..\obj\main.o: ..\HARDWARE\USART3\usart3.h
+..\obj\main.o: ..\HARDWARE\BEEP\beep.h
+..\obj\main.o: ..\Gizwits\gizwits_product.h
+..\obj\main.o: ..\Gizwits\gizwits_protocol.h
+..\obj\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+..\obj\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\main.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\obj\main.o: ..\Gizwits\gizwits_product.h
+..\obj\main.o: ..\HARDWARE\TIM5\tim5.h
 ..\obj\main.o: ..\WORK_MODE\WASHER\washer.h
 ..\obj\main.o: ..\HARDWARE\RELAY\RELAY.H
 ..\obj\main.o: ..\HARDWARE\USART_TO_LCD\USART_TO_LCD.H
@@ -42,3 +51,4 @@
 ..\obj\main.o: ..\HARDWARE\SHT2X\SHT2x.h
 ..\obj\main.o: ..\WORK_MODE\WASHER\washer.h
 ..\obj\main.o: ..\WORK_MODE\DRY\dry.h
+..\obj\main.o: ..\HARDWARE\TIM4\tim4.h
