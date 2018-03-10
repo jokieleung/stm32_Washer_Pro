@@ -52,6 +52,7 @@ extern u16 WATERIN_TIME; //进水时间变量
 extern u16 WASH_TIME; //洗衣时间变量
 extern u16 WATEROUT_TIME; //排水时间变量
 
+extern u8 washDrying_flag;
 //变量值，传感值的指针 
 //extern float Temp,Humi,Pres;
 //extern int RemainWashTime,DryTime,WashDryTime;
@@ -66,7 +67,8 @@ void TIM5_IRQHandler(void)   //TIM5中断
 			//****************如果洗衣模式打开*************************
 			if(Washer_Mode)
 			{
-				work_count++;
+				if(washDrying_flag)
+					work_count++;
 				if(waterin_count < WATERIN_TIME )
 					waterin_count++;
 				
@@ -81,7 +83,8 @@ void TIM5_IRQHandler(void)   //TIM5中断
 			//****************如果干衣模式打开*************************
 			if(Dry_Mode)
 			{
-				work_count++;
+				if(washDrying_flag)
+					work_count++;
 				dry_count++;
 			}
 								
