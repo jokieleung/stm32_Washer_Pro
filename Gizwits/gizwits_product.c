@@ -20,7 +20,7 @@
 #include "led.h"
 #include "usart3.h"
 #include "beep.h"
-
+#include "USART_TO_LCD.H"
 /**@} */
 /**@name Gizwits 用户API接口
 * @{
@@ -48,6 +48,8 @@ extern u8 washing_flag,drying_flag,washDrying_flag;
 extern u16 WATERIN_TIME; //进水时间变量
 extern u16 WASH_TIME; //洗衣时间变量
 extern u16 WATEROUT_TIME; //排水时间变量
+extern u16 waterin_count,wash_count,waterout_count;//进水计数值,洗衣计数值,排水计数值
+extern int RemainWashTime;
 int8_t gizwitsEventProcess(eventInfo_t *info, uint8_t *data, uint32_t len)
 {
   uint8_t i = 0;
@@ -124,10 +126,12 @@ int8_t gizwitsEventProcess(eventInfo_t *info, uint8_t *data, uint32_t len)
 				case EVENT_WashTime:
         currentDataPoint.valueWashTime = dataPointPtr->valueWashTime;
         GIZWITS_LOG("Evt:EVENT_WashTime %d\n",currentDataPoint.valueWashTime);
-				printf("down side washtime:%d______ \n",currentDataPoint.valueWashTime);
+//				printf("down side washtime:%d______ \n",currentDataPoint.valueWashTime);
 				WASH_TIME = currentDataPoint.valueWashTime - (WATERIN_TIME+WATEROUT_TIME);//调整洗衣时间
-				GIZWITS_LOG("WASH_TIME___%d\n",WASH_TIME);
+//				GIZWITS_LOG("WASH_TIME___%d\n",WASH_TIME);
 				
+				RemainWashTime = (WATERIN_TIME+WASH_TIME+WATEROUT_TIME)-waterin_count-wash_count-waterout_count;
+				UpdateRemainingWashTim(&RemainWashTime);
         //user handle
         break;
       case EVENT_DryTime:

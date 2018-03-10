@@ -277,7 +277,7 @@ void JumpToFinishedUI(){
 	}
 }
 //跳转到特定的界面
-//输入：7位跳转指令数组  eg. FNSH_PAGE[] = {0XA5,0X5A,0X04,0X80,0X03,0X00,0X07};//跳转洗衣完成页面指令 A5 5A 04 80 03 00 07 
+//输入：7位跳转指令数组  eg. FNSH_PAGE[] = {0XA5,0X5A,0X04,0X80,0X03,0X00,0X07};//跳转到7号页面指令 A5 5A 04 80 03 00 07 
 void JumpToUI(u8 PAGE_ARY[]){
 	u8 ARYlength,i;
 	
@@ -322,6 +322,7 @@ void UpdateEveryDisPara(float *Temp,float *Humi,float *Pres,int *RemainWashTime,
 	//更新压力值
 	UpdateDisPres(Pres);
 	//更新剩余洗衣时间
+	if(washing_flag)
 		UpdateRemainingWashTim(RemainWashTime);
 	//更新干燥时间
 	UpdateUsedDryTim(DryTime);
@@ -394,7 +395,7 @@ u8 ifButtonDown(){
 					else if(button7_cnt==rx_len){											//按键7
 						return BUTTON7_NUM;
 					}
-					else if((button8_cnt+2)==rx_len){											//按键8
+					else if((button8_cnt+2)==rx_len){											//按键8  获取加减洗衣时间变量的值
 //						printf("button8_cnt: %d\r\n",button8_cnt);
 						WASH_TIME=((USART2_RX_BUF[7]<<2)+USART2_RX_BUF[8])*60;//把赋值放在这里，保证实时性
 						return BUTTON8_NUM;

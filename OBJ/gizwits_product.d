@@ -39,3 +39,11 @@
 ..\obj\gizwits_product.o: ..\STM32F10x_FWLib\inc\misc.h
 ..\obj\gizwits_product.o: ..\HARDWARE\USART3\usart3.h
 ..\obj\gizwits_product.o: ..\HARDWARE\BEEP\beep.h
+..\obj\gizwits_product.o: ..\HARDWARE\USART_TO_LCD\USART_TO_LCD.H
+..\obj\gizwits_product.o: ..\HARDWARE\ADC\adc.h
+..\obj\gizwits_product.o: ..\HARDWARE\SHT2X\SHT2x.h
+..\obj\gizwits_product.o: ..\WORK_MODE\WASHER\washer.h
+..\obj\gizwits_product.o: ..\HARDWARE\RELAY\RELAY.H
+..\obj\gizwits_product.o: ..\HARDWARE\USART_TO_LCD\USART_TO_LCD.H
+..\obj\gizwits_product.o: ..\WORK_MODE\DRY\dry.h
+..\obj\gizwits_product.o: ..\SYSTEM\delay\delay.h

@@ -68,9 +68,9 @@ void stop_wash(){
 	Washer_Mode = 0;	//关闭洗衣模式标志位
 	
 
-//	WATERIN_TIME=WaterInTimeDefault; //进水时间变量复位
-//	WASH_TIME=WashTimeDefault;  //洗衣时间变量复位
-//	WATEROUT_TIME=WaterOutTimeDefault;  //排水时间变量复位
+	WATERIN_TIME=WaterInTimeDefault; //进水时间变量复位
+	WASH_TIME=WashTimeDefault;  //洗衣时间变量复位
+	WATEROUT_TIME=WaterOutTimeDefault;  //排水时间变量复位
 
 	WATER_IN = 1;//关闭进水阀
 	UNTRALSONIC = 1;//关闭振子
@@ -86,9 +86,9 @@ void Rst_Wash(){
 	waterout_count = 0;//归零排水时间计数值
 	Washer_Mode = 0;	//关闭洗衣模式标志位
 	
-//	WATERIN_TIME=WaterInTimeDefault; //进水时间变量复位
-//	WASH_TIME=WashTimeDefault;  //洗衣时间变量复位
-//	WATEROUT_TIME=WaterOutTimeDefault;  //排水时间变量复位
+	WATERIN_TIME=WaterInTimeDefault; //进水时间变量复位
+	WASH_TIME=WashTimeDefault;  //洗衣时间变量复位
+	WATEROUT_TIME=WaterOutTimeDefault;  //排水时间变量复位
 	
 	WATER_IN = 1;//关闭进水阀
 	UNTRALSONIC = 1;//关闭振子

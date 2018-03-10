@@ -44,8 +44,8 @@ u8 KeyDownNum=0;//按键值全局变量
 extern u16 WASH_TIME;
 //UI跳转指令 数组
 u8 START_W_ARY[] = {0XA5,0X5A,0X04,0X80,0X03,0X00,0X06};//正在洗衣界面
-u8 START_D_ARY[] = {0XA5,0X5A,0X04,0X80,0X03,0X00,0X06};//正在烘干界面
-u8 START_WD_ARY[] = {0XA5,0X5A,0X04,0X80,0X03,0X00,0X06};//正在烘洗界面
+u8 START_D_ARY[] = {0XA5,0X5A,0X04,0X80,0X03,0X00,0X0A};//正在烘干界面
+u8 START_WD_ARY[] = {0XA5,0X5A,0X04,0X80,0X03,0X00,0X09};//正在烘洗界面
 
 
 //10ms计时数
@@ -58,6 +58,9 @@ extern u8 washing_flag,drying_flag,washDrying_flag;
 //变量值，传感值的全局变量 
 extern float Temp,Humi,Pres;
 extern int RemainWashTime,DryTime,WashDryTime;
+
+//洗烘时间计数值
+extern u16 work_count;
 
 //声明函数
 void userHandle(void);
@@ -92,6 +95,7 @@ void TIM4_IRQHandler(void)   //TIM3中断
 			
 			if (KeyDownNum == BUTTON1_NUM) {	//洗衣界面按键 
 				Rst_Wash();//重置洗衣参数
+				UpdateRemainingWashTim(&RemainWashTime);//更新一次屏幕剩余洗衣时间值
 				goto tim4_ir_end;
 			}
 			if (KeyDownNum==BUTTON2_NUM)  {	//烘衣界面按键 
@@ -100,6 +104,7 @@ void TIM4_IRQHandler(void)   //TIM3中断
 			if (KeyDownNum==BUTTON3_NUM)  {	//洗烘界面按键
 				Rst_Wash();//重置洗衣参数
 				Rst_Dry();//重置干衣参数
+				work_count = 0;
 				goto tim4_ir_end;
 			}
 			if(KeyDownNum==BUTTON4_NUM){	//开始洗衣按键

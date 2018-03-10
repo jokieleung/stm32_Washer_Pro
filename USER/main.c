@@ -57,9 +57,9 @@ void userHandle(void)
 	currentDataPoint.valueDry = drying_flag;
 	currentDataPoint.valueWashDry = washDrying_flag;
 	//真空度、温湿度上传
-	currentDataPoint.valuePres = Pres;//Add Sensor Data Collection
-	currentDataPoint.valueTemp = Temp;//Add Sensor Data Collection
-	currentDataPoint.valueHumi = Humi;//Add Sensor Data Collection
+	currentDataPoint.valuePres = Pres;
+	currentDataPoint.valueTemp = Temp;
+	currentDataPoint.valueHumi = Humi;
 	//各工作状态的实时时间上传
 	currentDataPoint.valueWashTime = RemainWashTime;
   currentDataPoint.valueDryTime = DryTime;
@@ -84,12 +84,10 @@ void userHandle(void)
 	 BEEP_Init();            //蜂鸣器初始化
    Gizwits_Init();         //协议初始化
 	 TIM5_Int_Init(9999,7199);//计数周期为1s   此后修改为定时洗衣时间以及烘干时间用
-	printf("--------机智云IOT-VacuumWasher----------\r\n");
-	printf("Init Over\r\n\r\n");
+	 printf("--------机智云IOT-VacuumWasher----------\r\n");
+	 printf("Init Over\r\n\r\n");
    	while(1)
 	{
-		//单独实时更新洗衣时间 ，避免洗衣时间在调整的时候跳跃  无效 20180308
-//		UpdateRemainingWashTim(&RemainWashTime);
 		//洗衣状态
 		if(washing_flag){
 			JumpToUI(START_W_ARY);
