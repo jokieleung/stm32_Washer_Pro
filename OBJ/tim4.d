@@ -45,3 +45,4 @@
 ..\obj\tim4.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ..\obj\tim4.o: ..\Gizwits\gizwits_product.h
 ..\obj\tim4.o: ..\Gizwits\gizwits_protocol.h
+..\obj\tim4.o: ..\HARDWARE\VOICE\VOICE.H

@@ -6,6 +6,7 @@
 #include "USART_TO_LCD.H"
 #include "dry.h"
 #include "gizwits_protocol.h"
+#include "VOICE.H"
 //////////////////////////////////////////////////////////////////////////////////
 //本程序只供学习使用，未经作者许可，不得用于其它任何用途
 //ALIENTEK战舰STM32开发板

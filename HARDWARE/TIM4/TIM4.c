@@ -88,6 +88,9 @@ void TIM4_IRQHandler(void)   //TIM3中断
 				UpdateEveryDisPara(&Temp,&Humi,&Pres,&RemainWashTime,&DryTime,&WashDryTime);
 			}
 			
+			//**************每10ms检测一次音箱语音控制信号端******************************
+			VoiceDetect();
+			
 			//*****新增机智云和音响控制，将switch逻辑改回if 2018.3.6*********************
 			//*****每10ms检测一次串口屏按键**********************************************
 			//@20180307 更改为获取键值后设置flag,在main.c的while(1)内做动作，避免中断冲突

@@ -14,6 +14,7 @@
 "..\obj\tim4.o"
 "..\obj\tim5.o"
 "..\obj\usart_to_lcd.o"
+"..\obj\voice.o"
 "..\obj\delay.o"
 "..\obj\sys.o"
 "..\obj\usart.o"

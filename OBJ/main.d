@@ -52,3 +52,4 @@
 ..\obj\main.o: ..\WORK_MODE\WASHER\washer.h
 ..\obj\main.o: ..\WORK_MODE\DRY\dry.h
 ..\obj\main.o: ..\HARDWARE\TIM4\tim4.h
+..\obj\main.o: ..\HARDWARE\VOICE\VOICE.H

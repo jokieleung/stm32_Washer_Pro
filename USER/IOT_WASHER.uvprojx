@@ -335,7 +335,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F10X_HD,USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\KEY;..\HARDWARE\TIMER;..\HARDWARE\USART3;..\Gizwits;..\HARDWARE\LED;..\HARDWARE\BEEP;..\WORK_MODE\DRY;..\WORK_MODE\WASHER;..\HARDWARE\ADC;..\HARDWARE\IIC;..\HARDWARE\RELAY;..\HARDWARE\SHT2X;..\HARDWARE\TIM4;..\HARDWARE\USART_TO_LCD;..\HARDWARE\TIM5</IncludePath>
+              <IncludePath>..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\STM32F10x_FWLib\inc;..\CORE;..\HARDWARE\KEY;..\HARDWARE\TIMER;..\HARDWARE\USART3;..\Gizwits;..\HARDWARE\LED;..\HARDWARE\BEEP;..\WORK_MODE\DRY;..\WORK_MODE\WASHER;..\HARDWARE\ADC;..\HARDWARE\IIC;..\HARDWARE\RELAY;..\HARDWARE\SHT2X;..\HARDWARE\TIM4;..\HARDWARE\USART_TO_LCD;..\HARDWARE\TIM5;..\HARDWARE\VOICE</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -458,6 +458,11 @@
               <FileName>USART_TO_LCD.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\USART_TO_LCD\USART_TO_LCD.c</FilePath>
+            </File>
+            <File>
+              <FileName>VOICE.C</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\VOICE\VOICE.C</FilePath>
             </File>
           </Files>
         </Group>

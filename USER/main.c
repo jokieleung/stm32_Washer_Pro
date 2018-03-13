@@ -16,7 +16,7 @@
 #include "USART_TO_LCD.H"
 #include "washer.h"
 #include "dry.h"
-
+#include "VOICE.H"
 /************************************************
  机智云-IOT超声波真空微波洗烘一体机 V1.0
  武汉触米科技有限公司 
@@ -71,6 +71,8 @@ void userHandle(void)
 //主函数
  int main(void)
  {		
+	 u8 DRY_FSH[]={0XA5,0X5A,0X04,0X80,0X03,0X00,0X0D};//烘衣完成界面
+	 u8 WSHDRY_FSH[]={0XA5,0X5A,0X04,0X80,0X03,0X00,0X0C};//烘洗完成界面
 	 delay_init();	    	 //延时函数初始化	  
 	 NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); //设置NVIC中断分组2:2位抢占优先级，2位响应优先级
 	 Adc_Init();
@@ -84,10 +86,12 @@ void userHandle(void)
 	 BEEP_Init();            //蜂鸣器初始化
    Gizwits_Init();         //协议初始化
 	 TIM5_Int_Init(9999,7199);//计数周期为1s   此后修改为定时洗衣时间以及烘干时间用
+	 Voice_Init();
 	 printf("--------机智云IOT-VacuumWasher----------\r\n");
 	 printf("Init Over\r\n\r\n");
    	while(1)
 	{
+		
 		//洗衣状态
 		if(washing_flag){
 			JumpToUI(START_W_ARY);
@@ -99,14 +103,14 @@ void userHandle(void)
 		if(drying_flag){
 			JumpToUI(START_D_ARY);
 			dry_func();
-			JumpToFinishedUI();//跳转到洗衣完成的页面
+			JumpToUI(DRY_FSH);//跳转到干衣完成的页面
 			drying_flag = 0;
 		}
 		//洗烘状态
 		if(washDrying_flag){
 			JumpToUI(START_WD_ARY);
 			WashDryfunc();
-			JumpToFinishedUI();//跳转到洗衣完成的页面
+			JumpToUI(WSHDRY_FSH);//跳转到洗干衣完成的页面
 			washDrying_flag = 0;
 		}
 		
