@@ -20,4 +20,10 @@ u16 Get_Adc_Average(u8 ch,u8 times);
 //ch:通道值 0~3
 //times:平均次数
 double GetPresAverage(u8 ch,u8 times);
+
+//*****************关于ADC3的配置**************************
+void  Adc3_Init(void);
+u16 Get_Adc3(u8 ch);
+u16 Get_Adc3_Average(u8 ch,u8 times);
+double GetGravAverage(u8 ch,u8 times);
 #endif 

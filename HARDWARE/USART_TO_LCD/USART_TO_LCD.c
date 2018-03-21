@@ -300,7 +300,7 @@ void GetEveryDisPara(){
 	Humi = SHT2x_GetHumiPoll();
 //	printf("Humi %f\n",Humi);
 	//获取压力值
-	Pres = GetPresAverage(ADC_Channel_1,10);
+	Pres = GetPresAverage(ADC_Channel_7,10);
 //	printf("Pres %f \n",Pres);
 	//获取剩余洗衣时间
 	RemainWashTime = (WATERIN_TIME+WASH_TIME+WATEROUT_TIME)-waterin_count-wash_count-waterout_count;

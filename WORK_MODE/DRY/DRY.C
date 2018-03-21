@@ -26,7 +26,7 @@ void dry_func(){
 	GAS_IN = 1;//关闭进气（电磁阀）
 	GAS_OUT = 0;//开启抽气（电磁阀）
 	VACUUM_PUMP = 0;//打开真空泵
-	while(GetPresAverage(ADC_Channel_1,10)>=-88)//等待气压达到 -0.088Mpa（约为-0.09Mpa）
+	while(GetPresAverage(ADC_Channel_7,10)>=-88)//等待气压达到 -0.088Mpa（约为-0.09Mpa）
 	{
 		if(!drying_flag) {stop_dry();return;}
 	}
@@ -60,7 +60,7 @@ void dry_func(){
 	MICROWAVE	= 1;//关闭磁控管
 	GAS_OUT = 1;//关闭抽气（电磁阀）
 	VACUUM_PUMP = 1;//关闭真空泵
-	while(GetPresAverage(ADC_Channel_1,10)<=-5)//等待气压达到接近常压（约为-0.005Mpa）
+	while(GetPresAverage(ADC_Channel_7,10)<=-5)//等待气压达到接近常压（约为-0.005Mpa）
 	{
 		GAS_IN = 0;//开启进气（电磁阀）
 		if(!drying_flag) {stop_dry();return;}//检测是否按下结束按钮
@@ -78,7 +78,7 @@ void stop_dry(){
 	MICROWAVE	= 1;//关闭磁控管
 	GAS_OUT = 1;//关闭抽气（电磁阀）
 	VACUUM_PUMP = 1;//关闭真空泵
-	while(GetPresAverage(ADC_Channel_1,10)<=-5)//等待气压达到接近常压（约为-0.005Mpa）
+	while(GetPresAverage(ADC_Channel_7,10)<=-5)//等待气压达到接近常压（约为-0.005Mpa）
 	{
 		GAS_IN = 0;//开启进气（电磁阀）
 	}

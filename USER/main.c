@@ -76,6 +76,7 @@ void userHandle(void)
 	 delay_init();	    	 //延时函数初始化	  
 	 NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2); //设置NVIC中断分组2:2位抢占优先级，2位响应优先级
 	 Adc_Init();
+	 Adc3_Init();
 	 SHT2x_Init();       //SHT2x初始化 含I2C初始化
 	 USART2_Init(115200);	//串口2初始化为115200，与串口屏通信
 	 RELAY_Init();//继电器初始化，初始化默认设置为高电平（继电器关闭）
@@ -84,14 +85,13 @@ void userHandle(void)
 	 LED_Init();			    //LED端口初始化
 	 KEY_Init();             //按键初始化 
 	 BEEP_Init();            //蜂鸣器初始化
-   Gizwits_Init();         //协议初始化
+   Gizwits_Init();         //Gizwits协议初始化
 	 TIM5_Int_Init(9999,7199);//计数周期为1s   此后修改为定时洗衣时间以及烘干时间用
 	 Voice_Init();
 	 printf("--------机智云IOT-VacuumWasher----------\r\n");
 	 printf("Init Over\r\n\r\n");
    	while(1)
 	{
-		
 		//洗衣状态
 		if(washing_flag){
 			JumpToUI(START_W_ARY);

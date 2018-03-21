@@ -4,7 +4,7 @@ u8 Washer_Mode;//洗衣模式标志位
 
 //默认洗衣时间
 #define WaterInTimeDefault 3 	//进水时间变量  30s
-#define WashTimeDefault 300		//洗衣时间变量  300s
+#define WashTimeDefault 3		//洗衣时间变量  300s
 #define WaterOutTimeDefault 3	//排水时间变量  30s
 
 u16 WATERIN_TIME=WaterInTimeDefault;
@@ -151,7 +151,7 @@ void WashDryfunc(){
 	GAS_IN = 1;//关闭进气（电磁阀）
 	GAS_OUT = 0;//开启抽气（电磁阀）
 	VACUUM_PUMP = 0;//打开真空泵
-	while(GetPresAverage(ADC_Channel_1,10)>=-88)//等待气压达到 -0.088Mpa（约为-0.09Mpa）
+	while(GetPresAverage(ADC_Channel_7,10)>=-88)//等待气压达到 -0.088Mpa（约为-0.09Mpa）
 	{
 		if(!washDrying_flag) {goto StopWashDry;}//检测是否按下结束按钮
 	}
@@ -184,7 +184,7 @@ void WashDryfunc(){
 	MICROWAVE	= 1;//关闭磁控管
 	GAS_OUT = 1;//关闭抽气（电磁阀）
 	VACUUM_PUMP = 1;//关闭真空泵
-	while(GetPresAverage(ADC_Channel_1,10)<=-5)//等待气压达到接近常压（约为-0.005Mpa）
+	while(GetPresAverage(ADC_Channel_7,10)<=-5)//等待气压达到接近常压（约为-0.005Mpa）
 	{
 		GAS_IN = 0;//开启进气（电磁阀）
 		if(!washDrying_flag) {goto StopWashDry;}//检测是否按下结束按钮
