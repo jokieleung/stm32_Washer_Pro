@@ -45,7 +45,8 @@ u8 DRY_ARY_M[] = {0XA5,0X5A,0X05,0X82,0X00,0X60,0X00,0X00};//¸ÉÒÂÒÑÓÃÊ±¼äÏÔÊ¾Êı×
 u8 DRY_ARY_S[] = {0XA5,0X5A,0X05,0X82,0X00,0X61,0X00,0X00};//¸ÉÒÂÒÑÓÃÊ±¼äÏÔÊ¾Êı×é 
 u8 WLE_ARY_M[] = {0XA5,0X5A,0X05,0X82,0X00,0X70,0X00,0X00};//Ï´¸ÉÒÂÒÑÓÃÊ±¼äÏÔÊ¾Êı×é 
 u8 WLE_ARY_S[] = {0XA5,0X5A,0X05,0X82,0X00,0X71,0X00,0X00};//Ï´¸ÉÒÂÒÑÓÃÊ±¼äÏÔÊ¾Êı×é 
-
+//Ï´ÒÂ×´Ì¬±êÖ¾Î»
+extern u8 washing_flag;
 //±äÁ¿Öµ£¬´«¸ĞÖµµÄÈ«¾Ö±äÁ¿ 
 float Temp,Humi,Pres;
 int RemainWashTime,DryTime,WashDryTime;
@@ -303,7 +304,10 @@ void GetEveryDisPara(){
 	Pres = GetPresAverage(ADC_Channel_7,10);
 //	printf("Pres %f \n",Pres);
 	//»ñÈ¡Ê£ÓàÏ´ÒÂÊ±¼ä
-	RemainWashTime = (WATERIN_TIME+WASH_TIME+WATEROUT_TIME)-waterin_count-wash_count-waterout_count;
+	if(washing_flag) //Èç¹û´¦ÓÚÏ´ÒÂ¹¤×÷×´Ì¬£¬ÔòRemainWashTimeÎª×ÜµÄµ¹¼ÆÊ±
+		RemainWashTime = (WATERIN_TIME+WASH_TIME+WATEROUT_TIME)-waterin_count-wash_count-waterout_count;
+	else 	//Èç¹û´¦ÓÚÉèÖÃÊ±¼ä×´Ì¬£¬ÔòRemainWashTimeÎªÏ´ÒÂÊ±¼ä
+		RemainWashTime = WASH_TIME;
 //	printf("RemainWashTime %d \n",RemainWashTime);
 	//»ñÈ¡¸ÉÔïÊ±¼ä
 	DryTime = dry_count;
@@ -314,7 +318,7 @@ void GetEveryDisPara(){
 }
 //@¹¦ÄÜ£º»ñÈ¡ËùÓĞĞèÒªÏÔÊ¾µÄ±äÁ¿Öµ£¬²¢¸³Öµµ½ÏàÓ¦µÄ¹Ì¶¨Ö¸Õë£¨µØÖ·£©ÄÚ
 //@para: float *Temp,float *Humi,float *Pres,int *RemainWashTime,int *DryTime,int *WashDryTime
-extern u8 washing_flag;
+
 void UpdateEveryDisPara(float *Temp,float *Humi,float *Pres,int *RemainWashTime,int *DryTime,int *WashDryTime){
 	//¸üĞÂÎÂ¶ÈÖµ
 	UpdateDisTemp(Temp);

@@ -151,9 +151,25 @@ u16 Get_Adc3_Average(u8 ch,u8 times)
 	return temp_val/times;
 }
 
-//根据ADC3值计算出当前重力值
-//ch:通道值 0~3
-//times:平均次数
+/*** 根据ADC3值计算出当前重力值
+传感器的值
+灵敏度2.0mv/v，供电5-12v,量程40KG
+线性关系
+关于传感器输出信号
+    供电*灵敏度=称重传感器满量程输出
+例：传感器量程：40kg 灵敏度：2.0mv/V 供电5V 精度1/3000
+    传感器测力40kg时 输出电压为 2.0mv/V*5V=10mv
+    传感器测力20kg时 输出电压为 2.0mv/V*5V*20/40=5mv
+    传感器测力10kg时 输出电压为 2.0mv/V*5V*10/40=2.5mv
+		最小检测的精度是40kg/3000=1/75kg = 13.3g,输出电压为 2.0mv/V*5V*（1/40*75）=1/300=0.0034mv
+假设 放大倍数为330倍
+
+40KG AD值为3.3V  (ADC最小精度为0.0008V)
+最小精度13.3g AD值为1.122mv=   0.001122v
+    grav = 
+ch:通道值 0~3
+times:平均次数
+*/
 double GetGravAverage(u8 ch,u8 times){
 	double adcx,grav;
 	adcx=Get_Adc3_Average(ch,times);//获取ADC的值

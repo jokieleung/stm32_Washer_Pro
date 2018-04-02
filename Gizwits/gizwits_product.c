@@ -126,12 +126,14 @@ int8_t gizwitsEventProcess(eventInfo_t *info, uint8_t *data, uint32_t len)
 				case EVENT_WashTime:
         currentDataPoint.valueWashTime = dataPointPtr->valueWashTime;
         GIZWITS_LOG("Evt:EVENT_WashTime %d\n",currentDataPoint.valueWashTime);
-//				printf("down side washtime:%d______ \n",currentDataPoint.valueWashTime);
-				WASH_TIME = currentDataPoint.valueWashTime - (WATERIN_TIME+WATEROUT_TIME);//调整洗衣时间
-//				GIZWITS_LOG("WASH_TIME___%d\n",WASH_TIME);
 				
-				RemainWashTime = (WATERIN_TIME+WASH_TIME+WATEROUT_TIME)-waterin_count-wash_count-waterout_count;
+				RemainWashTime = currentDataPoint.valueWashTime; //下行调整的剩余洗衣时间
+				WASH_TIME = RemainWashTime /*- WATERIN_TIME -WATEROUT_TIME*/;//@20180402 如果 将调整的时间 - 进出水 = 洗衣时间,存在溢出问题，先把剩余洗衣时间直接赋值给WASH_TIME
 				UpdateRemainingWashTim(&RemainWashTime);
+				
+//				WASH_TIME = currentDataPoint.valueWashTime - (WATERIN_TIME+WATEROUT_TIME);//调整洗衣时间
+//				RemainWashTime = (WATERIN_TIME+WASH_TIME+WATEROUT_TIME)-waterin_count-wash_count-waterout_count;
+//				UpdateRemainingWashTim(&RemainWashTime);
         //user handle
         break;
       case EVENT_DryTime:

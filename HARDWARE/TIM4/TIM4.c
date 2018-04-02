@@ -98,7 +98,9 @@ void TIM4_IRQHandler(void)   //TIM3中断
 			
 			if (KeyDownNum == BUTTON1_NUM) {	//洗衣界面按键 
 				Rst_Wash();//重置洗衣参数
+				delay_us(50);
 				UpdateRemainingWashTim(&RemainWashTime);//更新一次屏幕剩余洗衣时间值
+				delay_us(50);
 				goto tim4_ir_end;
 			}
 			if (KeyDownNum==BUTTON2_NUM)  {	//烘衣界面按键 

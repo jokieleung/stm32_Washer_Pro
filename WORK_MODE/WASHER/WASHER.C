@@ -3,9 +3,9 @@
 u8 Washer_Mode;//洗衣模式标志位
 
 //默认洗衣时间
-#define WaterInTimeDefault 3 	//进水时间变量  30s
-#define WashTimeDefault 3		//洗衣时间变量  300s
-#define WaterOutTimeDefault 3	//排水时间变量  30s
+#define WaterInTimeDefault 0 	//进水时间变量  60s
+#define WashTimeDefault 120		//洗衣时间变量  300s
+#define WaterOutTimeDefault 150	//排水时间变量  60s
 
 u16 WATERIN_TIME=WaterInTimeDefault;
 u16 WASH_TIME=WashTimeDefault; 
@@ -48,12 +48,15 @@ void wash_func(){
 	//****************S3:排水*************************
 	
 	WATER_OUT = 0;//打开排水阀
+	CONNECT = 0;//打开连通阀
+	GAS_IN = 0;//打开进气阀
 	while(waterout_count < WATEROUT_TIME)//等待排水完毕
 	{
 		if(!washing_flag) {stop_wash();return;}
 	}
 	WATER_OUT = 1;//关闭排水阀
-	
+	CONNECT = 1;//关闭连通阀
+	GAS_IN = 1;//关闭进气阀
 	Washer_Mode = 0;//关闭洗衣模式标志位
 	
 	//****************S4:跳转到洗衣完成的页面(20180304把这部分写到了JumpToFinishedUI();)*************************
@@ -74,6 +77,8 @@ void stop_wash(){
 
 	WATER_IN = 1;//关闭进水阀
 	UNTRALSONIC = 1;//关闭振子
+	CONNECT = 1;
+	GAS_IN = 1;
 	
 //	后期需要改为检测水位传感器的水量，排完水后关闭排水阀
 	WATER_OUT = 1;//关闭排水阀
@@ -92,7 +97,8 @@ void Rst_Wash(){
 	
 	WATER_IN = 1;//关闭进水阀
 	UNTRALSONIC = 1;//关闭振子
-	
+	CONNECT = 1;
+	GAS_IN = 1;
 //	后期需要改为检测水位传感器的水量，排完水后关闭排水阀
 	WATER_OUT = 1;//关闭排水阀
 }
@@ -101,7 +107,7 @@ extern u16 work_count;
 extern u8 Dry_Mode;
 //功能:洗烘一体流程
 void WashDryfunc(){
-	u8 temp;
+//	u8 temp;
 	work_count=0;
 	//******************洗衣部分**********************************************************
 	//************************************************************************************
@@ -148,8 +154,10 @@ void WashDryfunc(){
 	
 	//****************S1:抽真空（暂时达到真空不关闭真空泵）*************************
 	MICROWAVE	= 1;//关闭磁控管
+	FAN = 1;//关闭磁控管散热风扇
 	GAS_IN = 1;//关闭进气（电磁阀）
-	GAS_OUT = 0;//开启抽气（电磁阀）
+//	GAS_OUT = 0;//开启抽气（电磁阀）
+	CONNECT = 0;//打开连通器
 	VACUUM_PUMP = 0;//打开真空泵
 	while(GetPresAverage(ADC_Channel_7,10)>=-88)//等待气压达到 -0.088Mpa（约为-0.09Mpa）
 	{
@@ -162,6 +170,7 @@ void WashDryfunc(){
 	//****************S2:开启磁控管开始加热（暂定采用间歇式工作模式）*************************
 	//*******************直至达到设定干燥的湿度值********************************************
 	MICROWAVE	= 0;//开启磁控管
+	FAN = 0;//开启磁控管散热风扇
 	while(SHT2x_GetHumiPoll()>=10)//等待湿度降到10%  循环调用这个有返回值的函数可能会导致性能问题，先放  Jokie on 2018.3.3
 	{
 		//***************************************************
@@ -176,13 +185,14 @@ void WashDryfunc(){
 		
 		if(!washDrying_flag) {goto StopWashDry;}//检测是否按下结束按钮
 		
-		temp = ifButtonDown();
-		if(temp == BUTTON9_NUM) break;//暂时作为仿真达到干燥条件跳出循环用的按键
+//		temp = ifButtonDown();
+//		if(temp == BUTTON9_NUM) break;//暂时作为仿真达到干燥条件跳出循环用的按键
 	}
 	
 	//****************S3:开启进气阀恢复常压，准备提示取衣******************************************
 	MICROWAVE	= 1;//关闭磁控管
-	GAS_OUT = 1;//关闭抽气（电磁阀）
+	FAN = 1;//关闭磁控管散热风扇
+//	GAS_OUT = 1;//关闭抽气（电磁阀）
 	VACUUM_PUMP = 1;//关闭真空泵
 	while(GetPresAverage(ADC_Channel_7,10)<=-5)//等待气压达到接近常压（约为-0.005Mpa）
 	{
@@ -190,6 +200,7 @@ void WashDryfunc(){
 		if(!washDrying_flag) {goto StopWashDry;}//检测是否按下结束按钮
 	}
 	GAS_IN = 1;//已恢复常压，关闭进气（电磁阀）
+	CONNECT = 1;//关闭连通器
 	Dry_Mode = 0;	//关闭干衣模式标志位
 	
 	StopWashDry:
