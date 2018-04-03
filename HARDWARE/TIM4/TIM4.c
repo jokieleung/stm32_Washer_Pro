@@ -41,7 +41,9 @@ void TIM4_Int_Init(u16 arr,u16 psc)
 }
 //定时器4中断服务程序
 u8 KeyDownNum=0;//按键值全局变量
-extern u16 WASH_TIME;
+//洗衣时间全局变量
+extern int WASH_TIME;
+extern u16 WATERIN_TIME,WATEROUT_TIME;
 //UI跳转指令 数组
 u8 START_W_ARY[] = {0XA5,0X5A,0X04,0X80,0X03,0X00,0X06};//正在洗衣界面
 u8 START_D_ARY[] = {0XA5,0X5A,0X04,0X80,0X03,0X00,0X0A};//正在烘干界面
@@ -86,6 +88,7 @@ void TIM4_IRQHandler(void)   //TIM3中断
 				Cnt200Ms = 0;
 				GetEveryDisPara();
 				UpdateEveryDisPara(&Temp,&Humi,&Pres,&RemainWashTime,&DryTime,&WashDryTime);
+					
 			}
 			
 			//**************每10ms检测一次音箱语音控制信号端******************************
@@ -99,7 +102,8 @@ void TIM4_IRQHandler(void)   //TIM3中断
 			if (KeyDownNum == BUTTON1_NUM) {	//洗衣界面按键 
 				Rst_Wash();//重置洗衣参数
 				delay_us(50);
-				UpdateRemainingWashTim(&RemainWashTime);//更新一次屏幕剩余洗衣时间值
+				UpdateRemainingWashTim(&WASH_TIME);//更新一次屏幕洗衣时间值
+				UpdateWashInAndOut(&WATERIN_TIME,&WATEROUT_TIME);
 				delay_us(50);
 				goto tim4_ir_end;
 			}
@@ -131,7 +135,7 @@ void TIM4_IRQHandler(void)   //TIM3中断
 				goto tim4_ir_end;
 			}
 			if (KeyDownNum==BUTTON8_NUM)  {	//用于加减洗衣时间
-//				WASH_TIME = ((USART2_RX_BUF[7]<<2)+USART2_RX_BUF[8])*60;
+//				在ifButtonDown内加减洗衣时间，保证实时性 
 				goto tim4_ir_end;
 			}
 			if (KeyDownNum==BUTTON9_NUM)  {	//暂时作为仿真达到干燥条件跳出循环用的按键

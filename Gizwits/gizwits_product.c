@@ -46,10 +46,10 @@ extern dataPoint_t currentDataPoint;
 extern u8 washing_flag,drying_flag,washDrying_flag;
 //全局进水、洗衣、排水时间变量
 extern u16 WATERIN_TIME; //进水时间变量
-extern u16 WASH_TIME; //洗衣时间变量
+extern int WASH_TIME; //洗衣时间变量
 extern u16 WATEROUT_TIME; //排水时间变量
 extern u16 waterin_count,wash_count,waterout_count;//进水计数值,洗衣计数值,排水计数值
-extern int RemainWashTime;
+extern u16 RemainWashTime;
 int8_t gizwitsEventProcess(eventInfo_t *info, uint8_t *data, uint32_t len)
 {
   uint8_t i = 0;
@@ -127,13 +127,10 @@ int8_t gizwitsEventProcess(eventInfo_t *info, uint8_t *data, uint32_t len)
         currentDataPoint.valueWashTime = dataPointPtr->valueWashTime;
         GIZWITS_LOG("Evt:EVENT_WashTime %d\n",currentDataPoint.valueWashTime);
 				
-				RemainWashTime = currentDataPoint.valueWashTime; //下行调整的剩余洗衣时间
-				WASH_TIME = RemainWashTime /*- WATERIN_TIME -WATEROUT_TIME*/;//@20180402 如果 将调整的时间 - 进出水 = 洗衣时间,存在溢出问题，先把剩余洗衣时间直接赋值给WASH_TIME
-				UpdateRemainingWashTim(&RemainWashTime);
+				WASH_TIME = currentDataPoint.valueWashTime; //下行调整的剩余洗衣时间
+				//@20180402 如果 将调整的时间 - 进出水 = 洗衣时间,存在溢出问题，先把剩余洗衣时间直接赋值给WASH_TIME
+				UpdateRemainingWashTim(&WASH_TIME);
 				
-//				WASH_TIME = currentDataPoint.valueWashTime - (WATERIN_TIME+WATEROUT_TIME);//调整洗衣时间
-//				RemainWashTime = (WATERIN_TIME+WASH_TIME+WATEROUT_TIME)-waterin_count-wash_count-waterout_count;
-//				UpdateRemainingWashTim(&RemainWashTime);
         //user handle
         break;
       case EVENT_DryTime:

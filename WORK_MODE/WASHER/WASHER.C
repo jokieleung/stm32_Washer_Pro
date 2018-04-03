@@ -8,14 +8,15 @@ u8 Washer_Mode;//洗衣模式标志位
 #define WaterOutTimeDefault 150	//排水时间变量  60s
 
 u16 WATERIN_TIME=WaterInTimeDefault;
-u16 WASH_TIME=WashTimeDefault; 
+int WASH_TIME=WashTimeDefault; 
 u16 WATEROUT_TIME=WaterOutTimeDefault; 
 
 extern u16 waterin_count;//进水计数值
 extern u16 wash_count;//洗衣计数值
 extern u16 waterout_count;//排水计数值
-
-
+//微波加热标志位
+extern u8 microwave_mode;
+extern u8 microwave_cnt;
 //全局洗衣机工作状态位
 extern u8 washing_flag,drying_flag,washDrying_flag;
 
@@ -171,23 +172,19 @@ void WashDryfunc(){
 	//*******************直至达到设定干燥的湿度值********************************************
 	MICROWAVE	= 0;//开启磁控管
 	FAN = 0;//开启磁控管散热风扇
+		microwave_mode = 1;
+	microwave_cnt = 0;
 	while(SHT2x_GetHumiPoll()>=10)//等待湿度降到10%  循环调用这个有返回值的函数可能会导致性能问题，先放  Jokie on 2018.3.3
 	{
-		//***************************************************
-		//这块温控后期可做成PID来自控 Jokie 2018.3.3
-		//PID输入：实时温度
-		//PID输出：磁控管电源需要支持高频的通断才可
-		//***************************************************
-		if(SHT2x_GetTempPoll()>=48){//若SHT20 温度大于48度停止磁控管
-			MICROWAVE	= 1;//停止磁控管
-		}
-		else MICROWAVE	= 0;//否则开启磁控管
+		//采用脉冲式方式驱动磁控管
+		if(microwave_cnt >= 5){//5s取反一次
+			MICROWAVE = !MICROWAVE;
+			microwave_cnt = 0;
+				}
 		
-		if(!washDrying_flag) {goto StopWashDry;}//检测是否按下结束按钮
-		
-//		temp = ifButtonDown();
-//		if(temp == BUTTON9_NUM) break;//暂时作为仿真达到干燥条件跳出循环用的按键
+		if(!drying_flag) {stop_dry();return;}
 	}
+	microwave_mode = 0;
 	
 	//****************S3:开启进气阀恢复常压，准备提示取衣******************************************
 	MICROWAVE	= 1;//关闭磁控管

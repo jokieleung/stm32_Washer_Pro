@@ -3,7 +3,7 @@
 <title>Static Call Graph - [..\OBJ\IOT_BEEP.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\OBJ\IOT_BEEP.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Tue Apr 03 00:10:26 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Tue Apr 03 23:48:23 2018
 <BR><P>
 <H3>Maximum Stack Usage =       2240 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -12,14 +12,14 @@ TIM4_IRQHandler &rArr; gizwitsHandle &rArr; gizProtocolGetDeviceInfo &rArr; gizP
 <H3>
 Functions with no stack information
 </H3><UL>
- <LI><a href="#[126]">__user_initial_stackheap</a>
+ <LI><a href="#[127]">__user_initial_stackheap</a>
 </UL>
 </UL>
 <P>
 <H3>
 Mutually Recursive functions
-</H3> <LI><a href="#[e8]">rbWrite</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[e8]">rbWrite</a><BR>
- <LI><a href="#[e6]">rbRead</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[e6]">rbRead</a><BR>
+</H3> <LI><a href="#[e9]">rbWrite</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[e9]">rbWrite</a><BR>
+ <LI><a href="#[e7]">rbRead</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[e7]">rbRead</a><BR>
  <LI><a href="#[1f]">ADC1_2_IRQHandler</a>&nbsp;&nbsp;&nbsp;&rArr;&nbsp;&nbsp;&nbsp;<a href="#[1f]">ADC1_2_IRQHandler</a><BR>
 </UL>
 <P>
@@ -118,15 +118,15 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry
 </UL>
 
-<P><STRONG><a name="[144]"></a>__scatterload_rt2_thumb_only</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
+<P><STRONG><a name="[145]"></a>__scatterload_rt2_thumb_only</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
 
-<P><STRONG><a name="[145]"></a>__scatterload_null</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
+<P><STRONG><a name="[146]"></a>__scatterload_null</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __scatter.o(!!!scatter), UNUSED)
 
-<P><STRONG><a name="[146]"></a>__decompress</STRONG> (Thumb, 90 bytes, Stack size unknown bytes, __dczerorl2.o(!!dczerorl2), UNUSED)
+<P><STRONG><a name="[147]"></a>__decompress</STRONG> (Thumb, 90 bytes, Stack size unknown bytes, __dczerorl2.o(!!dczerorl2), UNUSED)
 
-<P><STRONG><a name="[147]"></a>__decompress1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl2.o(!!dczerorl2), UNUSED)
+<P><STRONG><a name="[148]"></a>__decompress1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __dczerorl2.o(!!dczerorl2), UNUSED)
 
-<P><STRONG><a name="[148]"></a>__scatterload_zeroinit</STRONG> (Thumb, 28 bytes, Stack size unknown bytes, __scatter_zi.o(!!handler_zi), UNUSED)
+<P><STRONG><a name="[149]"></a>__scatterload_zeroinit</STRONG> (Thumb, 28 bytes, Stack size unknown bytes, __scatter_zi.o(!!handler_zi), UNUSED)
 
 <P><STRONG><a name="[51]"></a>_printf_d</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, _printf_d.o(.ARM.Collect$$_printf_percent$$00000009))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72 + Unknown Stack Size
@@ -135,82 +135,82 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec
 </UL>
 
-<P><STRONG><a name="[11d]"></a>_printf_percent</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000))
-<BR><BR>[Called By]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf
+<P><STRONG><a name="[11e]"></a>_printf_percent</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, _printf_percent.o(.ARM.Collect$$_printf_percent$$00000000))
+<BR><BR>[Called By]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf
 </UL>
 
-<P><STRONG><a name="[149]"></a>_printf_percent_end</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, _printf_percent_end.o(.ARM.Collect$$_printf_percent$$00000017))
+<P><STRONG><a name="[14a]"></a>_printf_percent_end</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, _printf_percent_end.o(.ARM.Collect$$_printf_percent$$00000017))
 
 <P><STRONG><a name="[56]"></a>__rt_lib_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit.o(.ARM.Collect$$libinit$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_li
 </UL>
 
-<P><STRONG><a name="[14a]"></a>__rt_lib_init_alloca_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000002E))
+<P><STRONG><a name="[14b]"></a>__rt_lib_init_alloca_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000002E))
 
-<P><STRONG><a name="[14b]"></a>__rt_lib_init_argv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000002C))
+<P><STRONG><a name="[14c]"></a>__rt_lib_init_argv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000002C))
 
-<P><STRONG><a name="[14c]"></a>__rt_lib_init_atexit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001B))
+<P><STRONG><a name="[14d]"></a>__rt_lib_init_atexit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001B))
 
-<P><STRONG><a name="[14d]"></a>__rt_lib_init_clock_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000021))
+<P><STRONG><a name="[14e]"></a>__rt_lib_init_clock_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000021))
 
-<P><STRONG><a name="[14e]"></a>__rt_lib_init_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000032))
+<P><STRONG><a name="[14f]"></a>__rt_lib_init_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000032))
 
-<P><STRONG><a name="[14f]"></a>__rt_lib_init_exceptions_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000030))
+<P><STRONG><a name="[150]"></a>__rt_lib_init_exceptions_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000030))
 
-<P><STRONG><a name="[150]"></a>__rt_lib_init_fp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000002))
+<P><STRONG><a name="[151]"></a>__rt_lib_init_fp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000002))
 
-<P><STRONG><a name="[151]"></a>__rt_lib_init_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001F))
+<P><STRONG><a name="[152]"></a>__rt_lib_init_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001F))
 
-<P><STRONG><a name="[152]"></a>__rt_lib_init_getenv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000023))
+<P><STRONG><a name="[153]"></a>__rt_lib_init_getenv_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000023))
 
-<P><STRONG><a name="[153]"></a>__rt_lib_init_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000A))
+<P><STRONG><a name="[154]"></a>__rt_lib_init_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000A))
 
-<P><STRONG><a name="[154]"></a>__rt_lib_init_lc_collate_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000011))
+<P><STRONG><a name="[155]"></a>__rt_lib_init_lc_collate_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000011))
 
-<P><STRONG><a name="[155]"></a>__rt_lib_init_lc_ctype_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000013))
+<P><STRONG><a name="[156]"></a>__rt_lib_init_lc_ctype_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000013))
 
-<P><STRONG><a name="[156]"></a>__rt_lib_init_lc_monetary_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000015))
+<P><STRONG><a name="[157]"></a>__rt_lib_init_lc_monetary_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000015))
 
-<P><STRONG><a name="[157]"></a>__rt_lib_init_lc_numeric_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000017))
+<P><STRONG><a name="[158]"></a>__rt_lib_init_lc_numeric_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000017))
 
-<P><STRONG><a name="[158]"></a>__rt_lib_init_lc_time_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000019))
+<P><STRONG><a name="[159]"></a>__rt_lib_init_lc_time_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000019))
 
-<P><STRONG><a name="[159]"></a>__rt_lib_init_preinit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000004))
+<P><STRONG><a name="[15a]"></a>__rt_lib_init_preinit_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000004))
 
-<P><STRONG><a name="[15a]"></a>__rt_lib_init_rand_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000E))
+<P><STRONG><a name="[15b]"></a>__rt_lib_init_rand_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000E))
 
-<P><STRONG><a name="[15b]"></a>__rt_lib_init_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000033))
+<P><STRONG><a name="[15c]"></a>__rt_lib_init_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000033))
 
-<P><STRONG><a name="[15c]"></a>__rt_lib_init_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001D))
+<P><STRONG><a name="[15d]"></a>__rt_lib_init_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000001D))
 
-<P><STRONG><a name="[15d]"></a>__rt_lib_init_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000025))
+<P><STRONG><a name="[15e]"></a>__rt_lib_init_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$00000025))
 
-<P><STRONG><a name="[15e]"></a>__rt_lib_init_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000C))
+<P><STRONG><a name="[15f]"></a>__rt_lib_init_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libinit2.o(.ARM.Collect$$libinit$$0000000C))
 
 <P><STRONG><a name="[5b]"></a>__rt_lib_shutdown</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown.o(.ARM.Collect$$libshutdown$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit_ls
 </UL>
 
-<P><STRONG><a name="[15f]"></a>__rt_lib_shutdown_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000002))
+<P><STRONG><a name="[160]"></a>__rt_lib_shutdown_cpp_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000002))
 
-<P><STRONG><a name="[160]"></a>__rt_lib_shutdown_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000007))
+<P><STRONG><a name="[161]"></a>__rt_lib_shutdown_fp_trap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000007))
 
-<P><STRONG><a name="[161]"></a>__rt_lib_shutdown_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F))
+<P><STRONG><a name="[162]"></a>__rt_lib_shutdown_heap_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F))
 
-<P><STRONG><a name="[162]"></a>__rt_lib_shutdown_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000010))
+<P><STRONG><a name="[163]"></a>__rt_lib_shutdown_return</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000010))
 
-<P><STRONG><a name="[163]"></a>__rt_lib_shutdown_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A))
+<P><STRONG><a name="[164]"></a>__rt_lib_shutdown_signal_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A))
 
-<P><STRONG><a name="[164]"></a>__rt_lib_shutdown_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000004))
+<P><STRONG><a name="[165]"></a>__rt_lib_shutdown_stdio_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$00000004))
 
-<P><STRONG><a name="[165]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C))
+<P><STRONG><a name="[166]"></a>__rt_lib_shutdown_user_alloc_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C))
 
 <P><STRONG><a name="[4f]"></a>__rt_entry</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry.o(.ARM.Collect$$rtentry$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__main
 <LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload_rt2
 </UL>
 
-<P><STRONG><a name="[166]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000002))
+<P><STRONG><a name="[167]"></a>__rt_entry_presh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000002))
 
 <P><STRONG><a name="[53]"></a>__rt_entry_sh</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry4.o(.ARM.Collect$$rtentry$$00000004))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
@@ -223,7 +223,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[56]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_init
 </UL>
 
-<P><STRONG><a name="[167]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
+<P><STRONG><a name="[168]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[57]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
 <BR><BR>[Stack]<UL><LI>Max Depth = 192 + Unknown Stack Size
@@ -233,9 +233,9 @@ Global Symbols
 <LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
 </UL>
 
-<P><STRONG><a name="[168]"></a>__rt_entry_postli_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000C))
+<P><STRONG><a name="[169]"></a>__rt_entry_postli_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000C))
 
-<P><STRONG><a name="[127]"></a>__rt_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit.o(.ARM.Collect$$rtexit$$00000000))
+<P><STRONG><a name="[128]"></a>__rt_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit.o(.ARM.Collect$$rtexit$$00000000))
 <BR><BR>[Called By]<UL><LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exit
 </UL>
 
@@ -243,7 +243,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_lib_shutdown
 </UL>
 
-<P><STRONG><a name="[169]"></a>__rt_exit_prels_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000002))
+<P><STRONG><a name="[16a]"></a>__rt_exit_prels_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000002))
 
 <P><STRONG><a name="[5c]"></a>__rt_exit_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rtexit2.o(.ARM.Collect$$rtexit$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sys_exit
@@ -261,7 +261,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[63]"></a>userHandle</STRONG> (Thumb, 106 bytes, Stack size 8 bytes, main.o(.text))
+<P><STRONG><a name="[63]"></a>userHandle</STRONG> (Thumb, 126 bytes, Stack size 8 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = userHandle &rArr; __aeabi_f2iz
 </UL>
 <BR>[Calls]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
@@ -329,7 +329,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_hd.o(.text)
 </UL>
-<P><STRONG><a name="[16a]"></a>SystemCoreClockUpdate</STRONG> (Thumb, 142 bytes, Stack size 8 bytes, system_stm32f10x.o(.text), UNUSED)
+<P><STRONG><a name="[16b]"></a>SystemCoreClockUpdate</STRONG> (Thumb, 142 bytes, Stack size 8 bytes, system_stm32f10x.o(.text), UNUSED)
 
 <P><STRONG><a name="[5f]"></a>TIM3_Int_Init</STRONG> (Thumb, 90 bytes, Stack size 32 bytes, timer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = TIM3_Int_Init &rArr; NVIC_Init
@@ -435,7 +435,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetEveryDisPara
 <LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dry_func
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WashDryfunc
-<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stop_dry
+<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stop_dry
 </UL>
 
 <P><STRONG><a name="[9d]"></a>Adc3_Init</STRONG> (Thumb, 132 bytes, Stack size 32 bytes, adc.o(.text), UNUSED)
@@ -643,8 +643,6 @@ Global Symbols
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetEveryDisPara
-<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dry_func
-<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WashDryfunc
 </UL>
 
 <P><STRONG><a name="[b3]"></a>SHT2x_GetHumiPoll</STRONG> (Thumb, 172 bytes, Stack size 64 bytes, sht2x.o(.text))
@@ -679,17 +677,18 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[2b]"></a>TIM4_IRQHandler</STRONG> (Thumb, 276 bytes, Stack size 16 bytes, tim4.o(.text))
+<P><STRONG><a name="[2b]"></a>TIM4_IRQHandler</STRONG> (Thumb, 284 bytes, Stack size 16 bytes, tim4.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 2240 + Unknown Stack Size
 <LI>Call Chain = TIM4_IRQHandler &rArr; gizwitsHandle &rArr; gizProtocolGetDeviceInfo &rArr; gizProtocolSum &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ifButtonDown
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsHandle
 <LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;VoiceDetect
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateWashInAndOut
 <LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateRemainingWashTim
 <LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateEveryDisPara
 <LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Rst_Wash
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Rst_Dry
+<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Rst_Dry
 <LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetEveryDisPara
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_us
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_GetITStatus
@@ -710,7 +709,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[3f]"></a>TIM5_IRQHandler</STRONG> (Thumb, 148 bytes, Stack size 8 bytes, tim5.o(.text))
+<P><STRONG><a name="[3f]"></a>TIM5_IRQHandler</STRONG> (Thumb, 164 bytes, Stack size 8 bytes, tim5.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = TIM5_IRQHandler &rArr; TIM_GetITStatus
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_GetITStatus
@@ -732,33 +731,33 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[bc]"></a>UpdateDisTemp</STRONG> (Thumb, 80 bytes, Stack size 32 bytes, usart_to_lcd.o(.text))
+<P><STRONG><a name="[bd]"></a>UpdateDisTemp</STRONG> (Thumb, 80 bytes, Stack size 32 bytes, usart_to_lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = UpdateDisTemp &rArr; __aeabi_fmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateEveryDisPara
 </UL>
 
-<P><STRONG><a name="[c0]"></a>UpdateDisHumi</STRONG> (Thumb, 80 bytes, Stack size 32 bytes, usart_to_lcd.o(.text))
+<P><STRONG><a name="[c1]"></a>UpdateDisHumi</STRONG> (Thumb, 80 bytes, Stack size 32 bytes, usart_to_lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = UpdateDisHumi &rArr; __aeabi_fmul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateEveryDisPara
 </UL>
 
-<P><STRONG><a name="[c1]"></a>UpdateDisPres</STRONG> (Thumb, 72 bytes, Stack size 32 bytes, usart_to_lcd.o(.text))
+<P><STRONG><a name="[c2]"></a>UpdateDisPres</STRONG> (Thumb, 72 bytes, Stack size 32 bytes, usart_to_lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = UpdateDisPres &rArr; __aeabi_f2iz
 </UL>
-<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2iz
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateEveryDisPara
@@ -767,30 +766,41 @@ Global Symbols
 <P><STRONG><a name="[ba]"></a>UpdateRemainingWashTim</STRONG> (Thumb, 146 bytes, Stack size 32 bytes, usart_to_lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = UpdateRemainingWashTim
 </UL>
-<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
 <LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateEveryDisPara
+<BR>[Called By]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ifButtonDown
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateEveryDisPara
 <LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM4_IRQHandler
-<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsEventProcess
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsEventProcess
 </UL>
 
-<P><STRONG><a name="[c2]"></a>UpdateUsedDryTim</STRONG> (Thumb, 146 bytes, Stack size 32 bytes, usart_to_lcd.o(.text))
+<P><STRONG><a name="[bb]"></a>UpdateWashInAndOut</STRONG> (Thumb, 132 bytes, Stack size 32 bytes, usart_to_lcd.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = UpdateWashInAndOut
+</UL>
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ifButtonDown
+<LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM4_IRQHandler
+</UL>
+
+<P><STRONG><a name="[c3]"></a>UpdateUsedDryTim</STRONG> (Thumb, 146 bytes, Stack size 32 bytes, usart_to_lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = UpdateUsedDryTim
 </UL>
-<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
 <LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateEveryDisPara
 </UL>
 
-<P><STRONG><a name="[c3]"></a>UpdateUsedWholeTim</STRONG> (Thumb, 146 bytes, Stack size 32 bytes, usart_to_lcd.o(.text))
+<P><STRONG><a name="[c4]"></a>UpdateUsedWholeTim</STRONG> (Thumb, 146 bytes, Stack size 32 bytes, usart_to_lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = UpdateUsedWholeTim
 </UL>
-<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
 <LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateEveryDisPara
@@ -799,22 +809,22 @@ Global Symbols
 <P><STRONG><a name="[73]"></a>JumpToFinishedUI</STRONG> (Thumb, 50 bytes, Stack size 24 bytes, usart_to_lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = JumpToFinishedUI
 </UL>
-<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
 </UL>
 <BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[71]"></a>JumpToUI</STRONG> (Thumb, 42 bytes, Stack size 16 bytes, usart_to_lcd.o(.text))
+<P><STRONG><a name="[71]"></a>JumpToUI</STRONG> (Thumb, 106 bytes, Stack size 16 bytes, usart_to_lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = JumpToUI
 </UL>
-<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
 </UL>
 <BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[b5]"></a>GetEveryDisPara</STRONG> (Thumb, 108 bytes, Stack size 16 bytes, usart_to_lcd.o(.text))
+<P><STRONG><a name="[b5]"></a>GetEveryDisPara</STRONG> (Thumb, 92 bytes, Stack size 16 bytes, usart_to_lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = GetEveryDisPara &rArr; SHT2x_GetHumiPoll &rArr; I2C_Read_Byte &rArr; I2C_NAck &rArr; I2C_SDA_OUT &rArr; GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SHT2x_GetHumiPoll
@@ -825,21 +835,24 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM4_IRQHandler
 </UL>
 
-<P><STRONG><a name="[b6]"></a>UpdateEveryDisPara</STRONG> (Thumb, 180 bytes, Stack size 32 bytes, usart_to_lcd.o(.text))
+<P><STRONG><a name="[b6]"></a>UpdateEveryDisPara</STRONG> (Thumb, 62 bytes, Stack size 32 bytes, usart_to_lcd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = UpdateEveryDisPara &rArr; UpdateDisPres &rArr; __aeabi_f2iz
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateUsedWholeTim
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateUsedDryTim
-<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisPres
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisHumi
-<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisTemp
+<BR>[Calls]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateUsedWholeTim
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateUsedDryTim
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisPres
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisHumi
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisTemp
 <LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateRemainingWashTim
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM4_IRQHandler
 </UL>
 
-<P><STRONG><a name="[b8]"></a>ifButtonDown</STRONG> (Thumb, 398 bytes, Stack size 36 bytes, usart_to_lcd.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = ifButtonDown
+<P><STRONG><a name="[b8]"></a>ifButtonDown</STRONG> (Thumb, 456 bytes, Stack size 56 bytes, usart_to_lcd.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = ifButtonDown &rArr; UpdateWashInAndOut
+</UL>
+<BR>[Calls]<UL><LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateWashInAndOut
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateRemainingWashTim
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM4_IRQHandler
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WashDryfunc
@@ -869,7 +882,7 @@ Global Symbols
 <P><STRONG><a name="[65]"></a>delay_init</STRONG> (Thumb, 50 bytes, Stack size 8 bytes, delay.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = delay_init
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_CLKSourceConfig
+<BR>[Calls]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_CLKSourceConfig
 </UL>
 <BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -886,8 +899,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[98]"></a>delay_ms</STRONG> (Thumb, 72 bytes, Stack size 0 bytes, delay.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateUsedWholeTim
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateUsedDryTim
+<BR><BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateUsedWholeTim
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateUsedDryTim
 <LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateRemainingWashTim
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SHT2x_GetHumiPoll
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SHT2x_GetTempPoll
@@ -1092,7 +1105,7 @@ Global Symbols
 <P><STRONG><a name="[d]"></a>WWDG_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f10x_hd.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_hd.o(RESET)
 </UL>
-<P><STRONG><a name="[126]"></a>__user_initial_stackheap</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, startup_stm32f10x_hd.o(.text))
+<P><STRONG><a name="[127]"></a>__user_initial_stackheap</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, startup_stm32f10x_hd.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
@@ -1111,20 +1124,20 @@ Global Symbols
 <LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM3_Int_Init
 </UL>
 
-<P><STRONG><a name="[16b]"></a>NVIC_SetVectorTable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, misc.o(.text), UNUSED)
+<P><STRONG><a name="[16c]"></a>NVIC_SetVectorTable</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, misc.o(.text), UNUSED)
 
-<P><STRONG><a name="[16c]"></a>NVIC_SystemLPConfig</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, misc.o(.text), UNUSED)
+<P><STRONG><a name="[16d]"></a>NVIC_SystemLPConfig</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, misc.o(.text), UNUSED)
 
-<P><STRONG><a name="[c4]"></a>SysTick_CLKSourceConfig</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, misc.o(.text))
+<P><STRONG><a name="[c5]"></a>SysTick_CLKSourceConfig</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, misc.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_init
 </UL>
 
-<P><STRONG><a name="[c5]"></a>GPIO_DeInit</STRONG> (Thumb, 172 bytes, Stack size 8 bytes, stm32f10x_gpio.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphResetCmd
+<P><STRONG><a name="[c6]"></a>GPIO_DeInit</STRONG> (Thumb, 172 bytes, Stack size 8 bytes, stm32f10x_gpio.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphResetCmd
 </UL>
 
-<P><STRONG><a name="[c7]"></a>GPIO_AFIODeInit</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, stm32f10x_gpio.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphResetCmd
+<P><STRONG><a name="[c8]"></a>GPIO_AFIODeInit</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, stm32f10x_gpio.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphResetCmd
 </UL>
 
 <P><STRONG><a name="[85]"></a>GPIO_Init</STRONG> (Thumb, 278 bytes, Stack size 24 bytes, stm32f10x_gpio.o(.text))
@@ -1143,18 +1156,18 @@ Global Symbols
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Adc_Init
 </UL>
 
-<P><STRONG><a name="[16d]"></a>GPIO_StructInit</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
+<P><STRONG><a name="[16e]"></a>GPIO_StructInit</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
 
 <P><STRONG><a name="[ab]"></a>GPIO_ReadInputDataBit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Read_Byte
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Wait_Ack
 </UL>
 
-<P><STRONG><a name="[16e]"></a>GPIO_ReadInputData</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
+<P><STRONG><a name="[16f]"></a>GPIO_ReadInputData</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[16f]"></a>GPIO_ReadOutputDataBit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
+<P><STRONG><a name="[170]"></a>GPIO_ReadOutputDataBit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[170]"></a>GPIO_ReadOutputData</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
+<P><STRONG><a name="[171]"></a>GPIO_ReadOutputData</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
 
 <P><STRONG><a name="[a2]"></a>GPIO_SetBits</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Read_Byte
@@ -1179,76 +1192,76 @@ Global Symbols
 <LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;BEEP_Init
 </UL>
 
-<P><STRONG><a name="[171]"></a>GPIO_WriteBit</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
+<P><STRONG><a name="[172]"></a>GPIO_WriteBit</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[172]"></a>GPIO_Write</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
+<P><STRONG><a name="[173]"></a>GPIO_Write</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[173]"></a>GPIO_PinLockConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
+<P><STRONG><a name="[174]"></a>GPIO_PinLockConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[174]"></a>GPIO_EventOutputConfig</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
+<P><STRONG><a name="[175]"></a>GPIO_EventOutputConfig</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[175]"></a>GPIO_EventOutputCmd</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
+<P><STRONG><a name="[176]"></a>GPIO_EventOutputCmd</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[176]"></a>GPIO_PinRemapConfig</STRONG> (Thumb, 138 bytes, Stack size 20 bytes, stm32f10x_gpio.o(.text), UNUSED)
+<P><STRONG><a name="[177]"></a>GPIO_PinRemapConfig</STRONG> (Thumb, 138 bytes, Stack size 20 bytes, stm32f10x_gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[177]"></a>GPIO_EXTILineConfig</STRONG> (Thumb, 66 bytes, Stack size 12 bytes, stm32f10x_gpio.o(.text), UNUSED)
+<P><STRONG><a name="[178]"></a>GPIO_EXTILineConfig</STRONG> (Thumb, 66 bytes, Stack size 12 bytes, stm32f10x_gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[178]"></a>GPIO_ETH_MediaInterfaceConfig</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
+<P><STRONG><a name="[179]"></a>GPIO_ETH_MediaInterfaceConfig</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
 
-<P><STRONG><a name="[179]"></a>RCC_DeInit</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<P><STRONG><a name="[17a]"></a>RCC_DeInit</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[17a]"></a>RCC_HSEConfig</STRONG> (Thumb, 70 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<P><STRONG><a name="[17b]"></a>RCC_HSEConfig</STRONG> (Thumb, 70 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[c9]"></a>RCC_GetFlagStatus</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, stm32f10x_rcc.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_WaitForHSEStartUp
+<P><STRONG><a name="[ca]"></a>RCC_GetFlagStatus</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_WaitForHSEStartUp
 </UL>
 
-<P><STRONG><a name="[c8]"></a>RCC_WaitForHSEStartUp</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, stm32f10x_rcc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_GetFlagStatus
+<P><STRONG><a name="[c9]"></a>RCC_WaitForHSEStartUp</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_GetFlagStatus
 </UL>
 
-<P><STRONG><a name="[17b]"></a>RCC_AdjustHSICalibrationValue</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<P><STRONG><a name="[17c]"></a>RCC_AdjustHSICalibrationValue</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[17c]"></a>RCC_HSICmd</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<P><STRONG><a name="[17d]"></a>RCC_HSICmd</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[17d]"></a>RCC_PLLConfig</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<P><STRONG><a name="[17e]"></a>RCC_PLLConfig</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[17e]"></a>RCC_PLLCmd</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<P><STRONG><a name="[17f]"></a>RCC_PLLCmd</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[17f]"></a>RCC_SYSCLKConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<P><STRONG><a name="[180]"></a>RCC_SYSCLKConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[180]"></a>RCC_GetSYSCLKSource</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<P><STRONG><a name="[181]"></a>RCC_GetSYSCLKSource</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[181]"></a>RCC_HCLKConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<P><STRONG><a name="[182]"></a>RCC_HCLKConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[182]"></a>RCC_PCLK1Config</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<P><STRONG><a name="[183]"></a>RCC_PCLK1Config</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[183]"></a>RCC_PCLK2Config</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<P><STRONG><a name="[184]"></a>RCC_PCLK2Config</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[184]"></a>RCC_ITConfig</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<P><STRONG><a name="[185]"></a>RCC_ITConfig</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[185]"></a>RCC_USBCLKConfig</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<P><STRONG><a name="[186]"></a>RCC_USBCLKConfig</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
 <P><STRONG><a name="[8a]"></a>RCC_ADCCLKConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Adc3_Init
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Adc_Init
 </UL>
 
-<P><STRONG><a name="[186]"></a>RCC_LSEConfig</STRONG> (Thumb, 50 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<P><STRONG><a name="[187]"></a>RCC_LSEConfig</STRONG> (Thumb, 50 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[187]"></a>RCC_LSICmd</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<P><STRONG><a name="[188]"></a>RCC_LSICmd</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[188]"></a>RCC_RTCCLKConfig</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<P><STRONG><a name="[189]"></a>RCC_RTCCLKConfig</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[189]"></a>RCC_RTCCLKCmd</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<P><STRONG><a name="[18a]"></a>RCC_RTCCLKCmd</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[dc]"></a>RCC_GetClocksFreq</STRONG> (Thumb, 192 bytes, Stack size 12 bytes, stm32f10x_rcc.o(.text))
+<P><STRONG><a name="[dd]"></a>RCC_GetClocksFreq</STRONG> (Thumb, 192 bytes, Stack size 12 bytes, stm32f10x_rcc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = RCC_GetClocksFreq
 </UL>
 <BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_Init
 </UL>
 
-<P><STRONG><a name="[18a]"></a>RCC_AHBPeriphClockCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<P><STRONG><a name="[18b]"></a>RCC_AHBPeriphClockCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
 <P><STRONG><a name="[83]"></a>RCC_APB2PeriphClockCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_INIT
@@ -1270,34 +1283,34 @@ Global Symbols
 <LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM3_Int_Init
 </UL>
 
-<P><STRONG><a name="[c6]"></a>RCC_APB2PeriphResetCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_DeInit
-<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_AFIODeInit
-<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_DeInit
+<P><STRONG><a name="[c7]"></a>RCC_APB2PeriphResetCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_DeInit
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_AFIODeInit
+<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_DeInit
 <LI><a href="#[8b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_DeInit
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_DeInit
 </UL>
 
-<P><STRONG><a name="[cb]"></a>RCC_APB1PeriphResetCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_DeInit
+<P><STRONG><a name="[cc]"></a>RCC_APB1PeriphResetCmd</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_DeInit
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_DeInit
 </UL>
 
-<P><STRONG><a name="[18b]"></a>RCC_BackupResetCmd</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<P><STRONG><a name="[18c]"></a>RCC_BackupResetCmd</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[18c]"></a>RCC_ClockSecuritySystemCmd</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<P><STRONG><a name="[18d]"></a>RCC_ClockSecuritySystemCmd</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[18d]"></a>RCC_MCOConfig</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<P><STRONG><a name="[18e]"></a>RCC_MCOConfig</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[18e]"></a>RCC_ClearFlag</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<P><STRONG><a name="[18f]"></a>RCC_ClearFlag</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[18f]"></a>RCC_GetITStatus</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<P><STRONG><a name="[190]"></a>RCC_GetITStatus</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[190]"></a>RCC_ClearITPendingBit</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
+<P><STRONG><a name="[191]"></a>RCC_ClearITPendingBit</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_rcc.o(.text), UNUSED)
 
-<P><STRONG><a name="[ca]"></a>TIM_DeInit</STRONG> (Thumb, 424 bytes, Stack size 8 bytes, stm32f10x_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphResetCmd
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphResetCmd
+<P><STRONG><a name="[cb]"></a>TIM_DeInit</STRONG> (Thumb, 424 bytes, Stack size 8 bytes, stm32f10x_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphResetCmd
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphResetCmd
 </UL>
 
 <P><STRONG><a name="[79]"></a>TIM_TimeBaseInit</STRONG> (Thumb, 122 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text))
@@ -1306,59 +1319,59 @@ Global Symbols
 <LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM3_Int_Init
 </UL>
 
-<P><STRONG><a name="[191]"></a>TIM_OC1Init</STRONG> (Thumb, 132 bytes, Stack size 16 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[192]"></a>TIM_OC1Init</STRONG> (Thumb, 132 bytes, Stack size 16 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[192]"></a>TIM_OC2Init</STRONG> (Thumb, 154 bytes, Stack size 16 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[193]"></a>TIM_OC2Init</STRONG> (Thumb, 154 bytes, Stack size 16 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[193]"></a>TIM_OC3Init</STRONG> (Thumb, 150 bytes, Stack size 16 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[194]"></a>TIM_OC3Init</STRONG> (Thumb, 150 bytes, Stack size 16 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[194]"></a>TIM_OC4Init</STRONG> (Thumb, 182 bytes, Stack size 16 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[195]"></a>TIM_OC4Init</STRONG> (Thumb, 182 bytes, Stack size 16 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[d4]"></a>TIM_SetIC4Prescaler</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ICInit
+<P><STRONG><a name="[d5]"></a>TIM_SetIC4Prescaler</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ICInit
 </UL>
 
-<P><STRONG><a name="[d2]"></a>TIM_SetIC3Prescaler</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ICInit
+<P><STRONG><a name="[d3]"></a>TIM_SetIC3Prescaler</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ICInit
 </UL>
 
-<P><STRONG><a name="[d0]"></a>TIM_SetIC2Prescaler</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_PWMIConfig
-<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ICInit
+<P><STRONG><a name="[d1]"></a>TIM_SetIC2Prescaler</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_PWMIConfig
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ICInit
 </UL>
 
-<P><STRONG><a name="[ce]"></a>TIM_SetIC1Prescaler</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_PWMIConfig
-<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ICInit
+<P><STRONG><a name="[cf]"></a>TIM_SetIC1Prescaler</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_PWMIConfig
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ICInit
 </UL>
 
-<P><STRONG><a name="[cc]"></a>TIM_ICInit</STRONG> (Thumb, 150 bytes, Stack size 16 bytes, stm32f10x_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetIC1Prescaler
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetIC2Prescaler
-<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetIC3Prescaler
-<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetIC4Prescaler
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TI1_Config
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TI2_Config
-<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TI3_Config
-<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TI4_Config
+<P><STRONG><a name="[cd]"></a>TIM_ICInit</STRONG> (Thumb, 150 bytes, Stack size 16 bytes, stm32f10x_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetIC3Prescaler
+<LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetIC4Prescaler
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TI1_Config
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TI2_Config
+<LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TI3_Config
+<LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TI4_Config
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetIC1Prescaler
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetIC2Prescaler
 </UL>
 
-<P><STRONG><a name="[d5]"></a>TIM_PWMIConfig</STRONG> (Thumb, 124 bytes, Stack size 24 bytes, stm32f10x_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetIC1Prescaler
-<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetIC2Prescaler
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TI1_Config
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TI2_Config
+<P><STRONG><a name="[d6]"></a>TIM_PWMIConfig</STRONG> (Thumb, 124 bytes, Stack size 24 bytes, stm32f10x_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TI1_Config
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TI2_Config
+<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetIC1Prescaler
+<LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetIC2Prescaler
 </UL>
 
-<P><STRONG><a name="[195]"></a>TIM_BDTRConfig</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[196]"></a>TIM_BDTRConfig</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[196]"></a>TIM_TimeBaseStructInit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[197]"></a>TIM_TimeBaseStructInit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[197]"></a>TIM_OCStructInit</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[198]"></a>TIM_OCStructInit</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[198]"></a>TIM_ICStructInit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[199]"></a>TIM_ICStructInit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[199]"></a>TIM_BDTRStructInit</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[19a]"></a>TIM_BDTRStructInit</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
 <P><STRONG><a name="[7c]"></a>TIM_Cmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM5_Int_Init
@@ -1366,7 +1379,7 @@ Global Symbols
 <LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM3_Int_Init
 </UL>
 
-<P><STRONG><a name="[19a]"></a>TIM_CtrlPWMOutputs</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[19b]"></a>TIM_CtrlPWMOutputs</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
 <P><STRONG><a name="[7a]"></a>TIM_ITConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM5_Int_Init
@@ -1374,151 +1387,151 @@ Global Symbols
 <LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM3_Int_Init
 </UL>
 
-<P><STRONG><a name="[19b]"></a>TIM_GenerateEvent</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[19c]"></a>TIM_GenerateEvent</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[19c]"></a>TIM_DMAConfig</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[19d]"></a>TIM_DMAConfig</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[19d]"></a>TIM_DMACmd</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[19e]"></a>TIM_DMACmd</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[19e]"></a>TIM_InternalClockConfig</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[19f]"></a>TIM_InternalClockConfig</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[d7]"></a>TIM_SelectInputTrigger</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TIxExternalClockConfig
-<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ITRxExternalClockConfig
+<P><STRONG><a name="[d8]"></a>TIM_SelectInputTrigger</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TIxExternalClockConfig
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ITRxExternalClockConfig
 </UL>
 
-<P><STRONG><a name="[d6]"></a>TIM_ITRxExternalClockConfig</STRONG> (Thumb, 24 bytes, Stack size 12 bytes, stm32f10x_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SelectInputTrigger
+<P><STRONG><a name="[d7]"></a>TIM_ITRxExternalClockConfig</STRONG> (Thumb, 24 bytes, Stack size 12 bytes, stm32f10x_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SelectInputTrigger
 </UL>
 
-<P><STRONG><a name="[d8]"></a>TIM_TIxExternalClockConfig</STRONG> (Thumb, 62 bytes, Stack size 24 bytes, stm32f10x_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TI1_Config
-<LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TI2_Config
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SelectInputTrigger
+<P><STRONG><a name="[d9]"></a>TIM_TIxExternalClockConfig</STRONG> (Thumb, 62 bytes, Stack size 24 bytes, stm32f10x_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TI1_Config
+<LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TI2_Config
+<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SelectInputTrigger
 </UL>
 
-<P><STRONG><a name="[da]"></a>TIM_ETRConfig</STRONG> (Thumb, 28 bytes, Stack size 12 bytes, stm32f10x_tim.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ETRClockMode2Config
-<LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ETRClockMode1Config
+<P><STRONG><a name="[db]"></a>TIM_ETRConfig</STRONG> (Thumb, 28 bytes, Stack size 12 bytes, stm32f10x_tim.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ETRClockMode2Config
+<LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ETRClockMode1Config
 </UL>
 
-<P><STRONG><a name="[d9]"></a>TIM_ETRClockMode1Config</STRONG> (Thumb, 54 bytes, Stack size 24 bytes, stm32f10x_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ETRConfig
+<P><STRONG><a name="[da]"></a>TIM_ETRClockMode1Config</STRONG> (Thumb, 54 bytes, Stack size 24 bytes, stm32f10x_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ETRConfig
 </UL>
 
-<P><STRONG><a name="[db]"></a>TIM_ETRClockMode2Config</STRONG> (Thumb, 32 bytes, Stack size 20 bytes, stm32f10x_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ETRConfig
+<P><STRONG><a name="[dc]"></a>TIM_ETRClockMode2Config</STRONG> (Thumb, 32 bytes, Stack size 20 bytes, stm32f10x_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ETRConfig
 </UL>
 
-<P><STRONG><a name="[19f]"></a>TIM_PrescalerConfig</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1a0]"></a>TIM_PrescalerConfig</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1a0]"></a>TIM_CounterModeConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1a1]"></a>TIM_CounterModeConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1a1]"></a>TIM_EncoderInterfaceConfig</STRONG> (Thumb, 66 bytes, Stack size 20 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1a2]"></a>TIM_EncoderInterfaceConfig</STRONG> (Thumb, 66 bytes, Stack size 20 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1a2]"></a>TIM_ForcedOC1Config</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1a3]"></a>TIM_ForcedOC1Config</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1a3]"></a>TIM_ForcedOC2Config</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1a4]"></a>TIM_ForcedOC2Config</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1a4]"></a>TIM_ForcedOC3Config</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1a5]"></a>TIM_ForcedOC3Config</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1a5]"></a>TIM_ForcedOC4Config</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1a6]"></a>TIM_ForcedOC4Config</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1a6]"></a>TIM_ARRPreloadConfig</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1a7]"></a>TIM_ARRPreloadConfig</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1a7]"></a>TIM_SelectCOM</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1a8]"></a>TIM_SelectCOM</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1a8]"></a>TIM_SelectCCDMA</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1a9]"></a>TIM_SelectCCDMA</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1a9]"></a>TIM_CCPreloadControl</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1aa]"></a>TIM_CCPreloadControl</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1aa]"></a>TIM_OC1PreloadConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1ab]"></a>TIM_OC1PreloadConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1ab]"></a>TIM_OC2PreloadConfig</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1ac]"></a>TIM_OC2PreloadConfig</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1ac]"></a>TIM_OC3PreloadConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1ad]"></a>TIM_OC3PreloadConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1ad]"></a>TIM_OC4PreloadConfig</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1ae]"></a>TIM_OC4PreloadConfig</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1ae]"></a>TIM_OC1FastConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1af]"></a>TIM_OC1FastConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1af]"></a>TIM_OC2FastConfig</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1b0]"></a>TIM_OC2FastConfig</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1b0]"></a>TIM_OC3FastConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1b1]"></a>TIM_OC3FastConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1b1]"></a>TIM_OC4FastConfig</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1b2]"></a>TIM_OC4FastConfig</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1b2]"></a>TIM_ClearOC1Ref</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1b3]"></a>TIM_ClearOC1Ref</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1b3]"></a>TIM_ClearOC2Ref</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1b4]"></a>TIM_ClearOC2Ref</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1b4]"></a>TIM_ClearOC3Ref</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1b5]"></a>TIM_ClearOC3Ref</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1b5]"></a>TIM_ClearOC4Ref</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1b6]"></a>TIM_ClearOC4Ref</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1b6]"></a>TIM_OC1PolarityConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1b7]"></a>TIM_OC1PolarityConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1b7]"></a>TIM_OC1NPolarityConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1b8]"></a>TIM_OC1NPolarityConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1b8]"></a>TIM_OC2PolarityConfig</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1b9]"></a>TIM_OC2PolarityConfig</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1b9]"></a>TIM_OC2NPolarityConfig</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1ba]"></a>TIM_OC2NPolarityConfig</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1ba]"></a>TIM_OC3PolarityConfig</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1bb]"></a>TIM_OC3PolarityConfig</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1bb]"></a>TIM_OC3NPolarityConfig</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1bc]"></a>TIM_OC3NPolarityConfig</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1bc]"></a>TIM_OC4PolarityConfig</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1bd]"></a>TIM_OC4PolarityConfig</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1bd]"></a>TIM_CCxCmd</STRONG> (Thumb, 30 bytes, Stack size 12 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1be]"></a>TIM_CCxCmd</STRONG> (Thumb, 30 bytes, Stack size 12 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1be]"></a>TIM_CCxNCmd</STRONG> (Thumb, 30 bytes, Stack size 12 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1bf]"></a>TIM_CCxNCmd</STRONG> (Thumb, 30 bytes, Stack size 12 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1bf]"></a>TIM_SelectOCxM</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1c0]"></a>TIM_SelectOCxM</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1c0]"></a>TIM_UpdateDisableConfig</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1c1]"></a>TIM_UpdateDisableConfig</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1c1]"></a>TIM_UpdateRequestConfig</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1c2]"></a>TIM_UpdateRequestConfig</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1c2]"></a>TIM_SelectHallSensor</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1c3]"></a>TIM_SelectHallSensor</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1c3]"></a>TIM_SelectOnePulseMode</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1c4]"></a>TIM_SelectOnePulseMode</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1c4]"></a>TIM_SelectOutputTrigger</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1c5]"></a>TIM_SelectOutputTrigger</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1c5]"></a>TIM_SelectSlaveMode</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1c6]"></a>TIM_SelectSlaveMode</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1c6]"></a>TIM_SelectMasterSlaveMode</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1c7]"></a>TIM_SelectMasterSlaveMode</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1c7]"></a>TIM_SetCounter</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1c8]"></a>TIM_SetCounter</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1c8]"></a>TIM_SetAutoreload</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1c9]"></a>TIM_SetAutoreload</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1c9]"></a>TIM_SetCompare1</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1ca]"></a>TIM_SetCompare1</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1ca]"></a>TIM_SetCompare2</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1cb]"></a>TIM_SetCompare2</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1cb]"></a>TIM_SetCompare3</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1cc]"></a>TIM_SetCompare3</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1cc]"></a>TIM_SetCompare4</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1cd]"></a>TIM_SetCompare4</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1cd]"></a>TIM_SetClockDivision</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1ce]"></a>TIM_SetClockDivision</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1ce]"></a>TIM_GetCapture1</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1cf]"></a>TIM_GetCapture1</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1cf]"></a>TIM_GetCapture2</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1d0]"></a>TIM_GetCapture2</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1d0]"></a>TIM_GetCapture3</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1d1]"></a>TIM_GetCapture3</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1d1]"></a>TIM_GetCapture4</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1d2]"></a>TIM_GetCapture4</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1d2]"></a>TIM_GetCounter</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1d3]"></a>TIM_GetCounter</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1d3]"></a>TIM_GetPrescaler</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1d4]"></a>TIM_GetPrescaler</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1d4]"></a>TIM_GetFlagStatus</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1d5]"></a>TIM_GetFlagStatus</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
-<P><STRONG><a name="[1d5]"></a>TIM_ClearFlag</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
+<P><STRONG><a name="[1d6]"></a>TIM_ClearFlag</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_tim.o(.text), UNUSED)
 
 <P><STRONG><a name="[7d]"></a>TIM_GetITStatus</STRONG> (Thumb, 34 bytes, Stack size 12 bytes, stm32f10x_tim.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = TIM_GetITStatus
@@ -1537,8 +1550,8 @@ Global Symbols
 <P><STRONG><a name="[84]"></a>USART_DeInit</STRONG> (Thumb, 134 bytes, Stack size 8 bytes, stm32f10x_usart.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = USART_DeInit
 </UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphResetCmd
-<LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphResetCmd
+<BR>[Calls]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB1PeriphResetCmd
+<LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphResetCmd
 </UL>
 <BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usart3_init
 </UL>
@@ -1546,18 +1559,18 @@ Global Symbols
 <P><STRONG><a name="[86]"></a>USART_Init</STRONG> (Thumb, 210 bytes, Stack size 56 bytes, stm32f10x_usart.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 68<LI>Call Chain = USART_Init &rArr; RCC_GetClocksFreq
 </UL>
-<BR>[Calls]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_GetClocksFreq
+<BR>[Calls]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_GetClocksFreq
 </UL>
 <BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usart3_init
 <LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_init
 <LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART2_Init
 </UL>
 
-<P><STRONG><a name="[1d6]"></a>USART_StructInit</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
+<P><STRONG><a name="[1d7]"></a>USART_StructInit</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
 
-<P><STRONG><a name="[1d7]"></a>USART_ClockInit</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, stm32f10x_usart.o(.text), UNUSED)
+<P><STRONG><a name="[1d8]"></a>USART_ClockInit</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, stm32f10x_usart.o(.text), UNUSED)
 
-<P><STRONG><a name="[1d8]"></a>USART_ClockStructInit</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
+<P><STRONG><a name="[1d9]"></a>USART_ClockStructInit</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
 
 <P><STRONG><a name="[87]"></a>USART_Cmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;usart3_init
@@ -1573,28 +1586,29 @@ Global Symbols
 <LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART2_Init
 </UL>
 
-<P><STRONG><a name="[1d9]"></a>USART_DMACmd</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
+<P><STRONG><a name="[1da]"></a>USART_DMACmd</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
 
-<P><STRONG><a name="[1da]"></a>USART_SetAddress</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
+<P><STRONG><a name="[1db]"></a>USART_SetAddress</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
 
-<P><STRONG><a name="[1db]"></a>USART_WakeUpConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
+<P><STRONG><a name="[1dc]"></a>USART_WakeUpConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
 
-<P><STRONG><a name="[1dc]"></a>USART_ReceiverWakeUpCmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
+<P><STRONG><a name="[1dd]"></a>USART_ReceiverWakeUpCmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
 
-<P><STRONG><a name="[1dd]"></a>USART_LINBreakDetectLengthConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
+<P><STRONG><a name="[1de]"></a>USART_LINBreakDetectLengthConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
 
-<P><STRONG><a name="[1de]"></a>USART_LINCmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
+<P><STRONG><a name="[1df]"></a>USART_LINCmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
 
-<P><STRONG><a name="[be]"></a>USART_SendData</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateUsedWholeTim
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateUsedDryTim
-<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisPres
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisHumi
-<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisTemp
+<P><STRONG><a name="[bf]"></a>USART_SendData</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateUsedWholeTim
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateUsedDryTim
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisPres
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisHumi
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisTemp
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateWashInAndOut
 <LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateRemainingWashTim
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;JumpToUI
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;JumpToFinishedUI
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartWrite
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartWrite
 </UL>
 
 <P><STRONG><a name="[81]"></a>USART_ReceiveData</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text))
@@ -1603,39 +1617,40 @@ Global Symbols
 <LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_IRQHandler
 </UL>
 
-<P><STRONG><a name="[1df]"></a>USART_SendBreak</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
+<P><STRONG><a name="[1e0]"></a>USART_SendBreak</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
 
-<P><STRONG><a name="[1e0]"></a>USART_SetGuardTime</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
+<P><STRONG><a name="[1e1]"></a>USART_SetGuardTime</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
 
-<P><STRONG><a name="[1e1]"></a>USART_SetPrescaler</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
+<P><STRONG><a name="[1e2]"></a>USART_SetPrescaler</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
 
-<P><STRONG><a name="[1e2]"></a>USART_SmartCardCmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
+<P><STRONG><a name="[1e3]"></a>USART_SmartCardCmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
 
-<P><STRONG><a name="[1e3]"></a>USART_SmartCardNACKCmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
+<P><STRONG><a name="[1e4]"></a>USART_SmartCardNACKCmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
 
-<P><STRONG><a name="[1e4]"></a>USART_HalfDuplexCmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
+<P><STRONG><a name="[1e5]"></a>USART_HalfDuplexCmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
 
-<P><STRONG><a name="[1e5]"></a>USART_OverSampling8Cmd</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
+<P><STRONG><a name="[1e6]"></a>USART_OverSampling8Cmd</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
 
-<P><STRONG><a name="[1e6]"></a>USART_OneBitMethodCmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
+<P><STRONG><a name="[1e7]"></a>USART_OneBitMethodCmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
 
-<P><STRONG><a name="[1e7]"></a>USART_IrDAConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
+<P><STRONG><a name="[1e8]"></a>USART_IrDAConfig</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
 
-<P><STRONG><a name="[1e8]"></a>USART_IrDACmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
+<P><STRONG><a name="[1e9]"></a>USART_IrDACmd</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
 
-<P><STRONG><a name="[bf]"></a>USART_GetFlagStatus</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateUsedWholeTim
-<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateUsedDryTim
-<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisPres
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisHumi
-<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisTemp
+<P><STRONG><a name="[c0]"></a>USART_GetFlagStatus</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[c4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateUsedWholeTim
+<LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateUsedDryTim
+<LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisPres
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisHumi
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisTemp
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateWashInAndOut
 <LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateRemainingWashTim
 <LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;JumpToUI
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;JumpToFinishedUI
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartWrite
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartWrite
 </UL>
 
-<P><STRONG><a name="[1e9]"></a>USART_ClearFlag</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
+<P><STRONG><a name="[1ea]"></a>USART_ClearFlag</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_usart.o(.text), UNUSED)
 
 <P><STRONG><a name="[80]"></a>USART_GetITStatus</STRONG> (Thumb, 84 bytes, Stack size 16 bytes, stm32f10x_usart.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = USART_GetITStatus
@@ -1645,12 +1660,12 @@ Global Symbols
 <LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_IRQHandler
 </UL>
 
-<P><STRONG><a name="[1ea]"></a>USART_ClearITPendingBit</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, stm32f10x_usart.o(.text), UNUSED)
+<P><STRONG><a name="[1eb]"></a>USART_ClearITPendingBit</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, stm32f10x_usart.o(.text), UNUSED)
 
 <P><STRONG><a name="[8b]"></a>ADC_DeInit</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, stm32f10x_adc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = ADC_DeInit
 </UL>
-<BR>[Calls]<UL><LI><a href="#[c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphResetCmd
+<BR>[Calls]<UL><LI><a href="#[c7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RCC_APB2PeriphResetCmd
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Adc3_Init
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Adc_Init
@@ -1663,16 +1678,16 @@ Global Symbols
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Adc_Init
 </UL>
 
-<P><STRONG><a name="[1eb]"></a>ADC_StructInit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[1ec]"></a>ADC_StructInit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
 
 <P><STRONG><a name="[8d]"></a>ADC_Cmd</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Adc3_Init
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Adc_Init
 </UL>
 
-<P><STRONG><a name="[1ec]"></a>ADC_DMACmd</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[1ed]"></a>ADC_DMACmd</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
 
-<P><STRONG><a name="[1ed]"></a>ADC_ITConfig</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[1ee]"></a>ADC_ITConfig</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, stm32f10x_adc.o(.text), UNUSED)
 
 <P><STRONG><a name="[8e]"></a>ADC_ResetCalibration</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Adc3_Init
@@ -1699,11 +1714,11 @@ Global Symbols
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_Adc
 </UL>
 
-<P><STRONG><a name="[1ee]"></a>ADC_GetSoftwareStartConvStatus</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[1ef]"></a>ADC_GetSoftwareStartConvStatus</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
 
-<P><STRONG><a name="[1ef]"></a>ADC_DiscModeChannelCountConfig</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[1f0]"></a>ADC_DiscModeChannelCountConfig</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, stm32f10x_adc.o(.text), UNUSED)
 
-<P><STRONG><a name="[1f0]"></a>ADC_DiscModeCmd</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[1f1]"></a>ADC_DiscModeCmd</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
 
 <P><STRONG><a name="[93]"></a>ADC_RegularChannelConfig</STRONG> (Thumb, 184 bytes, Stack size 20 bytes, stm32f10x_adc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 20<LI>Call Chain = ADC_RegularChannelConfig
@@ -1712,55 +1727,55 @@ Global Symbols
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_Adc
 </UL>
 
-<P><STRONG><a name="[1f1]"></a>ADC_ExternalTrigConvCmd</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[1f2]"></a>ADC_ExternalTrigConvCmd</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
 
 <P><STRONG><a name="[96]"></a>ADC_GetConversionValue</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_Adc3
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_Adc
 </UL>
 
-<P><STRONG><a name="[1f2]"></a>ADC_GetDualModeConversionValue</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[1f3]"></a>ADC_GetDualModeConversionValue</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
 
-<P><STRONG><a name="[1f3]"></a>ADC_AutoInjectedConvCmd</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[1f4]"></a>ADC_AutoInjectedConvCmd</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
 
-<P><STRONG><a name="[1f4]"></a>ADC_InjectedDiscModeCmd</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[1f5]"></a>ADC_InjectedDiscModeCmd</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
 
-<P><STRONG><a name="[1f5]"></a>ADC_ExternalTrigInjectedConvConfig</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[1f6]"></a>ADC_ExternalTrigInjectedConvConfig</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
 
-<P><STRONG><a name="[1f6]"></a>ADC_ExternalTrigInjectedConvCmd</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[1f7]"></a>ADC_ExternalTrigInjectedConvCmd</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
 
-<P><STRONG><a name="[1f7]"></a>ADC_SoftwareStartInjectedConvCmd</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[1f8]"></a>ADC_SoftwareStartInjectedConvCmd</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
 
-<P><STRONG><a name="[1f8]"></a>ADC_GetSoftwareStartInjectedConvCmdStatus</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[1f9]"></a>ADC_GetSoftwareStartInjectedConvCmdStatus</STRONG> (Thumb, 20 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
 
-<P><STRONG><a name="[1f9]"></a>ADC_InjectedChannelConfig</STRONG> (Thumb, 130 bytes, Stack size 20 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[1fa]"></a>ADC_InjectedChannelConfig</STRONG> (Thumb, 130 bytes, Stack size 20 bytes, stm32f10x_adc.o(.text), UNUSED)
 
-<P><STRONG><a name="[1fa]"></a>ADC_InjectedSequencerLengthConfig</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[1fb]"></a>ADC_InjectedSequencerLengthConfig</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, stm32f10x_adc.o(.text), UNUSED)
 
-<P><STRONG><a name="[1fb]"></a>ADC_SetInjectedOffset</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[1fc]"></a>ADC_SetInjectedOffset</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, stm32f10x_adc.o(.text), UNUSED)
 
-<P><STRONG><a name="[1fc]"></a>ADC_GetInjectedConversionValue</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[1fd]"></a>ADC_GetInjectedConversionValue</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, stm32f10x_adc.o(.text), UNUSED)
 
-<P><STRONG><a name="[1fd]"></a>ADC_AnalogWatchdogCmd</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[1fe]"></a>ADC_AnalogWatchdogCmd</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
 
-<P><STRONG><a name="[1fe]"></a>ADC_AnalogWatchdogThresholdsConfig</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[1ff]"></a>ADC_AnalogWatchdogThresholdsConfig</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
 
-<P><STRONG><a name="[1ff]"></a>ADC_AnalogWatchdogSingleChannelConfig</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[200]"></a>ADC_AnalogWatchdogSingleChannelConfig</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
 
-<P><STRONG><a name="[200]"></a>ADC_TempSensorVrefintCmd</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[201]"></a>ADC_TempSensorVrefintCmd</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
 
 <P><STRONG><a name="[95]"></a>ADC_GetFlagStatus</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_Adc3
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Get_Adc
 </UL>
 
-<P><STRONG><a name="[201]"></a>ADC_ClearFlag</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[202]"></a>ADC_ClearFlag</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
 
-<P><STRONG><a name="[202]"></a>ADC_GetITStatus</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[203]"></a>ADC_GetITStatus</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, stm32f10x_adc.o(.text), UNUSED)
 
-<P><STRONG><a name="[203]"></a>ADC_ClearITPendingBit</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
+<P><STRONG><a name="[204]"></a>ADC_ClearITPendingBit</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f10x_adc.o(.text), UNUSED)
 
-<P><STRONG><a name="[dd]"></a>gizwitsEventProcess</STRONG> (Thumb, 420 bytes, Stack size 48 bytes, gizwits_product.o(.text))
+<P><STRONG><a name="[de]"></a>gizwitsEventProcess</STRONG> (Thumb, 412 bytes, Stack size 48 bytes, gizwits_product.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 192 + Unknown Stack Size
 <LI>Call Chain = gizwitsEventProcess &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
@@ -1770,47 +1785,47 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsHandle
 </UL>
 
-<P><STRONG><a name="[10f]"></a>mcuRestart</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, gizwits_product.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolReboot
+<P><STRONG><a name="[110]"></a>mcuRestart</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, gizwits_product.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolReboot
 </UL>
 
 <P><STRONG><a name="[7f]"></a>gizTimerMs</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, gizwits_product.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM3_IRQHandler
-<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER_IRQ_FUN
+<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMER_IRQ_FUN
 </UL>
 
-<P><STRONG><a name="[f4]"></a>gizGetTimerCount</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, gizwits_product.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolReboot
-<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolAckHandle
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolResendData
-<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDevReportPolicy
-<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizCheckReport
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolWaitAck
+<P><STRONG><a name="[f5]"></a>gizGetTimerCount</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, gizwits_product.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolReboot
+<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolAckHandle
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolResendData
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDevReportPolicy
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizCheckReport
+<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolWaitAck
 </UL>
 
-<P><STRONG><a name="[de]"></a>TIMER_IRQ_FUN</STRONG> (Thumb, 8 bytes, Stack size 4 bytes, gizwits_product.o(.text), UNUSED)
+<P><STRONG><a name="[df]"></a>TIMER_IRQ_FUN</STRONG> (Thumb, 8 bytes, Stack size 4 bytes, gizwits_product.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizTimerMs
 </UL>
 
-<P><STRONG><a name="[df]"></a>UART_IRQ_FUN</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, gizwits_product.o(.text), UNUSED)
+<P><STRONG><a name="[e0]"></a>UART_IRQ_FUN</STRONG> (Thumb, 16 bytes, Stack size 8 bytes, gizwits_product.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizPutData
 </UL>
 
-<P><STRONG><a name="[e0]"></a>uartWrite</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, gizwits_product.o(.text))
+<P><STRONG><a name="[e1]"></a>uartWrite</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, gizwits_product.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = uartWrite
 </UL>
-<BR>[Calls]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
+<BR>[Calls]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_SendData
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetFlagStatus
 </UL>
-<BR>[Called By]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsPassthroughData
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsGetNTP
-<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsSetMode
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolErrorCmd
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetDeviceInfo
-<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolCommonAck
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolResendData
-<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizReportData
-<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedDataAck
+<BR>[Called By]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsPassthroughData
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsGetNTP
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsSetMode
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolErrorCmd
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetDeviceInfo
+<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolCommonAck
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolResendData
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizReportData
+<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedDataAck
 </UL>
 
 <P><STRONG><a name="[82]"></a>gizPutData</STRONG> (Thumb, 52 bytes, Stack size 16 bytes, gizwits_protocol.o(.text))
@@ -1818,108 +1833,107 @@ Global Symbols
 <LI>Call Chain = gizPutData &rArr; rbWrite &rArr;  rbWrite (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbWrite
+<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbWrite
 </UL>
 <BR>[Called By]<UL><LI><a href="#[34]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART3_IRQHandler
-<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_IRQ_FUN
+<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_IRQ_FUN
 </UL>
 
-<P><STRONG><a name="[f9]"></a>exchangeBytes</STRONG> (Thumb, 26 bytes, Stack size 12 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[fa]"></a>exchangeBytes</STRONG> (Thumb, 26 bytes, Stack size 12 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = exchangeBytes
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoints2ReportData
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoint2Event
+<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoints2ReportData
+<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoint2Event
 </UL>
 
 <P><STRONG><a name="[62]"></a>gizwitsInit</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
 <LI>Call Chain = gizwitsInit &rArr; rbCreate &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
-<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCreate
+<BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCreate
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gizwits_Init
 </UL>
 
-<P><STRONG><a name="[111]"></a>gizwitsSetMode</STRONG> (Thumb, 856 bytes, Stack size 40 bytes, gizwits_protocol.o(.text), UNUSED)
+<P><STRONG><a name="[112]"></a>gizwitsSetMode</STRONG> (Thumb, 856 bytes, Stack size 40 bytes, gizwits_protocol.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolWaitAck
-<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolHeadInit
-<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolExchangeBytes
-<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolSum
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartWrite
+<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolWaitAck
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolHeadInit
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolExchangeBytes
+<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolSum
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartWrite
 </UL>
 
-<P><STRONG><a name="[112]"></a>gizwitsGetNTP</STRONG> (Thumb, 94 bytes, Stack size 24 bytes, gizwits_protocol.o(.text), UNUSED)
+<P><STRONG><a name="[113]"></a>gizwitsGetNTP</STRONG> (Thumb, 94 bytes, Stack size 24 bytes, gizwits_protocol.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolWaitAck
-<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolHeadInit
-<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolExchangeBytes
-<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolSum
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartWrite
+<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolWaitAck
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolHeadInit
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolExchangeBytes
+<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolSum
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartWrite
 </UL>
 
 <P><STRONG><a name="[b4]"></a>gizwitsHandle</STRONG> (Thumb, 460 bytes, Stack size 1928 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 2224 + Unknown Stack Size
 <LI>Call Chain = gizwitsHandle &rArr; gizProtocolGetDeviceInfo &rArr; gizProtocolSum &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 <LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolModuleStatus
-<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolReboot
-<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolNTP
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolErrorCmd
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetDeviceInfo
-<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolAckHandle
-<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolCommonAck
-<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolWaitAckCheck
-<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetOnePacket
-<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDevReportPolicy
-<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedDataAck
-<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedProcess
-<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsEventProcess
+<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolModuleStatus
+<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolReboot
+<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolNTP
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolErrorCmd
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetDeviceInfo
+<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolAckHandle
+<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolCommonAck
+<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolWaitAckCheck
+<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetOnePacket
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDevReportPolicy
+<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedDataAck
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedProcess
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsEventProcess
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM4_IRQHandler
 </UL>
 
-<P><STRONG><a name="[113]"></a>gizwitsPassthroughData</STRONG> (Thumb, 172 bytes, Stack size 976 bytes, gizwits_protocol.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<P><STRONG><a name="[114]"></a>gizwitsPassthroughData</STRONG> (Thumb, 172 bytes, Stack size 976 bytes, gizwits_protocol.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolWaitAck
-<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolSum
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartWrite
+<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolWaitAck
+<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolSum
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartWrite
 </UL>
 
-<P><STRONG><a name="[114]"></a>stop_dry</STRONG> (Thumb, 78 bytes, Stack size 16 bytes, dry.o(.text))
+<P><STRONG><a name="[115]"></a>stop_dry</STRONG> (Thumb, 84 bytes, Stack size 16 bytes, dry.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 108<LI>Call Chain = stop_dry &rArr; GetPresAverage &rArr; Get_Adc_Average &rArr; Get_Adc &rArr; ADC_RegularChannelConfig
 </UL>
 <BR>[Calls]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetPresAverage
-<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdcmple
+<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdcmple
 </UL>
 <BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dry_func
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WashDryfunc
 </UL>
 
-<P><STRONG><a name="[74]"></a>dry_func</STRONG> (Thumb, 240 bytes, Stack size 16 bytes, dry.o(.text))
+<P><STRONG><a name="[74]"></a>dry_func</STRONG> (Thumb, 262 bytes, Stack size 16 bytes, dry.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = dry_func &rArr; SHT2x_GetHumiPoll &rArr; I2C_Read_Byte &rArr; I2C_NAck &rArr; I2C_SDA_OUT &rArr; GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SHT2x_GetHumiPoll
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SHT2x_GetTempPoll
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetPresAverage
-<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdrcmple
-<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdcmple
-<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stop_dry
-<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfrcmple
+<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdrcmple
+<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdcmple
+<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stop_dry
+<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfrcmple
 </UL>
 <BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[bb]"></a>Rst_Dry</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, dry.o(.text))
+<P><STRONG><a name="[bc]"></a>Rst_Dry</STRONG> (Thumb, 46 bytes, Stack size 0 bytes, dry.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM4_IRQHandler
 </UL>
 
-<P><STRONG><a name="[118]"></a>stop_wash</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, washer.o(.text))
+<P><STRONG><a name="[119]"></a>stop_wash</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, washer.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;wash_func
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WashDryfunc
 </UL>
@@ -1927,7 +1941,7 @@ Global Symbols
 <P><STRONG><a name="[72]"></a>wash_func</STRONG> (Thumb, 190 bytes, Stack size 4 bytes, washer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = wash_func
 </UL>
-<BR>[Calls]<UL><LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stop_wash
+<BR>[Calls]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stop_wash
 </UL>
 <BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1936,209 +1950,208 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[2b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM4_IRQHandler
 </UL>
 
-<P><STRONG><a name="[75]"></a>WashDryfunc</STRONG> (Thumb, 392 bytes, Stack size 16 bytes, washer.o(.text))
+<P><STRONG><a name="[75]"></a>WashDryfunc</STRONG> (Thumb, 418 bytes, Stack size 16 bytes, washer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = WashDryfunc &rArr; SHT2x_GetHumiPoll &rArr; I2C_Read_Byte &rArr; I2C_NAck &rArr; I2C_SDA_OUT &rArr; GPIO_Init
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ifButtonDown
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SHT2x_GetHumiPoll
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SHT2x_GetTempPoll
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetPresAverage
-<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdrcmple
-<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdcmple
-<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stop_wash
-<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stop_dry
-<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfrcmple
+<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdrcmple
+<LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cdcmple
+<LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stop_wash
+<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stop_dry
+<LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfrcmple
 </UL>
 <BR>[Called By]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[204]"></a>__use_no_semihosting</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi_2.o(.text), UNUSED)
+<P><STRONG><a name="[205]"></a>__use_no_semihosting</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi_2.o(.text), UNUSED)
 
 <P><STRONG><a name="[70]"></a>__2printf</STRONG> (Thumb, 20 bytes, Stack size 24 bytes, noretval__2printf.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144 + Unknown Stack Size
 <LI>Call Chain = __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_file
+<BR>[Calls]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_file
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsHandle
 <LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizPutData
 <LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsPassthroughData
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsGetNTP
-<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsSetMode
-<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolModuleStatus
-<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolNTP
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolErrorCmd
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetDeviceInfo
-<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolAckHandle
-<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolCommonAck
-<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolWaitAckCheck
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolResendData
-<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetOnePacket
-<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDevReportPolicy
-<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizReportData
-<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedDataAck
-<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedProcess
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoints2ReportData
-<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizCheckReport
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoint2Event
-<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizCompressValue
-<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDecompressionValue
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolWaitAck
-<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolHeadInit
-<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizByteOrderExchange
-<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolSum
-<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbWrite
-<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbRead
-<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCanWrite
-<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCanRead
-<LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCapacity
-<LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbDelete
-<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCreate
-<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsEventProcess
+<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsPassthroughData
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsGetNTP
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsSetMode
+<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolModuleStatus
+<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolNTP
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolErrorCmd
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetDeviceInfo
+<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolAckHandle
+<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolCommonAck
+<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolWaitAckCheck
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolResendData
+<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetOnePacket
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDevReportPolicy
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizReportData
+<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedDataAck
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedProcess
+<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoints2ReportData
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizCheckReport
+<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoint2Event
+<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizCompressValue
+<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDecompressionValue
+<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolWaitAck
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolHeadInit
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizByteOrderExchange
+<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolSum
+<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbWrite
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbRead
+<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCanWrite
+<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCanRead
+<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCapacity
+<LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbDelete
+<LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCreate
+<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsEventProcess
 </UL>
 
-<P><STRONG><a name="[121]"></a>_printf_pre_padding</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, _printf_pad.o(.text))
+<P><STRONG><a name="[122]"></a>_printf_pre_padding</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, _printf_pad.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = _printf_pre_padding
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
+<BR>[Called By]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
 </UL>
 
-<P><STRONG><a name="[122]"></a>_printf_post_padding</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, _printf_pad.o(.text))
+<P><STRONG><a name="[123]"></a>_printf_post_padding</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, _printf_pad.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = _printf_post_padding
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
+<BR>[Called By]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
 </UL>
 
 <P><STRONG><a name="[52]"></a>_printf_int_dec</STRONG> (Thumb, 104 bytes, Stack size 24 bytes, _printf_dec.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = _printf_int_dec &rArr; _printf_int_common &rArr; _printf_post_padding
 </UL>
-<BR>[Calls]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
+<BR>[Calls]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
 </UL>
 <BR>[Called By]<UL><LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_d
 </UL>
 
-<P><STRONG><a name="[11b]"></a>__printf</STRONG> (Thumb, 308 bytes, Stack size 40 bytes, __printf_flags_wp.o(.text))
+<P><STRONG><a name="[11c]"></a>__printf</STRONG> (Thumb, 308 bytes, Stack size 40 bytes, __printf_flags_wp.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40 + Unknown Stack Size
 <LI>Call Chain = __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_percent
-<LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_is_digit
+<BR>[Calls]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_percent
+<LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_is_digit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_common
-</UL>
-
-<P><STRONG><a name="[e7]"></a>__aeabi_memcpy</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memcpy_v6.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsPassthroughData
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetDeviceInfo
-<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetOnePacket
-<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDevReportPolicy
-<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizReportData
-<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedDataAck
-<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedProcess
-<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDecompressionValue
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolWaitAck
-<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbWrite
-<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbRead
+<BR>[Called By]<UL><LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_common
 </UL>
 
-<P><STRONG><a name="[11e]"></a>__rt_memcpy</STRONG> (Thumb, 138 bytes, Stack size 0 bytes, rt_memcpy_v6.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<P><STRONG><a name="[e8]"></a>__aeabi_memcpy</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memcpy_v6.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsPassthroughData
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetDeviceInfo
+<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetOnePacket
+<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDevReportPolicy
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizReportData
+<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedDataAck
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedProcess
+<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDecompressionValue
+<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolWaitAck
+<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbWrite
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbRead
 </UL>
 
-<P><STRONG><a name="[205]"></a>_memcpy_lastbytes</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_v6.o(.text), UNUSED)
+<P><STRONG><a name="[11f]"></a>__rt_memcpy</STRONG> (Thumb, 138 bytes, Stack size 0 bytes, rt_memcpy_v6.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+</UL>
 
-<P><STRONG><a name="[10a]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text))
+<P><STRONG><a name="[206]"></a>_memcpy_lastbytes</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_v6.o(.text), UNUSED)
+
+<P><STRONG><a name="[10b]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __aeabi_memcpy4
 </UL>
-<BR>[Called By]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_memcpy
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetDeviceInfo
+<BR>[Called By]<UL><LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_memcpy
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetDeviceInfo
 </UL>
 
-<P><STRONG><a name="[206]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
+<P><STRONG><a name="[207]"></a>__aeabi_memcpy8</STRONG> (Thumb, 0 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[207]"></a>__rt_memcpy_w</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
+<P><STRONG><a name="[208]"></a>__rt_memcpy_w</STRONG> (Thumb, 100 bytes, Stack size 8 bytes, rt_memcpy_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[208]"></a>_memcpy_lastbytes_aligned</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_w.o(.text), UNUSED)
+<P><STRONG><a name="[209]"></a>_memcpy_lastbytes_aligned</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memcpy_w.o(.text), UNUSED)
 
 <P><STRONG><a name="[61]"></a>__aeabi_memclr</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memclr.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsHandle
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Gizwits_Init
-<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedProcess
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedProcess
 </UL>
 
-<P><STRONG><a name="[11f]"></a>__rt_memclr</STRONG> (Thumb, 68 bytes, Stack size 0 bytes, rt_memclr.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset_w
+<P><STRONG><a name="[120]"></a>__rt_memclr</STRONG> (Thumb, 68 bytes, Stack size 0 bytes, rt_memclr.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset_w
 </UL>
 
-<P><STRONG><a name="[209]"></a>_memset</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr.o(.text), UNUSED)
+<P><STRONG><a name="[20a]"></a>_memset</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr.o(.text), UNUSED)
 
-<P><STRONG><a name="[f3]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, rt_memclr_w.o(.text))
+<P><STRONG><a name="[f4]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, rt_memclr_w.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = __aeabi_memclr4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsHandle
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsInit
-<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolAckHandle
-<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolWaitAckCheck
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolWaitAck
+<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolAckHandle
+<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolWaitAckCheck
+<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolWaitAck
 </UL>
 
-<P><STRONG><a name="[20a]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, rt_memclr_w.o(.text), UNUSED)
+<P><STRONG><a name="[20b]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, rt_memclr_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[20b]"></a>__rt_memclr_w</STRONG> (Thumb, 78 bytes, Stack size 4 bytes, rt_memclr_w.o(.text), UNUSED)
+<P><STRONG><a name="[20c]"></a>__rt_memclr_w</STRONG> (Thumb, 78 bytes, Stack size 4 bytes, rt_memclr_w.o(.text), UNUSED)
 
-<P><STRONG><a name="[120]"></a>_memset_w</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr_w.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_memclr
+<P><STRONG><a name="[121]"></a>_memset_w</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, rt_memclr_w.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_memclr
 </UL>
 
-<P><STRONG><a name="[20c]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[20d]"></a>__use_two_region_memory</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
-<P><STRONG><a name="[20d]"></a>__rt_heap_escrow$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[20e]"></a>__rt_heap_escrow$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
-<P><STRONG><a name="[20e]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
+<P><STRONG><a name="[20f]"></a>__rt_heap_expand$2region</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, heapauxi.o(.text), UNUSED)
 
-<P><STRONG><a name="[20f]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+<P><STRONG><a name="[210]"></a>__I$use$semihosting</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[210]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
+<P><STRONG><a name="[211]"></a>__use_no_semihosting_swi</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, use_no_semi.o(.text), UNUSED)
 
-<P><STRONG><a name="[11a]"></a>_printf_int_common</STRONG> (Thumb, 178 bytes, Stack size 32 bytes, _printf_intcommon.o(.text))
+<P><STRONG><a name="[11b]"></a>_printf_int_common</STRONG> (Thumb, 178 bytes, Stack size 32 bytes, _printf_intcommon.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = _printf_int_common &rArr; _printf_post_padding
 </UL>
-<BR>[Calls]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
-<LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding
+<BR>[Calls]<UL><LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_post_padding
+<LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_pre_padding
 </UL>
 <BR>[Called By]<UL><LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_dec
 </UL>
 
-<P><STRONG><a name="[119]"></a>_printf_char_file</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, _printf_char_file.o(.text))
+<P><STRONG><a name="[11a]"></a>_printf_char_file</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, _printf_char_file.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120 + Unknown Stack Size
 <LI>Call Chain = _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ferror
-<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_common
+<BR>[Calls]<UL><LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ferror
+<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_common
 </UL>
 <BR>[Called By]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 
-<P><STRONG><a name="[123]"></a>_printf_char_common</STRONG> (Thumb, 32 bytes, Stack size 64 bytes, _printf_char_common.o(.text))
+<P><STRONG><a name="[124]"></a>_printf_char_common</STRONG> (Thumb, 32 bytes, Stack size 64 bytes, _printf_char_common.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 104 + Unknown Stack Size
 <LI>Call Chain = _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf
+<BR>[Calls]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_file
+<BR>[Called By]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_file
 </UL>
 
-<P><STRONG><a name="[124]"></a>ferror</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, ferror.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_file
+<P><STRONG><a name="[125]"></a>ferror</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, ferror.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_char_file
 </UL>
 
 <P><STRONG><a name="[54]"></a>__user_setup_stackheap</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, sys_stackheap_outer.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
 <LI>Call Chain = __user_setup_stackheap
 </UL>
-<BR>[Calls]<UL><LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_initial_stackheap
-<LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_perproc_libspace
+<BR>[Calls]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_initial_stackheap
+<LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_perproc_libspace
 </UL>
 <BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_sh
 </UL>
@@ -2147,21 +2160,21 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
 <LI>Call Chain = exit
 </UL>
-<BR>[Calls]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit
+<BR>[Calls]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_exit
 </UL>
 <BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_main
 </UL>
 
-<P><STRONG><a name="[211]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+<P><STRONG><a name="[212]"></a>__user_libspace</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
-<P><STRONG><a name="[125]"></a>__user_perproc_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text))
+<P><STRONG><a name="[126]"></a>__user_perproc_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_setup_stackheap
 </UL>
 
-<P><STRONG><a name="[212]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
+<P><STRONG><a name="[213]"></a>__user_perthread_libspace</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, libspace.o(.text), UNUSED)
 
-<P><STRONG><a name="[11c]"></a>_is_digit</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, __printf_wp.o(i._is_digit))
-<BR><BR>[Called By]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf
+<P><STRONG><a name="[11d]"></a>_is_digit</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, __printf_wp.o(i._is_digit))
+<BR><BR>[Called By]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__printf
 </UL>
 
 <P><STRONG><a name="[b2]"></a>__aeabi_d2f</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, d2f.o(x$fpl$d2f))
@@ -2172,21 +2185,21 @@ Global Symbols
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SHT2x_GetTempPoll
 </UL>
 
-<P><STRONG><a name="[128]"></a>_d2f</STRONG> (Thumb, 98 bytes, Stack size 32 bytes, d2f.o(x$fpl$d2f), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fretinf
-<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dnaninf
+<P><STRONG><a name="[129]"></a>_d2f</STRONG> (Thumb, 98 bytes, Stack size 32 bytes, d2f.o(x$fpl$d2f), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fretinf
+<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dnaninf
 </UL>
 
-<P><STRONG><a name="[213]"></a>__aeabi_dadd</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, daddsub_clz.o(x$fpl$dadd), UNUSED)
+<P><STRONG><a name="[214]"></a>__aeabi_dadd</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, daddsub_clz.o(x$fpl$dadd), UNUSED)
 
-<P><STRONG><a name="[12b]"></a>_dadd</STRONG> (Thumb, 332 bytes, Stack size 16 bytes, daddsub_clz.o(x$fpl$dadd), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub1
-<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dretinf
-<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dnaninf
+<P><STRONG><a name="[12c]"></a>_dadd</STRONG> (Thumb, 332 bytes, Stack size 16 bytes, daddsub_clz.o(x$fpl$dadd), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub1
+<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dretinf
+<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dnaninf
 </UL>
 
-<P><STRONG><a name="[12f]"></a>__fpl_dcmp_Inf</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, dcmpi.o(x$fpl$dcmpinf), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dcmple
+<P><STRONG><a name="[130]"></a>__fpl_dcmp_Inf</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, dcmpi.o(x$fpl$dcmpinf), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dcmple
 </UL>
 
 <P><STRONG><a name="[9a]"></a>__aeabi_ui2d</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dfltu))
@@ -2194,23 +2207,23 @@ Global Symbols
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetPresAverage
 </UL>
 
-<P><STRONG><a name="[214]"></a>_dfltu</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dfltu), UNUSED)
+<P><STRONG><a name="[215]"></a>_dfltu</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, dflt_clz.o(x$fpl$dfltu), UNUSED)
 
-<P><STRONG><a name="[115]"></a>__aeabi_cdcmple</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, dleqf.o(x$fpl$dleqf))
+<P><STRONG><a name="[116]"></a>__aeabi_cdcmple</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, dleqf.o(x$fpl$dleqf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __aeabi_cdcmple
 </UL>
 <BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dry_func
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WashDryfunc
-<LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stop_dry
+<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;stop_dry
 </UL>
 
-<P><STRONG><a name="[12e]"></a>_dcmple</STRONG> (Thumb, 120 bytes, Stack size 32 bytes, dleqf.o(x$fpl$dleqf), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dnaninf
-<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dcmp_Inf
+<P><STRONG><a name="[12f]"></a>_dcmple</STRONG> (Thumb, 120 bytes, Stack size 32 bytes, dleqf.o(x$fpl$dleqf), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dnaninf
+<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dcmp_Inf
 </UL>
 
-<P><STRONG><a name="[132]"></a>__fpl_dcmple_InfNaN</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, dleqf.o(x$fpl$dleqf), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_drcmple
+<P><STRONG><a name="[133]"></a>__fpl_dcmple_InfNaN</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, dleqf.o(x$fpl$dleqf), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_drcmple
 </UL>
 
 <P><STRONG><a name="[9b]"></a>__aeabi_dmul</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, dmul.o(x$fpl$dmul))
@@ -2222,34 +2235,34 @@ Global Symbols
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetPresAverage
 </UL>
 
-<P><STRONG><a name="[130]"></a>_dmul</STRONG> (Thumb, 332 bytes, Stack size 32 bytes, dmul.o(x$fpl$dmul), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dretinf
-<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dnaninf
+<P><STRONG><a name="[131]"></a>_dmul</STRONG> (Thumb, 332 bytes, Stack size 32 bytes, dmul.o(x$fpl$dmul), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dretinf
+<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dnaninf
 </UL>
 
-<P><STRONG><a name="[12a]"></a>__fpl_dnaninf</STRONG> (Thumb, 156 bytes, Stack size 16 bytes, dnaninf.o(x$fpl$dnaninf), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dmul
-<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dcmple
-<LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub
-<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_d2f
+<P><STRONG><a name="[12b]"></a>__fpl_dnaninf</STRONG> (Thumb, 156 bytes, Stack size 16 bytes, dnaninf.o(x$fpl$dnaninf), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dmul
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dcmple
+<LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub
+<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd
+<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_d2f
 </UL>
 
-<P><STRONG><a name="[12d]"></a>__fpl_dretinf</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, dretinf.o(x$fpl$dretinf), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_f2d
-<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dmul
-<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd
+<P><STRONG><a name="[12e]"></a>__fpl_dretinf</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, dretinf.o(x$fpl$dretinf), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_f2d
+<LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dmul
+<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd
 </UL>
 
-<P><STRONG><a name="[116]"></a>__aeabi_cdrcmple</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, drleqf.o(x$fpl$drleqf))
+<P><STRONG><a name="[117]"></a>__aeabi_cdrcmple</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, drleqf.o(x$fpl$drleqf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_cdrcmple
 </UL>
 <BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dry_func
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WashDryfunc
 </UL>
 
-<P><STRONG><a name="[131]"></a>_drcmple</STRONG> (Thumb, 108 bytes, Stack size 16 bytes, drleqf.o(x$fpl$drleqf), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dcmple_InfNaN
+<P><STRONG><a name="[132]"></a>_drcmple</STRONG> (Thumb, 108 bytes, Stack size 16 bytes, drleqf.o(x$fpl$drleqf), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dcmple_InfNaN
 </UL>
 
 <P><STRONG><a name="[9c]"></a>__aeabi_dsub</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, daddsub_clz.o(x$fpl$dsub))
@@ -2261,9 +2274,9 @@ Global Symbols
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetPresAverage
 </UL>
 
-<P><STRONG><a name="[133]"></a>_dsub</STRONG> (Thumb, 464 bytes, Stack size 32 bytes, daddsub_clz.o(x$fpl$dsub), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd1
-<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dnaninf
+<P><STRONG><a name="[134]"></a>_dsub</STRONG> (Thumb, 464 bytes, Stack size 32 bytes, daddsub_clz.o(x$fpl$dsub), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd1
+<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dnaninf
 </UL>
 
 <P><STRONG><a name="[b1]"></a>__aeabi_f2d</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, f2d.o(x$fpl$f2d))
@@ -2273,140 +2286,140 @@ Global Symbols
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SHT2x_GetTempPoll
 </UL>
 
-<P><STRONG><a name="[135]"></a>_f2d</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, f2d.o(x$fpl$f2d), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
-<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dretinf
+<P><STRONG><a name="[136]"></a>_f2d</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, f2d.o(x$fpl$f2d), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
+<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_dretinf
 </UL>
 
-<P><STRONG><a name="[f0]"></a>__aeabi_fadd</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, faddsub_clz.o(x$fpl$fadd), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizX2YFloat
+<P><STRONG><a name="[f1]"></a>__aeabi_fadd</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, faddsub_clz.o(x$fpl$fadd), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizX2YFloat
 </UL>
 
-<P><STRONG><a name="[137]"></a>_fadd</STRONG> (Thumb, 196 bytes, Stack size 16 bytes, faddsub_clz.o(x$fpl$fadd), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fsub1
-<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fretinf
-<LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
+<P><STRONG><a name="[138]"></a>_fadd</STRONG> (Thumb, 196 bytes, Stack size 16 bytes, faddsub_clz.o(x$fpl$fadd), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fsub1
+<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fretinf
+<LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
 </UL>
 
-<P><STRONG><a name="[13b]"></a>__fpl_fcmp_Inf</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, fcmpi.o(x$fpl$fcmpinf), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmple
-<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpeq
+<P><STRONG><a name="[13c]"></a>__fpl_fcmp_Inf</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, fcmpi.o(x$fpl$fcmpinf), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmple
+<LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpeq
 </UL>
 
-<P><STRONG><a name="[ed]"></a>__aeabi_fdiv</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, fdiv.o(x$fpl$fdiv))
+<P><STRONG><a name="[ee]"></a>__aeabi_fdiv</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, fdiv.o(x$fpl$fdiv))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_fdiv
 </UL>
-<BR>[Called By]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizY2XFloat
+<BR>[Called By]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizY2XFloat
 </UL>
 
-<P><STRONG><a name="[139]"></a>_fdiv</STRONG> (Thumb, 384 bytes, Stack size 16 bytes, fdiv.o(x$fpl$fdiv), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fretinf
-<LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
+<P><STRONG><a name="[13a]"></a>_fdiv</STRONG> (Thumb, 384 bytes, Stack size 16 bytes, fdiv.o(x$fpl$fdiv), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fretinf
+<LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
 </UL>
 
-<P><STRONG><a name="[fc]"></a>__aeabi_cfcmpeq</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, feqf.o(x$fpl$feqf))
+<P><STRONG><a name="[fd]"></a>__aeabi_cfcmpeq</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, feqf.o(x$fpl$feqf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_cfcmpeq
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizCheckReport
+<BR>[Called By]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizCheckReport
 </UL>
 
-<P><STRONG><a name="[13a]"></a>_fcmpeq</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, feqf.o(x$fpl$feqf), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
-<LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fcmp_Inf
+<P><STRONG><a name="[13b]"></a>_fcmpeq</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, feqf.o(x$fpl$feqf), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
+<LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fcmp_Inf
 </UL>
 
 <P><STRONG><a name="[64]"></a>__aeabi_f2iz</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, ffix.o(x$fpl$ffix))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_f2iz
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisPres
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisHumi
-<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisTemp
+<BR>[Called By]<UL><LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisPres
+<LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisHumi
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisTemp
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;userHandle
 </UL>
 
-<P><STRONG><a name="[13c]"></a>_ffix</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, ffix.o(x$fpl$ffix), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
+<P><STRONG><a name="[13d]"></a>_ffix</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, ffix.o(x$fpl$ffix), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
 </UL>
 
-<P><STRONG><a name="[ee]"></a>__aeabi_f2uiz</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, ffixu.o(x$fpl$ffixu))
+<P><STRONG><a name="[ef]"></a>__aeabi_f2uiz</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, ffixu.o(x$fpl$ffixu))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_f2uiz
 </UL>
-<BR>[Called By]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizY2XFloat
+<BR>[Called By]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizY2XFloat
 </UL>
 
-<P><STRONG><a name="[13d]"></a>_ffixu</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, ffixu.o(x$fpl$ffixu), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
+<P><STRONG><a name="[13e]"></a>_ffixu</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, ffixu.o(x$fpl$ffixu), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
 </UL>
 
 <P><STRONG><a name="[b0]"></a>__aeabi_ui2f</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, fflt_clz.o(x$fpl$ffltu))
 <BR><BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SHT2x_GetHumiPoll
 <LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SHT2x_GetTempPoll
-<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizX2YFloat
+<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizX2YFloat
 </UL>
 
-<P><STRONG><a name="[215]"></a>_ffltu</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, fflt_clz.o(x$fpl$ffltu), UNUSED)
+<P><STRONG><a name="[216]"></a>_ffltu</STRONG> (Thumb, 38 bytes, Stack size 0 bytes, fflt_clz.o(x$fpl$ffltu), UNUSED)
 
-<P><STRONG><a name="[216]"></a>__aeabi_cfcmple</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, fleqf.o(x$fpl$fleqf), UNUSED)
+<P><STRONG><a name="[217]"></a>__aeabi_cfcmple</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, fleqf.o(x$fpl$fleqf), UNUSED)
 
-<P><STRONG><a name="[13e]"></a>_fcmple</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, fleqf.o(x$fpl$fleqf), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
-<LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fcmp_Inf
+<P><STRONG><a name="[13f]"></a>_fcmple</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, fleqf.o(x$fpl$fleqf), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
+<LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fcmp_Inf
 </UL>
 
-<P><STRONG><a name="[141]"></a>__fpl_fcmple_InfNaN</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, fleqf.o(x$fpl$fleqf), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_frcmple
+<P><STRONG><a name="[142]"></a>__fpl_fcmple_InfNaN</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, fleqf.o(x$fpl$fleqf), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_frcmple
 </UL>
 
-<P><STRONG><a name="[bd]"></a>__aeabi_fmul</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, fmul.o(x$fpl$fmul))
+<P><STRONG><a name="[be]"></a>__aeabi_fmul</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, fmul.o(x$fpl$fmul))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_fmul
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisHumi
-<LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisTemp
-<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizX2YFloat
+<BR>[Called By]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisHumi
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UpdateDisTemp
+<LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizX2YFloat
 </UL>
 
-<P><STRONG><a name="[13f]"></a>_fmul</STRONG> (Thumb, 258 bytes, Stack size 16 bytes, fmul.o(x$fpl$fmul), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fretinf
-<LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
+<P><STRONG><a name="[140]"></a>_fmul</STRONG> (Thumb, 258 bytes, Stack size 16 bytes, fmul.o(x$fpl$fmul), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fretinf
+<LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
 </UL>
 
-<P><STRONG><a name="[136]"></a>__fpl_fnaninf</STRONG> (Thumb, 140 bytes, Stack size 8 bytes, fnaninf.o(x$fpl$fnaninf), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fsub
-<LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fadd
-<LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_f2d
-<LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmple
-<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fmul
-<LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ffixu
-<LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ffix
-<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpeq
-<LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fdiv
+<P><STRONG><a name="[137]"></a>__fpl_fnaninf</STRONG> (Thumb, 140 bytes, Stack size 8 bytes, fnaninf.o(x$fpl$fnaninf), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fsub
+<LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fadd
+<LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_f2d
+<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmple
+<LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fmul
+<LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ffixu
+<LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ffix
+<LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fcmpeq
+<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fdiv
 </UL>
 
-<P><STRONG><a name="[129]"></a>__fpl_fretinf</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, fretinf.o(x$fpl$fretinf), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fadd
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_d2f
-<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fmul
-<LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fdiv
+<P><STRONG><a name="[12a]"></a>__fpl_fretinf</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, fretinf.o(x$fpl$fretinf), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fadd
+<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_d2f
+<LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fmul
+<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fdiv
 </UL>
 
-<P><STRONG><a name="[117]"></a>__aeabi_cfrcmple</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, frleqf.o(x$fpl$frleqf))
+<P><STRONG><a name="[118]"></a>__aeabi_cfrcmple</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, frleqf.o(x$fpl$frleqf))
 <BR><BR>[Called By]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;dry_func
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;WashDryfunc
 </UL>
 
-<P><STRONG><a name="[140]"></a>_frcmple</STRONG> (Thumb, 98 bytes, Stack size 0 bytes, frleqf.o(x$fpl$frleqf), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fcmple_InfNaN
+<P><STRONG><a name="[141]"></a>_frcmple</STRONG> (Thumb, 98 bytes, Stack size 0 bytes, frleqf.o(x$fpl$frleqf), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fcmple_InfNaN
 </UL>
 
-<P><STRONG><a name="[ec]"></a>__aeabi_fsub</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, faddsub_clz.o(x$fpl$fsub))
+<P><STRONG><a name="[ed]"></a>__aeabi_fsub</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, faddsub_clz.o(x$fpl$fsub))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = __aeabi_fsub
 </UL>
-<BR>[Called By]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizY2XFloat
+<BR>[Called By]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizY2XFloat
 </UL>
 
-<P><STRONG><a name="[142]"></a>_fsub</STRONG> (Thumb, 234 bytes, Stack size 16 bytes, faddsub_clz.o(x$fpl$fsub), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fadd1
-<LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
+<P><STRONG><a name="[143]"></a>_fsub</STRONG> (Thumb, 234 bytes, Stack size 16 bytes, faddsub_clz.o(x$fpl$fsub), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fadd1
+<LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__fpl_fnaninf
 </UL>
 <P>
 <H3>
@@ -2426,27 +2439,27 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[49]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemInit
 </UL>
 
-<P><STRONG><a name="[d3]"></a>TI4_Config</STRONG> (Thumb, 130 bytes, Stack size 20 bytes, stm32f10x_tim.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ICInit
+<P><STRONG><a name="[d4]"></a>TI4_Config</STRONG> (Thumb, 130 bytes, Stack size 20 bytes, stm32f10x_tim.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ICInit
 </UL>
 
-<P><STRONG><a name="[d1]"></a>TI3_Config</STRONG> (Thumb, 122 bytes, Stack size 20 bytes, stm32f10x_tim.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ICInit
+<P><STRONG><a name="[d2]"></a>TI3_Config</STRONG> (Thumb, 122 bytes, Stack size 20 bytes, stm32f10x_tim.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ICInit
 </UL>
 
-<P><STRONG><a name="[cf]"></a>TI2_Config</STRONG> (Thumb, 130 bytes, Stack size 20 bytes, stm32f10x_tim.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_PWMIConfig
-<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ICInit
-<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TIxExternalClockConfig
+<P><STRONG><a name="[d0]"></a>TI2_Config</STRONG> (Thumb, 130 bytes, Stack size 20 bytes, stm32f10x_tim.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TIxExternalClockConfig
+<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_PWMIConfig
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ICInit
 </UL>
 
-<P><STRONG><a name="[cd]"></a>TI1_Config</STRONG> (Thumb, 108 bytes, Stack size 20 bytes, stm32f10x_tim.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_PWMIConfig
-<LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ICInit
-<LI><a href="#[d8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TIxExternalClockConfig
+<P><STRONG><a name="[ce]"></a>TI1_Config</STRONG> (Thumb, 108 bytes, Stack size 20 bytes, stm32f10x_tim.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TIxExternalClockConfig
+<LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_PWMIConfig
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ICInit
 </UL>
 
-<P><STRONG><a name="[e1]"></a>rbCreate</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[e2]"></a>rbCreate</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152 + Unknown Stack Size
 <LI>Call Chain = rbCreate &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
@@ -2455,430 +2468,430 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsInit
 </UL>
 
-<P><STRONG><a name="[e2]"></a>rbDelete</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, gizwits_protocol.o(.text), UNUSED)
+<P><STRONG><a name="[e3]"></a>rbDelete</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, gizwits_protocol.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 
-<P><STRONG><a name="[e3]"></a>rbCapacity</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[e4]"></a>rbCapacity</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152 + Unknown Stack Size
 <LI>Call Chain = rbCapacity &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbWrite
-<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbRead
-<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCanWrite
-<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCanRead
+<BR>[Called By]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbWrite
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbRead
+<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCanWrite
+<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCanRead
 </UL>
 
-<P><STRONG><a name="[e4]"></a>rbCanRead</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[e5]"></a>rbCanRead</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
 <LI>Call Chain = rbCanRead &rArr; rbCapacity &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCapacity
+<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCapacity
 </UL>
-<BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetOnePacket
-<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbRead
-<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCanWrite
+<BR>[Called By]<UL><LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetOnePacket
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbRead
+<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCanWrite
 </UL>
 
-<P><STRONG><a name="[e5]"></a>rbCanWrite</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[e6]"></a>rbCanWrite</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 176 + Unknown Stack Size
 <LI>Call Chain = rbCanWrite &rArr; rbCanRead &rArr; rbCapacity &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCanRead
-<LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCapacity
+<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCanRead
+<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCapacity
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbWrite
+<BR>[Called By]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbWrite
 </UL>
 
-<P><STRONG><a name="[e6]"></a>rbRead</STRONG> (Thumb, 174 bytes, Stack size 24 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[e7]"></a>rbRead</STRONG> (Thumb, 174 bytes, Stack size 24 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184 + Unknown Stack Size
  + In Cycle
 <LI>Call Chain = rbRead &rArr;  rbRead (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbRead
-<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCanRead
-<LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCapacity
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbRead
+<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCanRead
+<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCapacity
 </UL>
-<BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetOnePacket
-<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbRead
+<BR>[Called By]<UL><LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetOnePacket
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbRead
 </UL>
 
-<P><STRONG><a name="[e8]"></a>rbWrite</STRONG> (Thumb, 186 bytes, Stack size 24 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[e9]"></a>rbWrite</STRONG> (Thumb, 186 bytes, Stack size 24 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 200 + Unknown Stack Size
  + In Cycle
 <LI>Call Chain = rbWrite &rArr;  rbWrite (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbWrite
-<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCanWrite
-<LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCapacity
+<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbWrite
+<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCanWrite
+<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCapacity
 </UL>
 <BR>[Called By]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizPutData
-<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbWrite
+<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbWrite
 </UL>
 
-<P><STRONG><a name="[e9]"></a>gizProtocolSum</STRONG> (Thumb, 52 bytes, Stack size 24 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[ea]"></a>gizProtocolSum</STRONG> (Thumb, 52 bytes, Stack size 24 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
 <LI>Call Chain = gizProtocolSum &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsPassthroughData
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsGetNTP
-<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsSetMode
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolErrorCmd
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetDeviceInfo
-<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolCommonAck
-<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetOnePacket
-<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizReportData
-<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedDataAck
+<BR>[Called By]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsPassthroughData
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsGetNTP
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsSetMode
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolErrorCmd
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetDeviceInfo
+<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolCommonAck
+<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetOnePacket
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizReportData
+<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedDataAck
 </UL>
 
-<P><STRONG><a name="[101]"></a>gizProtocolExchangeBytes</STRONG> (Thumb, 22 bytes, Stack size 12 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[102]"></a>gizProtocolExchangeBytes</STRONG> (Thumb, 22 bytes, Stack size 12 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = gizProtocolExchangeBytes
 </UL>
-<BR>[Called By]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsGetNTP
-<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsSetMode
-<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolModuleStatus
-<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolNTP
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolErrorCmd
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetDeviceInfo
-<LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolCommonAck
-<LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetOnePacket
-<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizReportData
-<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedDataAck
+<BR>[Called By]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsGetNTP
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsSetMode
+<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolModuleStatus
+<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolNTP
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolErrorCmd
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetDeviceInfo
+<LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolCommonAck
+<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetOnePacket
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizReportData
+<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedDataAck
 </UL>
 
-<P><STRONG><a name="[10d]"></a>gizExchangeWord</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, gizwits_protocol.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolNTP
+<P><STRONG><a name="[10e]"></a>gizExchangeWord</STRONG> (Thumb, 26 bytes, Stack size 0 bytes, gizwits_protocol.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolNTP
 </UL>
 
-<P><STRONG><a name="[ea]"></a>gizByteOrderExchange</STRONG> (Thumb, 64 bytes, Stack size 24 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[eb]"></a>gizByteOrderExchange</STRONG> (Thumb, 64 bytes, Stack size 24 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 168 + Unknown Stack Size
 <LI>Call Chain = gizByteOrderExchange &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoints2ReportData
-<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDecompressionValue
+<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoints2ReportData
+<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDecompressionValue
 </UL>
 
-<P><STRONG><a name="[fe]"></a>gizY2X</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[ff]"></a>gizY2X</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = gizY2X
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoints2ReportData
+<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoints2ReportData
 </UL>
 
-<P><STRONG><a name="[fa]"></a>gizX2Y</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[fb]"></a>gizX2Y</STRONG> (Thumb, 12 bytes, Stack size 8 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = gizX2Y
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoint2Event
+<BR>[Called By]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoint2Event
 </UL>
 
-<P><STRONG><a name="[eb]"></a>gizY2XFloat</STRONG> (Thumb, 42 bytes, Stack size 32 bytes, gizwits_protocol.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = gizY2XFloat &rArr; __aeabi_fdiv
+<P><STRONG><a name="[ec]"></a>gizY2XFloat</STRONG> (Thumb, 42 bytes, Stack size 32 bytes, gizwits_protocol.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = gizY2XFloat &rArr; __aeabi_fsub
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
-<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2uiz
+<BR>[Calls]<UL><LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fsub
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_f2uiz
+<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoints2ReportData
+<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoints2ReportData
 </UL>
 
-<P><STRONG><a name="[ef]"></a>gizX2YFloat</STRONG> (Thumb, 42 bytes, Stack size 32 bytes, gizwits_protocol.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
+<P><STRONG><a name="[f0]"></a>gizX2YFloat</STRONG> (Thumb, 42 bytes, Stack size 32 bytes, gizwits_protocol.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fmul
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ui2f
 </UL>
 
-<P><STRONG><a name="[f6]"></a>gizAcrossByteJudge</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, gizwits_protocol.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizCompressValue
-<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDecompressionValue
+<P><STRONG><a name="[f7]"></a>gizAcrossByteJudge</STRONG> (Thumb, 42 bytes, Stack size 0 bytes, gizwits_protocol.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizCompressValue
+<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDecompressionValue
 </UL>
 
-<P><STRONG><a name="[f1]"></a>gizProtocolHeadInit</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[f2]"></a>gizProtocolHeadInit</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152 + Unknown Stack Size
 <LI>Call Chain = gizProtocolHeadInit &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsGetNTP
-<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsSetMode
-<LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolErrorCmd
-<LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetDeviceInfo
-<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizReportData
-<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedDataAck
+<BR>[Called By]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsGetNTP
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsSetMode
+<LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolErrorCmd
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolGetDeviceInfo
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizReportData
+<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedDataAck
 </UL>
 
-<P><STRONG><a name="[f2]"></a>gizProtocolWaitAck</STRONG> (Thumb, 416 bytes, Stack size 16 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[f3]"></a>gizProtocolWaitAck</STRONG> (Thumb, 416 bytes, Stack size 16 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
 <LI>Call Chain = gizProtocolWaitAck &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
-<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizGetTimerCount
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizGetTimerCount
 </UL>
-<BR>[Called By]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsPassthroughData
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsGetNTP
-<LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsSetMode
-<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizReportData
+<BR>[Called By]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsPassthroughData
+<LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsGetNTP
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsSetMode
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizReportData
 </UL>
 
-<P><STRONG><a name="[f5]"></a>gizDecompressionValue</STRONG> (Thumb, 202 bytes, Stack size 48 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[f6]"></a>gizDecompressionValue</STRONG> (Thumb, 202 bytes, Stack size 48 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 216 + Unknown Stack Size
 <LI>Call Chain = gizDecompressionValue &rArr; gizByteOrderExchange &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizAcrossByteJudge
-<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizByteOrderExchange
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizAcrossByteJudge
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizByteOrderExchange
 </UL>
-<BR>[Called By]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoint2Event
+<BR>[Called By]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoint2Event
 </UL>
 
-<P><STRONG><a name="[f7]"></a>gizCompressValue</STRONG> (Thumb, 136 bytes, Stack size 40 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[f8]"></a>gizCompressValue</STRONG> (Thumb, 136 bytes, Stack size 40 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184 + Unknown Stack Size
 <LI>Call Chain = gizCompressValue &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizAcrossByteJudge
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizAcrossByteJudge
 </UL>
-<BR>[Called By]<UL><LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoints2ReportData
+<BR>[Called By]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoints2ReportData
 </UL>
 
-<P><STRONG><a name="[f8]"></a>gizDataPoint2Event</STRONG> (Thumb, 306 bytes, Stack size 24 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[f9]"></a>gizDataPoint2Event</STRONG> (Thumb, 306 bytes, Stack size 24 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 240 + Unknown Stack Size
 <LI>Call Chain = gizDataPoint2Event &rArr; gizDecompressionValue &rArr; gizByteOrderExchange &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exchangeBytes
-<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDecompressionValue
-<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizX2Y
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exchangeBytes
+<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDecompressionValue
+<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizX2Y
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedProcess
+<BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedProcess
 </UL>
 
-<P><STRONG><a name="[fb]"></a>gizCheckReport</STRONG> (Thumb, 278 bytes, Stack size 16 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[fc]"></a>gizCheckReport</STRONG> (Thumb, 278 bytes, Stack size 16 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
 <LI>Call Chain = gizCheckReport &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizGetTimerCount
-<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfcmpeq
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizGetTimerCount
+<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_cfcmpeq
 </UL>
-<BR>[Called By]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDevReportPolicy
+<BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDevReportPolicy
 </UL>
 
-<P><STRONG><a name="[fd]"></a>gizDataPoints2ReportData</STRONG> (Thumb, 694 bytes, Stack size 24 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[fe]"></a>gizDataPoints2ReportData</STRONG> (Thumb, 694 bytes, Stack size 24 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 208 + Unknown Stack Size
 <LI>Call Chain = gizDataPoints2ReportData &rArr; gizCompressValue &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exchangeBytes
-<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizCompressValue
-<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizY2XFloat
-<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizY2X
-<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizByteOrderExchange
+<LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;exchangeBytes
+<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizCompressValue
+<LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizY2XFloat
+<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizY2X
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizByteOrderExchange
 </UL>
-<BR>[Called By]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDevReportPolicy
-<LI><a href="#[ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedProcess
+<BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDevReportPolicy
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolIssuedProcess
 </UL>
 
-<P><STRONG><a name="[ff]"></a>gizProtocolIssuedProcess</STRONG> (Thumb, 214 bytes, Stack size 32 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[100]"></a>gizProtocolIssuedProcess</STRONG> (Thumb, 214 bytes, Stack size 32 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 272 + Unknown Stack Size
 <LI>Call Chain = gizProtocolIssuedProcess &rArr; gizDataPoint2Event &rArr; gizDecompressionValue &rArr; gizByteOrderExchange &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
-<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoints2ReportData
-<LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoint2Event
+<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoints2ReportData
+<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoint2Event
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsHandle
 </UL>
 
-<P><STRONG><a name="[100]"></a>gizProtocolIssuedDataAck</STRONG> (Thumb, 204 bytes, Stack size 72 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[101]"></a>gizProtocolIssuedDataAck</STRONG> (Thumb, 204 bytes, Stack size 72 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 240 + Unknown Stack Size
 <LI>Call Chain = gizProtocolIssuedDataAck &rArr; gizProtocolSum &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolHeadInit
-<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolExchangeBytes
-<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolSum
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartWrite
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolHeadInit
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolExchangeBytes
+<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolSum
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartWrite
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsHandle
 </UL>
 
-<P><STRONG><a name="[102]"></a>gizReportData</STRONG> (Thumb, 134 bytes, Stack size 48 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[103]"></a>gizReportData</STRONG> (Thumb, 134 bytes, Stack size 48 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 216 + Unknown Stack Size
 <LI>Call Chain = gizReportData &rArr; gizProtocolSum &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolWaitAck
-<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolHeadInit
-<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolExchangeBytes
-<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolSum
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartWrite
+<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolWaitAck
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolHeadInit
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolExchangeBytes
+<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolSum
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartWrite
 </UL>
-<BR>[Called By]<UL><LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDevReportPolicy
+<BR>[Called By]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDevReportPolicy
 </UL>
 
-<P><STRONG><a name="[103]"></a>gizDevReportPolicy</STRONG> (Thumb, 120 bytes, Stack size 8 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[104]"></a>gizDevReportPolicy</STRONG> (Thumb, 120 bytes, Stack size 8 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 224 + Unknown Stack Size
 <LI>Call Chain = gizDevReportPolicy &rArr; gizReportData &rArr; gizProtocolSum &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizReportData
-<LI><a href="#[fd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoints2ReportData
-<LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizCheckReport
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizGetTimerCount
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizReportData
+<LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizDataPoints2ReportData
+<LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizCheckReport
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizGetTimerCount
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsHandle
 </UL>
 
-<P><STRONG><a name="[104]"></a>gizProtocolGetOnePacket</STRONG> (Thumb, 672 bytes, Stack size 48 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[105]"></a>gizProtocolGetOnePacket</STRONG> (Thumb, 672 bytes, Stack size 48 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 232 + Unknown Stack Size
 <LI>Call Chain = gizProtocolGetOnePacket &rArr; rbRead &rArr;  rbRead (Cycle)
 </UL>
-<BR>[Calls]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<BR>[Calls]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolExchangeBytes
-<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolSum
-<LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbRead
-<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCanRead
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolExchangeBytes
+<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolSum
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbRead
+<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rbCanRead
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsHandle
 </UL>
 
-<P><STRONG><a name="[105]"></a>gizProtocolResendData</STRONG> (Thumb, 66 bytes, Stack size 8 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[106]"></a>gizProtocolResendData</STRONG> (Thumb, 66 bytes, Stack size 8 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152 + Unknown Stack Size
 <LI>Call Chain = gizProtocolResendData &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartWrite
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizGetTimerCount
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartWrite
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizGetTimerCount
 </UL>
-<BR>[Called By]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolAckHandle
+<BR>[Called By]<UL><LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolAckHandle
 </UL>
 
-<P><STRONG><a name="[106]"></a>gizProtocolWaitAckCheck</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[107]"></a>gizProtocolWaitAckCheck</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
 <LI>Call Chain = gizProtocolWaitAckCheck &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsHandle
 </UL>
 
-<P><STRONG><a name="[107]"></a>gizProtocolCommonAck</STRONG> (Thumb, 88 bytes, Stack size 24 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[108]"></a>gizProtocolCommonAck</STRONG> (Thumb, 88 bytes, Stack size 24 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 192 + Unknown Stack Size
 <LI>Call Chain = gizProtocolCommonAck &rArr; gizProtocolSum &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolExchangeBytes
-<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolSum
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartWrite
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolExchangeBytes
+<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolSum
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartWrite
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsHandle
 </UL>
 
-<P><STRONG><a name="[108]"></a>gizProtocolAckHandle</STRONG> (Thumb, 98 bytes, Stack size 8 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[109]"></a>gizProtocolAckHandle</STRONG> (Thumb, 98 bytes, Stack size 8 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
 <LI>Call Chain = gizProtocolAckHandle &rArr; gizProtocolResendData &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
+<BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolResendData
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizGetTimerCount
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolResendData
+<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizGetTimerCount
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsHandle
 </UL>
 
-<P><STRONG><a name="[109]"></a>gizProtocolGetDeviceInfo</STRONG> (Thumb, 184 bytes, Stack size 128 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[10a]"></a>gizProtocolGetDeviceInfo</STRONG> (Thumb, 184 bytes, Stack size 128 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 296 + Unknown Stack Size
 <LI>Call Chain = gizProtocolGetDeviceInfo &rArr; gizProtocolSum &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
-<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
+<BR>[Calls]<UL><LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
+<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy
 <LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolHeadInit
-<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolExchangeBytes
-<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolSum
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartWrite
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolHeadInit
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolExchangeBytes
+<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolSum
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartWrite
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsHandle
 </UL>
 
-<P><STRONG><a name="[10b]"></a>gizProtocolErrorCmd</STRONG> (Thumb, 92 bytes, Stack size 32 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[10c]"></a>gizProtocolErrorCmd</STRONG> (Thumb, 92 bytes, Stack size 32 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 200 + Unknown Stack Size
 <LI>Call Chain = gizProtocolErrorCmd &rArr; gizProtocolSum &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolHeadInit
-<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolExchangeBytes
-<LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolSum
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartWrite
+<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolHeadInit
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolExchangeBytes
+<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolSum
+<LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uartWrite
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsHandle
 </UL>
 
-<P><STRONG><a name="[10c]"></a>gizProtocolNTP</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[10d]"></a>gizProtocolNTP</STRONG> (Thumb, 104 bytes, Stack size 16 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160 + Unknown Stack Size
 <LI>Call Chain = gizProtocolNTP &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizExchangeWord
-<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolExchangeBytes
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizExchangeWord
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolExchangeBytes
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsHandle
 </UL>
 
-<P><STRONG><a name="[10e]"></a>gizProtocolReboot</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[10f]"></a>gizProtocolReboot</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = gizProtocolReboot
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizGetTimerCount
-<LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mcuRestart
+<BR>[Calls]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizGetTimerCount
+<LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mcuRestart
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsHandle
 </UL>
 
-<P><STRONG><a name="[110]"></a>gizProtocolModuleStatus</STRONG> (Thumb, 1400 bytes, Stack size 8 bytes, gizwits_protocol.o(.text))
+<P><STRONG><a name="[111]"></a>gizProtocolModuleStatus</STRONG> (Thumb, 1400 bytes, Stack size 8 bytes, gizwits_protocol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 152 + Unknown Stack Size
 <LI>Call Chain = gizProtocolModuleStatus &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
-<LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolExchangeBytes
+<LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizProtocolExchangeBytes
 </UL>
 <BR>[Called By]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gizwitsHandle
 </UL>
 
-<P><STRONG><a name="[134]"></a>_dadd1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, daddsub_clz.o(x$fpl$dadd), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub
+<P><STRONG><a name="[135]"></a>_dadd1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, daddsub_clz.o(x$fpl$dadd), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dsub
 </UL>
 
-<P><STRONG><a name="[12c]"></a>_dsub1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, daddsub_clz.o(x$fpl$dsub), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd
+<P><STRONG><a name="[12d]"></a>_dsub1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, daddsub_clz.o(x$fpl$dsub), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_dadd
 </UL>
 
-<P><STRONG><a name="[143]"></a>_fadd1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, faddsub_clz.o(x$fpl$fadd), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fsub
+<P><STRONG><a name="[144]"></a>_fadd1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, faddsub_clz.o(x$fpl$fadd), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fsub
 </UL>
 
-<P><STRONG><a name="[138]"></a>_fsub1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, faddsub_clz.o(x$fpl$fsub), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fadd
+<P><STRONG><a name="[139]"></a>_fsub1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, faddsub_clz.o(x$fpl$fsub), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fadd
 </UL>
 
 <P><STRONG><a name="[4c]"></a>_printf_input_char</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, _printf_char_common.o(.text))

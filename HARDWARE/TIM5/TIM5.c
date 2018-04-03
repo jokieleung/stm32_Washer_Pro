@@ -49,14 +49,13 @@ u16 waterout_count=0;//排水计数值
 u16 dry_count = 0;//已干燥时间计数值
 u16 work_count = 0;//已工作的总时间计数值
 extern u16 WATERIN_TIME; //进水时间变量
-extern u16 WASH_TIME; //洗衣时间变量
+extern int WASH_TIME; //洗衣时间变量
 extern u16 WATEROUT_TIME; //排水时间变量
 
 extern u8 washDrying_flag;
-//变量值，传感值的指针 
-//extern float Temp,Humi,Pres;
-//extern int RemainWashTime,DryTime,WashDryTime;
-
+//微波脉冲式驱动加热用的变量
+extern u8 microwave_mode;//微波加热状态标志位
+u8 microwave_cnt=0;
 void TIM5_IRQHandler(void)   //TIM5中断
 {
 	if (TIM_GetITStatus(TIM5, TIM_IT_Update) != RESET)  //检查TIM5更新中断发生与否
@@ -86,6 +85,12 @@ void TIM5_IRQHandler(void)   //TIM5中断
 				if(washDrying_flag)
 					work_count++;
 				dry_count++;
+			}
+			//****************如果微波加热打开*************************
+			if(microwave_mode)
+			{
+				microwave_cnt++;
+				
 			}
 								
 		}

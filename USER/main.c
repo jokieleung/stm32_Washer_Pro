@@ -48,6 +48,7 @@ void Gizwits_Init(void)
 	memset((uint8_t*)&currentDataPoint, 0, sizeof(dataPoint_t));//设备状态结构体初始化
 	gizwitsInit();//缓冲区初始化
 }
+extern int WASH_TIME;
 //数据采集（上行逻辑）
 void userHandle(void)
 {
@@ -61,10 +62,12 @@ void userHandle(void)
 	currentDataPoint.valueTemp = Temp;
 	currentDataPoint.valueHumi = Humi;
 	//各工作状态的实时时间上传
-	currentDataPoint.valueWashTime = RemainWashTime;
+	if(washing_flag)
+		currentDataPoint.valueWashTime = RemainWashTime;
+	else 
+		currentDataPoint.valueWashTime = WASH_TIME;
   currentDataPoint.valueDryTime = DryTime;
   currentDataPoint.valueWashDryTime = WashDryTime;
-	
 }
 
 

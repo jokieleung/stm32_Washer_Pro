@@ -29,8 +29,9 @@ u8 START_WD[] = {0XA5,0X5A,0X06,0X83,0X00,0X00,0X01,0X03,0X32};
 u8 END[] = {0XA5,0X5A,0X06,0X83,0X00,0X00,0X01,0X04,0X44};
 //加减洗衣时间
 u8 WSH_TIM[] = {0XA5,0X5A,0X06,0X83,0X00,0X50,0X01};
-//手动终止干燥过程（模拟达到要求的湿度条件）
-u8 BRK_DRY[] = {0XA5,0X5A,0X06,0X83,0X00,0X00,0X01,0X04,0X45};
+//进\出水时间
+u8 WATER_IN_TIME[] = {0XA5,0X5A,0X06,0X83,0X00,0X54,0X01};
+u8 WATER_OUT_TIME[] = {0XA5,0X5A,0X06,0X83,0X00,0X56,0X01};
 //*******************button(end)**************************************
 
 //初始化发送数值变量用的数组
@@ -40,6 +41,11 @@ u8 HUM_ARY[] = {0XA5,0X5A,0X05,0X82,0X00,0X40,0X00,0X00};//湿度值显示数组
 //剩余时间显示数组
 u8 WSH_ARY_M[] = {0XA5,0X5A,0X05,0X82,0X00,0X50,0X00,0X00};//洗衣剩余时间显示数组 
 u8 WSH_ARY_S[] = {0XA5,0X5A,0X05,0X82,0X00,0X51,0X00,0X00};//洗衣剩余时间显示数组 
+//进出水时间显示数组
+//u8 WSH_IN_M[] = {0XA5,0X5A,0X05,0X82,0X00,0X53,0X00,0X00};//洗衣剩余时间显示数组 
+u8 WSH_IN_S[] = {0XA5,0X5A,0X05,0X82,0X00,0X54,0X00,0X00};//洗衣剩余时间显示数组 
+//u8 WSH_OUT_M[] = {0XA5,0X5A,0X05,0X82,0X00,0X55,0X00,0X00};//洗衣剩余时间显示数组 
+u8 WSH_OUT_S[] = {0XA5,0X5A,0X05,0X82,0X00,0X56,0X00,0X00};//洗衣剩余时间显示数组 
 //已用时间显示数组
 u8 DRY_ARY_M[] = {0XA5,0X5A,0X05,0X82,0X00,0X60,0X00,0X00};//干衣已用时间显示数组 
 u8 DRY_ARY_S[] = {0XA5,0X5A,0X05,0X82,0X00,0X61,0X00,0X00};//干衣已用时间显示数组 
@@ -163,7 +169,7 @@ extern u16 waterin_count;//进水计数值
 extern u16 wash_count;//洗衣计数值
 extern u16 waterout_count;//排水计数值
 extern u16 WATERIN_TIME; //进水时间变量
-extern u16 WASH_TIME; //洗衣时间变量
+extern int WASH_TIME; //洗衣时间变量
 extern u16 WATEROUT_TIME; //排水时间变量
 
 void UpdateRemainingWashTim(int *remainSec){
@@ -197,7 +203,39 @@ void UpdateRemainingWashTim(int *remainSec){
 				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//等待发送结束
 	}
 }
-
+//更新进出水时间
+void UpdateWashInAndOut(u16 *InSec,u16 *OutSec){
+	int Sec;
+	u8 low,high,i;
+	u8 ARYlength;
+	
+	Sec = *InSec; //秒
+	low = Sec & 0xff;
+	high = (Sec>>8) & 0xff;
+	WSH_IN_S[7] = low;
+	WSH_IN_S[6] = high;
+	ARYlength = sizeof(WSH_IN_S)/sizeof(WSH_IN_S[0]); //计算数组长度
+//		把变量数组里的数据循环发送给串口，每次发送一个字节  Jokie
+	for(i=0;i<ARYlength;i++)
+	{
+				USART_SendData(USART2, WSH_IN_S[i]);//向串口2把接收的数据重新通过串口2发送
+				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//等待发送结束
+	}
+	
+	Sec = *OutSec; //秒：（取余）
+	low = Sec & 0xff;
+	high = (Sec>>8) & 0xff;
+	WSH_OUT_S[7] = low;
+	WSH_OUT_S[6] = high;
+//		把变量数组里的数据循环发送给串口，每次发送一个字节  Jokie
+	ARYlength = sizeof(WSH_OUT_S)/sizeof(WSH_OUT_S[0]); //计算数组长度
+	for(i=0;i<ARYlength;i++)
+	{
+				USART_SendData(USART2, WSH_OUT_S[i]);//向串口2把接收的数据重新通过串口2发送
+				while(USART_GetFlagStatus(USART2,USART_FLAG_TC)!=SET);//等待发送结束
+	}
+	
+}
 
 extern u16 dry_count;
 //更新已经干衣时间
@@ -304,10 +342,10 @@ void GetEveryDisPara(){
 	Pres = GetPresAverage(ADC_Channel_7,10);
 //	printf("Pres %f \n",Pres);
 	//获取剩余洗衣时间
-	if(washing_flag) //如果处于洗衣工作状态，则RemainWashTime为总的倒计时
+	//if(washing_flag) //如果处于洗衣工作状态，则RemainWashTime为总的倒计时
 		RemainWashTime = (WATERIN_TIME+WASH_TIME+WATEROUT_TIME)-waterin_count-wash_count-waterout_count;
-	else 	//如果处于设置时间状态，则RemainWashTime为洗衣时间
-		RemainWashTime = WASH_TIME;
+	//else 	//如果处于设置时间状态，则RemainWashTime为洗衣时间
+	//	RemainWashTime = WASH_TIME;
 //	printf("RemainWashTime %d \n",RemainWashTime);
 	//获取干燥时间
 	DryTime = dry_count;
@@ -347,7 +385,7 @@ void UpdateEveryDisPara(float *Temp,float *Humi,float *Pres,int *RemainWashTime,
 u8 ifButtonDown(){
 	u16 t;
 	u16 rx_len;
-	u8 button1_cnt=0,button2_cnt=0,button3_cnt=0,button4_cnt=0,button5_cnt=0,button6_cnt=0,button7_cnt=0,button8_cnt=0,button9_cnt=0;//用来判定BUTTON BUF与哪个BUTTON的键值是一致的变量			
+	u8 button1_cnt=0,button2_cnt=0,button3_cnt=0,button4_cnt=0,button5_cnt=0,button6_cnt=0,button7_cnt=0,button8_cnt=0,button9_cnt=0,button10_cnt=0;//用来判定BUTTON BUF与哪个BUTTON的键值是一致的变量			
 			//串口2测试  成功  2018-1-22
 
 			rx_len=USART2_RX_STA&0x3fff;//得到此次接收到的数据长度
@@ -360,7 +398,7 @@ u8 ifButtonDown(){
 				//STEP1 把串口2接收BUF与各BUTTON键值比较
 				//归零Cnt
 				button1_cnt=0;button2_cnt=0;button3_cnt=0;button4_cnt=0;button5_cnt=0;button6_cnt=0;button7_cnt=0;
-				button8_cnt=0;button9_cnt=0;
+				button8_cnt=0;button9_cnt=0;button10_cnt=0;
 				for(t=0;t<rx_len;t++)
 				{
 					
@@ -372,7 +410,9 @@ u8 ifButtonDown(){
 					if(START_WD[t]==USART2_RX_BUF[t])	button6_cnt++;
 					if(END[t]==USART2_RX_BUF[t])			button7_cnt++;
 					if(WSH_TIM[t]==USART2_RX_BUF[t])	button8_cnt++;  //加减洗衣时间 设置
-					if(BRK_DRY[t]==USART2_RX_BUF[t])	button9_cnt++;
+					//进出水时间设置
+					if(WATER_IN_TIME[t]==USART2_RX_BUF[t])	button9_cnt++;
+					if(WATER_OUT_TIME[t]==USART2_RX_BUF[t])	button10_cnt++;
 					//通过串口1观察 debug用  测试成功 2018.03.02 13：44
 	//				USART_SendData(USART1, USART2_RX_BUF[t]);//把接收的串口2数据重新通过串口1发送
 	//				while(USART_GetFlagStatus(USART1,USART_FLAG_TC)!=SET);//等待发送结束
@@ -403,23 +443,23 @@ u8 ifButtonDown(){
 					else if((button8_cnt+2)==rx_len){											//按键8  获取加减洗衣时间变量的值
 //						printf("button8_cnt: %d\r\n",button8_cnt);
 						WASH_TIME=((USART2_RX_BUF[7]<<2)+USART2_RX_BUF[8])*60;//把赋值放在这里，保证实时性
+						UpdateRemainingWashTim(&WASH_TIME);
 						return BUTTON8_NUM;
 					}
-					else if(button9_cnt==rx_len){											//按键9
+					else if((button9_cnt+2)==rx_len){											//按键9	获取加减进水时间变量的值
+						WATERIN_TIME=((USART2_RX_BUF[7]<<2)+USART2_RX_BUF[8]);//把赋值放在这里，保证实时性
+						UpdateWashInAndOut(&WATERIN_TIME,&WATEROUT_TIME);
 						return BUTTON9_NUM;
+					}
+					else if((button10_cnt+2)==rx_len){											//按键10	获取加减排水时间变量的值
+						WATEROUT_TIME=((USART2_RX_BUF[7]<<2)+USART2_RX_BUF[8]);//把赋值放在这里，保证实时性
+						UpdateWashInAndOut(&WATERIN_TIME,&WATEROUT_TIME);
+						return BUTTON10_NUM;
 					}
 					rx_len=0;
 			}
 			else return 0;
 }
-
-
-
-
-
-
-
-
 
 void USART2_IRQHandler( void )
 {	
@@ -440,119 +480,8 @@ void USART2_IRQHandler( void )
   }
 //----------------------------------------------------------------------------------------
 //-----------------------------在串口中断中接收数据   BY Jokie(end)---------------------
-//----------------------------------------------------------------------------------------
-	 
-	 
-	 
-	 
-	 
-	 
-
-	 
-//----------------------------------------------------------------------------------------
-//-----------------------------卖家给的例程中断函数部分---------------------------
-//******************************************************************************************
-	 
-	 
-//	 		if(USART_GetITStatus(USART2, USART_IT_RXNE) != RESET)  //接收中断(接收数据不管什么结尾)
-//	{
-//		 CommBuff[TalNum++]=USART_ReceiveData(USART2);//保存串口数据
-//    if(TalNum==BUFFER_SIZE)
-//      TalNum=0;   			
-//   }
-	
-	 
-	 
-//******************************************************************************************
-//-----------------------------卖家给的例程中断函数部分(end)---------------------
-//----------------------------------------------------------------------------------------	 
 
 }
 
 
 
-
-//***********************卖家例程*******************************
-//*************************************************************
-//u16 StartNum=0,TalNum=0;
-//#define BUFFER_SIZE 2048//指令缓冲区大小，用户可根据自己单片机的容量修改
-//u8 CommBuff[BUFFER_SIZE];//定义指令缓冲区
-//#define USER_R3 0xA5//帧头
-//#define USER_RA 0x5A//帧头
-
-//void deal_command()
-//{
-//    u16 i,CurNum,tem_TalNum;
-//    u8 CmdBuf[256];
-//    u16 nowbuffer,len;
-//    len=StartNum;
-//    tem_TalNum=TalNum;
-//    if(tem_TalNum==len)//
-//       return;
-//    if(CommBuff[StartNum]!=USER_R3)
-//    {
-//        StartNum++;
-//        if(StartNum==BUFFER_SIZE)
-//          StartNum=0;
-//        return;
-//    }
-//    if(tem_TalNum>len)
-//      nowbuffer=tem_TalNum-len;
-//    else
-//      nowbuffer=tem_TalNum+BUFFER_SIZE-len;
-//    if(nowbuffer<5)
-//      return;
-//    CurNum=StartNum+2;
-//    if(CurNum>BUFFER_SIZE-1)
-//      CurNum-=BUFFER_SIZE;
-//    len=CommBuff[CurNum]+3;
-//    if(nowbuffer<len)
-//      return;
-//    i=0;
-//    CurNum=StartNum;
-//    while(1)
-//    {
-//        CmdBuf[i++]=CommBuff[CurNum++];
-//        if(CurNum==BUFFER_SIZE)
-//          CurNum=0;
-//        if(i==4)
-//        {
-//            if(CmdBuf[0]!=USER_R3||CmdBuf[1]!=USER_RA)//
-//            {
-//                StartNum=CurNum;
-//                return;
-//            }
-//            len=CmdBuf[2];
-//        }
-//        else if(i>4)
-//        {
-//            if(i==len+3)//校验完成，正好是一条指令的长度，则break ，用以在接下来进行解析CmdBuf
-//            {
-//                StartNum=CurNum;
-//                break;
-//            }
-//            else if(i>255)//
-//            {
-//                StartNum=CurNum;
-//                return;
-//            }
-//            else if(CurNum==tem_TalNum)
-//              return;
-//        }        
-//    }
-//    ///现在解析指令CmdBuf保存一整条指令
-//    switch(CmdBuf[3])
-//    {
-//            case 0x81:		//读寄存器指令
-//                
-//                break;
-//            case 0x83:		//读变量存储器指令								接收，串口屏发送的   变量存储器读写指令（0x82、0x83）是双字节，地址范围为0x0000~0xffff。
-//                
-//                break;
-//            default:			//命令无效,删除
-//                    break;
-//    }
-//    return;
-//}
-//***********************卖家例程（end）***********************************
-//*************************************************************

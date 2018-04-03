@@ -2,7 +2,9 @@
 
 //全局洗衣机工作状态位
 extern u8 washing_flag,drying_flag,washDrying_flag;
-
+//微波加热模式开启标志位
+u8 microwave_mode;
+extern u8 microwave_cnt;
 //GAS_IN进气阀
 //GAS_OUT	出气阀
 //VACUUM_PUMP PD6真空泵
@@ -40,6 +42,8 @@ void dry_func(){
 	//*******************直至达到设定干燥的湿度值********************************************
 	MICROWAVE	= 0;//开启磁控管
 	FAN = 0;//开启磁控管散热风扇
+	microwave_mode = 1;
+	microwave_cnt = 0;
 	while(SHT2x_GetHumiPoll()>=10)//等待湿度降到10%  循环调用这个有返回值的函数可能会导致性能问题，先放  Jokie on 2018.3.3
 	{
 		//***************************************************
@@ -47,24 +51,27 @@ void dry_func(){
 		//PID输入：实时温度
 		//PID输出：磁控管电源需要支持高频的通断才可
 		//***************************************************
-		if(SHT2x_GetTempPoll()>=48){   //若SHT20 温度大于48度停止磁控管
-			MICROWAVE	= 1;//停止磁控管
-		}
-		else MICROWAVE	= 0;//否则开启磁控管
+//		if(SHT2x_GetTempPoll()>=48){   //若SHT20 温度大于48度停止磁控管
+//			MICROWAVE	= 1;//停止磁控管
+//		}
+//		else 
+//			MICROWAVE	= 0;//否则开启磁控管
+		
+		//采用脉冲式方式驱动磁控管
+		if(microwave_cnt >= 5){//5s取反一次
+			MICROWAVE = !MICROWAVE;
+			microwave_cnt = 0;
+				}
 		
 		if(!drying_flag) {stop_dry();return;}
-//		temp = ifButtonDown();
-//		printf("ifButtonDown temp:	%d	\n",temp);
-//		if(temp == BUTTON9_NUM) break;//暂时作为仿真达到干燥条件跳出循环用的按键
-		
 	}
-	
+	microwave_mode = 0;
 	//****************S3:开启进气阀恢复常压，准备提示取衣******************************************
 	MICROWAVE	= 1;//关闭磁控管
 	FAN = 1;//关闭磁控管散热风扇
 //	GAS_OUT = 1;//关闭抽气（电磁阀）
 	VACUUM_PUMP = 1;//关闭真空泵
-	while(GetPresAverage(ADC_Channel_7,10)<=-5)//等待气压达到接近常压（约为-0.005Mpa）
+	while(GetPresAverage(ADC_Channel_7,10)<=-2)//等待气压达到接近常压（约为-0.002Mpa）
 	{
 		GAS_IN = 0;//开启进气（电磁阀）
 		if(!drying_flag) {stop_dry();return;}//检测是否按下结束按钮
@@ -79,11 +86,12 @@ void dry_func(){
 //功能：终止干衣
 void stop_dry(){
 	dry_count = 0;//归零已干燥时间计数值
+	microwave_mode = 0;
 	MICROWAVE	= 1;//关闭磁控管
 	FAN = 1;//关闭磁控管散热风扇
 //	GAS_OUT = 1;//关闭抽气（电磁阀）
 	VACUUM_PUMP = 1;//关闭真空泵
-	while(GetPresAverage(ADC_Channel_7,10)<=-5)//等待气压达到接近常压（约为-0.005Mpa）
+	while(GetPresAverage(ADC_Channel_7,10)<=-2)//等待气压达到接近常压（约为-0.002Mpa）
 	{
 		GAS_IN = 0;//开启进气（电磁阀）
 	}
@@ -95,6 +103,7 @@ void stop_dry(){
 //功能：干衣参数复位
 void Rst_Dry(){
 	dry_count = 0;//归零已干燥时间计数值
+	microwave_mode = 0;
 	MICROWAVE	= 1;//关闭磁控管
 	FAN = 1;//关闭磁控管散热风扇
 //	GAS_OUT = 1;//关闭抽气（电磁阀）
