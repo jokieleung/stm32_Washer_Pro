@@ -87,11 +87,11 @@ void TIM5_IRQHandler(void)   //TIM5中断
 				dry_count++;
 			}
 			//****************如果微波加热打开*************************
-			if(microwave_mode)
-			{
-				microwave_cnt++;
-				
-			}
+//			if(microwave_mode)
+//			{
+//				microwave_cnt++;
+//				
+//			}
 								
 		}
 }

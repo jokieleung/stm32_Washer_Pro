@@ -73,7 +73,8 @@ void TIM4_IRQHandler(void)   //TIM3中断
 		{
 			TIM_ClearITPendingBit(TIM4, TIM_IT_Update  );  //清除TIMx更新中断标志 
 			
-			
+			//temp testing @20180405
+			//CONNECT = 0;//打开连通器
 			
 			//**************每80ms处理一次机智云协议******************************
 			TenMsCnt++;
@@ -129,16 +130,22 @@ void TIM4_IRQHandler(void)   //TIM3中断
 				goto tim4_ir_end;
 			}
 			if (KeyDownNum==BUTTON7_NUM)  {	//结束按键  停止所有洗烘操作  
-				washing_flag = 0;
-				drying_flag = 0;
-				washDrying_flag = 0;
+				if(washing_flag) washing_flag = 0;
+				if(drying_flag) drying_flag = 0;
+				if(washDrying_flag) washDrying_flag = 0;
 				goto tim4_ir_end;
 			}
 			if (KeyDownNum==BUTTON8_NUM)  {	//用于加减洗衣时间
 //				在ifButtonDown内加减洗衣时间，保证实时性 
 				goto tim4_ir_end;
 			}
-			if (KeyDownNum==BUTTON9_NUM)  {	//暂时作为仿真达到干燥条件跳出循环用的按键
+			
+			if (KeyDownNum == BUTTON11_NUM) {	//进气阀控制按钮
+				GAS_IN = !GAS_IN;
+				goto tim4_ir_end;
+			}
+			if (KeyDownNum == BUTTON12_NUM) {	//进气阀控制按钮
+				FAN = !FAN;
 				goto tim4_ir_end;
 			}
 			

@@ -20,7 +20,7 @@
 /************************************************
  机智云-IOT超声波真空微波洗烘一体机 V1.0
  武汉触米科技有限公司 
- 作者：Jokie @jokieleung@qq.com
+ 作者：Jokie @leungjokie@gmail.com
 ************************************************/
 
 
@@ -74,6 +74,8 @@ void userHandle(void)
 //主函数
  int main(void)
  {		
+	 u8 i=0;
+	 u8 OPENING[]={0XA5,0X5A,0X04,0X80,0X03,0X00,0X00};//主界面
 	 u8 DRY_FSH[]={0XA5,0X5A,0X04,0X80,0X03,0X00,0X0D};//烘衣完成界面
 	 u8 WSHDRY_FSH[]={0XA5,0X5A,0X04,0X80,0X03,0X00,0X0C};//烘洗完成界面
 	 delay_init();	    	 //延时函数初始化	  
@@ -85,20 +87,19 @@ void userHandle(void)
 	 RELAY_Init();//继电器初始化，初始化默认设置为高电平（继电器关闭）
 	 TIM4_Int_Init(99,7199);//计数周期为10ms 用于屏幕的按键检测
 	 uart_init(115200);	    //串口1初始化为115200 调试打印用
-//	 LED_Init();			    //LED端口初始化
-//	 KEY_Init();             //按键初始化 
 	 BEEP_Init();            //蜂鸣器初始化
    Gizwits_Init();         //Gizwits协议初始化
 	 TIM5_Int_Init(9999,7199);//计数周期为1s   此后修改为定时洗衣时间以及烘干时间用
 	 Voice_Init();
+	 //Rst_Screen();					//复位屏幕,恢复到开机页
 	 printf("--------机智云IOT-VacuumWasher----------\r\n");
 	 printf("Init Over\r\n\r\n");
    	while(1)
 	{
-		//洗衣状态
 		if(washing_flag){
 			JumpToUI(START_W_ARY);
-			wash_func();
+			//for(i=0;i<3;i++)
+				wash_func();
 			JumpToFinishedUI();//跳转到洗衣完成的页面
 			washing_flag = 0;
 		}

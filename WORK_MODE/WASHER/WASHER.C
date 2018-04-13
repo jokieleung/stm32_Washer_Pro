@@ -49,15 +49,15 @@ void wash_func(){
 	//****************S3:排水*************************
 	
 	WATER_OUT = 0;//打开排水阀
-	CONNECT = 0;//打开连通阀
-	GAS_IN = 0;//打开进气阀
+	//CONNECT = 0;//打开连通阀
+	//GAS_IN = 0;//打开进气阀
 	while(waterout_count < WATEROUT_TIME)//等待排水完毕
 	{
 		if(!washing_flag) {stop_wash();return;}
 	}
 	WATER_OUT = 1;//关闭排水阀
-	CONNECT = 1;//关闭连通阀
-	GAS_IN = 1;//关闭进气阀
+	//CONNECT = 1;//关闭连通阀
+	//GAS_IN = 1;//关闭进气阀
 	Washer_Mode = 0;//关闭洗衣模式标志位
 	
 	//****************S4:跳转到洗衣完成的页面(20180304把这部分写到了JumpToFinishedUI();)*************************
@@ -78,8 +78,8 @@ void stop_wash(){
 
 	WATER_IN = 1;//关闭进水阀
 	UNTRALSONIC = 1;//关闭振子
-	CONNECT = 1;
-	GAS_IN = 1;
+	//CONNECT = 1;
+	//GAS_IN = 1;
 	
 //	后期需要改为检测水位传感器的水量，排完水后关闭排水阀
 	WATER_OUT = 1;//关闭排水阀
@@ -98,8 +98,8 @@ void Rst_Wash(){
 	
 	WATER_IN = 1;//关闭进水阀
 	UNTRALSONIC = 1;//关闭振子
-	CONNECT = 1;
-	GAS_IN = 1;
+	//CONNECT = 1;
+	//GAS_IN = 1;
 //	后期需要改为检测水位传感器的水量，排完水后关闭排水阀
 	WATER_OUT = 1;//关闭排水阀
 }
@@ -174,7 +174,7 @@ void WashDryfunc(){
 	FAN = 0;//开启磁控管散热风扇
 		microwave_mode = 1;
 	microwave_cnt = 0;
-	while(SHT2x_GetHumiPoll()>=10)//等待湿度降到10%  循环调用这个有返回值的函数可能会导致性能问题，先放  Jokie on 2018.3.3
+	while(1/*SHT2x_GetHumiPoll()>=10*/)//等待湿度降到10%  循环调用这个有返回值的函数可能会导致性能问题，先放  Jokie on 2018.3.3
 	{
 		//采用脉冲式方式驱动磁控管
 		if(microwave_cnt >= 5){//5s取反一次
@@ -191,7 +191,7 @@ void WashDryfunc(){
 	FAN = 1;//关闭磁控管散热风扇
 //	GAS_OUT = 1;//关闭抽气（电磁阀）
 	VACUUM_PUMP = 1;//关闭真空泵
-	while(GetPresAverage(ADC_Channel_7,10)<=-5)//等待气压达到接近常压（约为-0.005Mpa）
+	while(GetPresAverage(ADC_Channel_7,10)<=-2)//等待气压达到接近常压（约为-0.002Mpa）
 	{
 		GAS_IN = 0;//开启进气（电磁阀）
 		if(!washDrying_flag) {goto StopWashDry;}//检测是否按下结束按钮

@@ -43,6 +43,8 @@
 #define BUTTON8_NUM 0x08
 #define BUTTON9_NUM 0x09	
 #define BUTTON10_NUM 0x0A		
+#define BUTTON11_NUM 0x0B		
+#define BUTTON12_NUM 0x0C	
 			
 extern u8  USART2_RX_BUF[USART2_REC_LEN]; //接收缓冲,最大USART_REC_LEN个字节.末字节为换行符 
 extern u16 USART2_RX_STA;         		//接收状态标记	
@@ -58,6 +60,7 @@ void UpdateDisTemp(float *temp);
 void UpdateDisHumi(float *humi);
 void UpdateDisPres(float *pres);
 
+void Rst_Screen(void);
 void UpdateRemainingWashTim(int *remainSec);
 void UpdateWashInAndOut(u16 *InSec,u16 *OutSec);
 void UpdateUsedDryTim(int *UsedSec);

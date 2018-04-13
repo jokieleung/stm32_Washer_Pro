@@ -17,6 +17,10 @@ u8 USART2_RX_BUF[USART2_REC_LEN];     //接收缓冲,最大USART2_REC_LEN个字节.
 //bit14~0，	接收到的有效字节数目
 u16 USART2_RX_STA=0;       //接收状态标记	  
 //*******************button*********************************************
+//进气阀按键控制数组
+u8 GASIN_BT[] = {0XA5,0X5A,0X06,0X83,0X00,0X00,0X01,0X05,0X67};
+//风扇按钮控制数组
+u8 FAN_BT[] = {0XA5,0X5A,0X06,0X83,0X00,0X00,0X01,0X06,0X78};
 //按键键值数组·
 u8 WASH_BT[] = {0XA5,0X5A,0X06,0X83,0X00,0X00,0X01,0X01,0X11};
 u8 DRY_BT[] = {0XA5,0X5A,0X06,0X83,0X00,0X00,0X01,0X02,0X22};
@@ -97,6 +101,12 @@ void USART2_Init(u32 bound)
   	USART_ITConfig(USART2, USART_IT_RXNE|USART_IT_IDLE, ENABLE);//开启串口接受和总线空闲中断
   	
 	USART_Cmd(USART2, ENABLE);                    //使能串口2 	
+}
+
+//功能：复位显示屏至开机画面各示数
+void Rst_Screen(){
+	u8 OPENING[]={0XA5,0X5A,0X04,0X80,0X03,0X00,0X0B};//开机界面
+	JumpToUI(OPENING);
 }
 
 //功能 ：更新显示屏温度值
@@ -385,7 +395,7 @@ void UpdateEveryDisPara(float *Temp,float *Humi,float *Pres,int *RemainWashTime,
 u8 ifButtonDown(){
 	u16 t;
 	u16 rx_len;
-	u8 button1_cnt=0,button2_cnt=0,button3_cnt=0,button4_cnt=0,button5_cnt=0,button6_cnt=0,button7_cnt=0,button8_cnt=0,button9_cnt=0,button10_cnt=0;//用来判定BUTTON BUF与哪个BUTTON的键值是一致的变量			
+	u8 button1_cnt=0,button2_cnt=0,button3_cnt=0,button4_cnt=0,button5_cnt=0,button6_cnt=0,button7_cnt=0,button8_cnt=0,button9_cnt=0,button10_cnt=0,button11_cnt=0,button12_cnt=0;//用来判定BUTTON BUF与哪个BUTTON的键值是一致的变量			
 			//串口2测试  成功  2018-1-22
 
 			rx_len=USART2_RX_STA&0x3fff;//得到此次接收到的数据长度
@@ -398,7 +408,7 @@ u8 ifButtonDown(){
 				//STEP1 把串口2接收BUF与各BUTTON键值比较
 				//归零Cnt
 				button1_cnt=0;button2_cnt=0;button3_cnt=0;button4_cnt=0;button5_cnt=0;button6_cnt=0;button7_cnt=0;
-				button8_cnt=0;button9_cnt=0;button10_cnt=0;
+				button8_cnt=0;button9_cnt=0;button10_cnt=0;button11_cnt=0;button12_cnt=0;
 				for(t=0;t<rx_len;t++)
 				{
 					
@@ -413,6 +423,10 @@ u8 ifButtonDown(){
 					//进出水时间设置
 					if(WATER_IN_TIME[t]==USART2_RX_BUF[t])	button9_cnt++;
 					if(WATER_OUT_TIME[t]==USART2_RX_BUF[t])	button10_cnt++;
+					//进气阀按钮
+					if(GASIN_BT[t]==USART2_RX_BUF[t])	button11_cnt++;
+					//风扇按钮
+					if(FAN_BT[t]==USART2_RX_BUF[t])	button12_cnt++;
 					//通过串口1观察 debug用  测试成功 2018.03.02 13：44
 	//				USART_SendData(USART1, USART2_RX_BUF[t]);//把接收的串口2数据重新通过串口1发送
 	//				while(USART_GetFlagStatus(USART1,USART_FLAG_TC)!=SET);//等待发送结束
@@ -455,6 +469,14 @@ u8 ifButtonDown(){
 						WATEROUT_TIME=((USART2_RX_BUF[7]<<2)+USART2_RX_BUF[8]);//把赋值放在这里，保证实时性
 						UpdateWashInAndOut(&WATERIN_TIME,&WATEROUT_TIME);
 						return BUTTON10_NUM;
+					}
+					else if((button11_cnt)==rx_len){											//按键11	进气阀按钮
+						
+						return BUTTON11_NUM;
+					}
+					else if((button12_cnt)==rx_len){											//按键12	风扇按钮
+						
+						return BUTTON12_NUM;
 					}
 					rx_len=0;
 			}

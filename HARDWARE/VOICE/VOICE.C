@@ -22,33 +22,34 @@ extern u8 washing_flag,drying_flag,washDrying_flag;
 
 //”Ô“Ù–≈∫≈ºÏ≤‚
 void VoiceDetect(void){
+	//–£»¸‘› ±≤ª”√ @20180410
 	//”Ô“Ùœ¥“¬–≈∫≈
-			if(WASH_VOICE&&(voiceWash_toggle_flag==0)){
-				washing_flag = 1;
-				voiceWash_toggle_flag =1;
-			}
-			if(!WASH_VOICE&&(voiceWash_toggle_flag==1)){
-				washing_flag = 0;
-				voiceWash_toggle_flag =0;
-			}
-			//”Ô“Ù∫Ê“¬–≈∫≈
-			if(DRY_VOICE&&(voiceDry_toggle_flag==0)){
-				drying_flag = 1;
-				voiceDry_toggle_flag =1;
-			}
-			if(!DRY_VOICE&&(voiceDry_toggle_flag==1)){
-				drying_flag = 0;
-				voiceDry_toggle_flag =0;
-			}
-			//”Ô“Ùœ¥∫Ê–≈∫≈
-			if(WASH_DRY_VOICE&&(voiceWashDry_toggle_flag==0)){
-				washDrying_flag = 1;
-				voiceWashDry_toggle_flag =1;
-			}
-			if(!WASH_DRY_VOICE&&(voiceWashDry_toggle_flag==1)){
-				washDrying_flag = 0;
-				voiceWashDry_toggle_flag =0;
-			}
+//			if(WASH_VOICE&&(voiceWash_toggle_flag==0)){
+//				washing_flag = 1;
+//				voiceWash_toggle_flag =1;
+//			}
+//			if(!WASH_VOICE&&(voiceWash_toggle_flag==1)){
+//				washing_flag = 0;
+//				voiceWash_toggle_flag =0;
+//			}
+//			//”Ô“Ù∫Ê“¬–≈∫≈
+//			if(DRY_VOICE&&(voiceDry_toggle_flag==0)){
+//				drying_flag = 1;
+//				voiceDry_toggle_flag =1;
+//			}
+//			if(!DRY_VOICE&&(voiceDry_toggle_flag==1)){
+//				drying_flag = 0;
+//				voiceDry_toggle_flag =0;
+//			}
+//			//”Ô“Ùœ¥∫Ê–≈∫≈
+//			if(WASH_DRY_VOICE&&(voiceWashDry_toggle_flag==0)){
+//				washDrying_flag = 1;
+//				voiceWashDry_toggle_flag =1;
+//			}
+//			if(!WASH_DRY_VOICE&&(voiceWashDry_toggle_flag==1)){
+//				washDrying_flag = 0;
+//				voiceWashDry_toggle_flag =0;
+//			}
 }
 
 

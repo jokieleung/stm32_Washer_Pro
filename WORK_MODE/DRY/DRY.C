@@ -15,6 +15,8 @@ extern u16 dry_count;//已干燥时间计数值
 
 //功能：正常干衣模式
 void dry_func(){
+		u8 DRY_FSH[]={0XA5,0X5A,0X04,0X80,0X03,0X00,0X0D};//烘衣完成界面
+	u8 DRY_WAIT[]={0XA5,0X5A,0X04,0X80,0X03,0X00,0X0E};//进气等待页面
 //	u8 temp;
 	dry_count = 0;//归零已干燥时间计数值
 	Dry_Mode = 1;	//开启干衣模式标志位
@@ -40,12 +42,14 @@ void dry_func(){
 	
 	//****************S2:开启磁控管开始加热（暂定采用间歇式工作模式）*************************
 	//*******************直至达到设定干燥的湿度值********************************************
+	
 	MICROWAVE	= 0;//开启磁控管
 	FAN = 0;//开启磁控管散热风扇
-	microwave_mode = 1;
-	microwave_cnt = 0;
-	while(SHT2x_GetHumiPoll()>=10)//等待湿度降到10%  循环调用这个有返回值的函数可能会导致性能问题，先放  Jokie on 2018.3.3
+	microwave_mode = 1; //开启磁控管加热模式 打开TIM5相应计时部分
+	microwave_cnt = 0;//TIM5 磁控管定时计时计数值
+	while(1)//等待湿度降到10%  循环调用这个有返回值的函数可能会导致性能问题，先放  Jokie on 2018.3.3
 	{
+		/*SHT2x_GetHumiPoll()>=10*/
 		//***************************************************
 		//这块温控后期可做成PID来自控 Jokie 2018.3.3
 		//PID输入：实时温度
@@ -58,10 +62,10 @@ void dry_func(){
 //			MICROWAVE	= 0;//否则开启磁控管
 		
 		//采用脉冲式方式驱动磁控管
-		if(microwave_cnt >= 5){//5s取反一次
-			MICROWAVE = !MICROWAVE;
-			microwave_cnt = 0;
-				}
+//		if(microwave_cnt >= 5){		//5s取反一次
+//		//	MICROWAVE = !MICROWAVE;
+//			microwave_cnt = 0;
+//				}
 		
 		if(!drying_flag) {stop_dry();return;}
 	}
@@ -71,11 +75,13 @@ void dry_func(){
 	FAN = 1;//关闭磁控管散热风扇
 //	GAS_OUT = 1;//关闭抽气（电磁阀）
 	VACUUM_PUMP = 1;//关闭真空泵
+	JumpToUI(DRY_WAIT);//跳转到干衣等待的页面
 	while(GetPresAverage(ADC_Channel_7,10)<=-2)//等待气压达到接近常压（约为-0.002Mpa）
 	{
 		GAS_IN = 0;//开启进气（电磁阀）
 		if(!drying_flag) {stop_dry();return;}//检测是否按下结束按钮
 	}
+	JumpToUI(DRY_FSH);//跳转到干衣完成的页面
 	GAS_IN = 1;//已恢复常压，关闭进气（电磁阀）
 	CONNECT = 1;//关闭连通器
 	Dry_Mode = 0;	//关闭干衣模式标志位
@@ -85,16 +91,20 @@ void dry_func(){
 }
 //功能：终止干衣
 void stop_dry(){
+	u8 DRY_FSH[]={0XA5,0X5A,0X04,0X80,0X03,0X00,0X0D};//烘衣完成界面
+	u8 DRY_WAIT[]={0XA5,0X5A,0X04,0X80,0X03,0X00,0X0E};//进气等待页面
 	dry_count = 0;//归零已干燥时间计数值
 	microwave_mode = 0;
 	MICROWAVE	= 1;//关闭磁控管
 	FAN = 1;//关闭磁控管散热风扇
 //	GAS_OUT = 1;//关闭抽气（电磁阀）
 	VACUUM_PUMP = 1;//关闭真空泵
+	JumpToUI(DRY_WAIT);//跳转到干衣完成的页面
 	while(GetPresAverage(ADC_Channel_7,10)<=-2)//等待气压达到接近常压（约为-0.002Mpa）
 	{
 		GAS_IN = 0;//开启进气（电磁阀）
 	}
+	JumpToUI(DRY_FSH);//跳转到干衣完成的页面
 	GAS_IN = 1;//已恢复常压，关闭进气（电磁阀）
 	CONNECT = 1;//关闭连通阀
 	Dry_Mode = 0;	//关闭干衣模式标志位
